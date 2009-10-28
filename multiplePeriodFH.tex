@@ -1,0 +1,76 @@
+\subsection{Two Period Cash Flow}
+We first consider a simple cash flow that has payoff of the security value at time two and zero in other periods. The evolution of the security price is a markov process illustrated in Figure~\ref{fig:twoPeriodPrice}. 
+\begin{figure}
+\includegraphics[scale=0.6]{twoPeriodPrice}\newline
+\caption{Two period price evolution of a security}%
+\label{fig:twoPeriodPrice}%
+\end{figure}
+
+
+The decision maker has three contracts to manipulate his consumption cash flows: the first one changes the cash flow between time 0 and time 1, the seond one changes the cash flow between time 1 and time 2,  and the third changes the cash flow between time 0 and time 2, as illustrated in Figure~\ref{fig:twoPeriodContracts}.   
+\begin{figure}
+\includegraphics[scale=0.6]{twoPeriodContracts}\newline
+\caption{Three contracts to change the consumption cash flow}%
+\label{fig:twoPeriodContracts}%
+\end{figure}
+The decision maker's utility maximization problem becomes
+
+\begin{align*}
+&\mathcal{U}^N_0 (0,0, S_2|S_0) \\&= \max_{\beta_0(S_0),\beta_1(S_1), C_{01}(S_0,S_1), C_{02}(S_0,S_2), C_{12}(S_1,S_2)} \E_0^N [U(-\beta_0(S_0) - E_0^M[C_{01}(S_0,S_1)|S_0] - E_0^M[C_{02}(S_0,S_2)|S_0], \\&  \beta_0(S_0) + C_{01}(S_0,S_1) - E_1^M[C_{12}(S_1,S_2)|S_1]-\beta_1(S_1),  S_2+ C_{02}(S_0,S_2)+C_{12}(S_1,S_2) + \beta_1(S_1)|S_0]
+\end{align*}
+
+Since the bond holding can be incooporated into the contracts, the problem is implified to
+\begin{align*}
+&\mathcal{U}^N_0 (0,0, S_2|S_0) \\&= \max_{C_{01}(S_0,S_1), C_{02}(S_0,S_2), C_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C_{01}(S_0,S_1)|S_0] - \E_0^M[C_{02}(S_0,S_2)|S_0], \\&C_{01}(S_0,S_1) - \E_1^M[C_{12}(S_1,S_2)|S_1], S_2+ C_{02}(S_0,S_2)+C_{12}(S_1,S_2)\big{)} |S_0\big{]}
+\end{align*}
+Further more it can be shown that the contract beween time 0 and time 2 is redundant because we can use variable substitution as follow:
+\[ C'_{12}(S_1,S_2) = C_{12}(S_1,S_2) + C_{02}(S_0,S_2) \]
+\[C'_{01}(S_0,S_1) = C_{01}(S_0,S_1) + \E_1^M[C_{02}(S_0,S_2)|S_1] \]
+Then we have
+\[ \E_0^M[C'_{01}(S_0,S_1)|S_0] =  \E_0^M[C_{01}(S_0,S_1)|S_0] + E_0^M[\E_1^M[C_{02}(S_0,S_2)|S_1]|S_0] = \E_0^M[C_{01}(S_0,S_1)|S_0] +\E_0^M[C_{02}(S_0,S_2)|S_0] \]
+because $S_0$ is a function of $S_1$.  And we also have
+\[C_{01}(S_0,S_1) - \E_1^M[C_{12}(S_1,S_2)|S_1] = C'_{01}(S_0,S_1) - \E_1^M[C'_{12}(S_1,S_2)|S_1]\]
+
+
+{\remark Contracts across multiple periods can always be replicated by contracts of adjacent periods.}
+
+Thus the maximum utility problem is reduced to
+\begin{align} \label{eqn:maxUti(0,0,S2)}
+&\mathcal{U}^N_0 (0,0, S_2|S_0)\nonumber \\&= \max_{C'_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C'_{01}(S_0,S_1)|S_0] , C'_{01}(S_0,S_1) - \E_1^M[C'_{12}(S_1,S_2)|S_1], S_2+C'_{12}(S_1,S_2)\big{)} |S_0\big{]} 
+\end{align}
+
+
+{\lemma The certainty equivalent value of two period is
+\[PCEV_0^N(0,0,S_2|S_0) = \E_0^M[S_2|S_0] \]
+}
+\proof By Equation~ (\ref{eqn:maxUti(0,0,S2)}) and variable substitution $C''_{12}(S_1,S_2) = C'_{12}(S_1,S_2) + S_2$
+\begin{align*}
+&\mathcal{U}^N_0 (0,0, S_2|S_0)\nonumber \\&= \max_{C'_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C'_{01}(S_0,S_1)|S_0] ,\\& C'_{01}(S_0,S_1) - \E_1^M[C''_{12}(S_1,S_2)-S_2|S_1], C''_{12}(S_1,S_2)\big{)} |S_0\big{]} \\
+& = \max_{C''_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} \E_0^M[S_2|S_0]- \E_0^M[C''_{01}(S_0,S_1)|S_0] , \\&C''_{01}(S_0,S_1) - \E_1^M[C''_{12}(S_1,S_2)|S_1], C''_{12}(S_1,S_2)\big{)} |S_0\big{]}
+\end{align*}
+where the second equation is by variable substitution $C''_{01}(S_0,S_1) = C'_{01}(S_0,S_1) + E_1^M[S_2|S_1]$ and $E_0^M[E_1^M[S_2|S_1]|S_0] = \E_0^M[S_2|S_0]$ because $S_0$ is a function of $S_1$.  And finally the definition of the present certainty equivalent value concludes the proof.
+\endproof
+
+\subsection{Multiple Period Cash Flow}
+We start with definition of the maximum utility for a give cash flow under financial hedging.  The financial hedging contract can be defined as follow,
+
+{\definition A hedging contract $C_{ij}(S_i,S_j)$ is an agreement between a decision maker and the other party, which becomes effective at time $i$ and expires at time $j$; It represents that the decision maker pays the other party a  cash price $P_{ij}(C_{ij})$ at time $i$ and receives from the other party a security price dependent cash $C_{ij}(S_i,S_j)$ at time $j$.  }
+
+
+{\proposition Under complete market assumption, the hedging contract cash price at time $i$ is
+\begin{align}
+P_{ij}(C_{ij}) = E_i^M[C_{ij}(S_i,S_j)|S_i] \quad \forall i< j.
+\end{align}
+}
+
+The maximum utility under probability measure $N$ of a cash flow that is a function of the security price can then be expressed as follow,
+\begin{align}
+&\mathcal{U}^N_i (X_i(S_i),\cdots, X_N(S_N)|S_i) \\&= \max_{C_{kj}(S_k,S_j) \forall i\leq k <j, i< j \leq N} \E_i^N \big{[}U\big{(}- \sum_{k=i+1}^N P_{ik} (C_{ik})+X_i(S_i), \nonumber \\ &-\sum_{k=i+1}^N P_{i+1,k} (C_{i+1,k})+X_{i+1}(S_{i+1}) + C_{i,i+1}(S_i,S_{i+1}), \cdots, \nonumber\\&
+X_N(S_N) + \sum_{k=i}^{N-1} C_{k,N}(S_k,S_N) \big{)}|S_i\big{]} \nonumber
+\end{align}
+The present certainty equivalent value under probability measure $N$ is then  defined as
+\begin{align}
+\mathcal{U}^N_i(PCEV_i^N(X_i(S_i),\cdots,X_N(S_N)|S_i), 0, \cdots, 0) = \mathcal{U}^N_i (X_i(S_i),\cdots, X_N(S_N)|S_i) 
+\end{align}
+We next show what is the format of this present certainty equivalent value. 
+
