@@ -1,13 +1,61 @@
-\subsection{Two Period Cash Flow}
-We first consider a simple cash flow that has payoff of the security value at time two and zero in other periods. The evolution of the security price is a markov process illustrated in Figure~\ref{fig:twoPeriodPrice}. 
+\subsection{PCEV of Three-Period Cash Flow}
+In this section we extend the result into three periods, the realizations of the  risky security price and the related contracts are show in Figure~\ref{fig:twoPeriodPrice}. 
+
 \begin{figure}
 \includegraphics[scale=0.6]{twoPeriodPrice}\newline
 \caption{Two period price evolution of a security}%
 \label{fig:twoPeriodPrice}%
 \end{figure}
+In each period the security price goes up with risk neutral probability $p_1$ and goes down with risk neutral probability $p_2$.
+
+\subsubsection{PCEV of $(0,0,t(S_2))$}
 
 
-The decision maker has three contracts to manipulate his consumption cash flows: the first one changes the cash flow between time 0 and time 1, the seond one changes the cash flow between time 1 and time 2,  and the third changes the cash flow between time 0 and time 2, as illustrated in Figure~\ref{fig:twoPeriodContracts}.   
+When we face uncertainty future cash flow $(0,0,t(S_2)$, we can use four derivatives to change the income cash flow to consumption cash flows. They are respectively,
+\begin{itemize}
+\item $x_1, x_2$: the payoff of derivatives that starts at time 0 and expires at time 1
+\item $u_1, u_2, u_3$: the payoff of derivatives that starts at time 0 and expires at time 2
+\item $y_1, y_2$: the payoff of derivatives that starts at time 1 and expires at time 2 and if the security price is $s_{10}$ in period 1.
+\item $z_1, z_2$: the payoff of derivatives that starts at time 1 and expires at time 2 and if the security price is $s_{11}$ in period 1.
+\end{itemize}
+
+
+
+
+There are total four consumption paths in this example, the consumption cash flow  a given set of derivative contracts $x, y, z, u$ are
+\begin{table}[htdp]
+\begin{center}\begin{tabular}{cccc} path & 1 & 2 & 3 \\ 1 &$-x_1p_1 - x_2p_2 - u_1p_1^2 -2u_2p_1p_2 - u_3p^2_2$ & $x_1 - y_1p_1 - y_2 p_2$ & $y_1 + u_1 + t_1$ \\2& the same as path 1 & the same as path 1 & $y_2 + u_2 + t_2$ \\3 & the same as path 1 & $x_2  - z_1 p_1-z_2p_2$ & $z_1 + u_2 + t_2$ \\4 & the same as path 1 & the same as path 3 & $z_2 + u_3 + t_3$ \end{tabular} \caption{consumption cash flow with derivative $x,y,z, u$}
+\end{center}
+\label{defaulttable}
+\end{table}
+
+We use variable substitution to get the PCEV of the given three period uncertain cash flow. 
+\[y'_1 = y_1 + u_1 + t_1, y'_2 = y_2 + u_2 + t_2, z'_1 = z_1 + u_2 + t_2, z'_2 = z_2 + u_3 + t_3 \]
+The consumption cash flow becomes
+\begin{table}[htdp]
+\begin{center}\begin{tabular}{cccc} path & 1 & 2 & 3 \\ 1 &$-x_1p_1 - x_2p_2 - u_1p_1^2 -2u_2p_1p_2 - u_3p^2_2$ & $x_1 - (y'_1 - t_1 - u_1) p_1 - (y'_2-t_2-u_2) p_2$ & $y'_1 $ \\2& the same as path 1 & the same as path 1 & $y'_2 $ \\3 & the same as path 1 & $x_2  - (z'_1-t_2-u_2) p_1-(z'_2-t_3-u_3) p_2$ & $z'_1 $ \\4 & the same as path 1 & the same as path 3 & $z'_2 $ \end{tabular} \caption{consumption cash flow with derivative $x,y',z', u$}
+\end{center}
+\label{table-y'z'}
+\end{table}
+
+Finally we make variable substitution on $x$
+\[x'_1 = x_1 - (y'_1 - t_1 - u_1)p_1 - (y'_2 - t_2 - u_2)p_2,\quad x'_2 = x_2 - (z'_1 - t_2 - u_2)p_1 - (z'_2-t_3-u_3) \]
+
+The consumption cash flow becomes
+
+\begin{table}[htdp]
+\begin{center}\begin{tabular}{cccc} path & 1 & 2 & 3 \\ 1 &$-x'_1p_1 - x'_2p_2 - (y'_1- t_1)p_1^2 -(y'_2+z'_1-2t_2) p_1p_2 - (z'_2 -t_3) p^2_2$ & $x'_1 $ & $y'_1 $ \\2& the same as path 1 & the same as path 1 & $y'_2 $ \\3 & the same as path 1 & $x'_2  $ & $z'_1 $ \\4 & the same as path 1 & the same as path 2 & $z'_2 $ \end{tabular} \caption{consumption cash flow with derivative $x',y',z'$}
+\end{center}
+\label{table-x'y'z'}
+\end{table}
+Through those variable substitutions, we have two observations:\\
+(1) we have moved the uncertain cash flow $t(S_2)$ into a deterministic cash at time 0. Thus, we have
+\[PCEV_0(0,0,t(S_2)) = \E_0^M[t(S_2)|S_0] \]
+(2) we find that the contract $u$ is redundant, therefore we do not need to enter derivative contract across two or more periods for us to maximize the consumption utility. This redundancy is due to the fact that any such derivative can be replicated by the contracts in adjacent periods, in the above example, the contract $u$ can be replicated by the following:
+\[ \bar{x}_1 = u_1p_1 + u_2p_2, \bar{x}_2 = u_2p_1 + u_3p_2 \] 
+\[\bar{y}_1 = u_1, \bar{y}_2 = u_2, \bar{z}_1 = u_2, \bar{z}_2 = u_3 \]
+
+Next we formalize the above two observations. Since the bond shares are embedded in the derivative contract, they are redundant when we buy derivatives. Thus, the decision maker has three derivative contracts to manipulate his consumption cash flows: the first one changes the cash flow between time 0 and time 1, the second one changes the cash flow between time 1 and time 2,  and the third changes the cash flow between time 0 and time 2, as illustrated in Figure~\ref{fig:twoPeriodContracts}.   
 \begin{figure}
 \includegraphics[scale=0.6]{twoPeriodContracts}\newline
 \caption{Three contracts to change the consumption cash flow}%
@@ -16,39 +64,40 @@ The decision maker has three contracts to manipulate his consumption cash flows:
 The decision maker's utility maximization problem becomes
 
 \begin{align*}
-&\mathcal{U}^N_0 (0,0, S_2|S_0) \\&= \max_{\beta_0(S_0),\beta_1(S_1), C_{01}(S_0,S_1), C_{02}(S_0,S_2), C_{12}(S_1,S_2)} \E_0^N [U(-\beta_0(S_0) - E_0^M[C_{01}(S_0,S_1)|S_0] - E_0^M[C_{02}(S_0,S_2)|S_0], \\&  \beta_0(S_0) + C_{01}(S_0,S_1) - E_1^M[C_{12}(S_1,S_2)|S_1]-\beta_1(S_1),  S_2+ C_{02}(S_0,S_2)+C_{12}(S_1,S_2) + \beta_1(S_1)|S_0]
+&\mathcal{U}^N_0 (0,0, t( S_2)|S_0) \\&= \max_{ C_{01}(S_0,S_1), C_{02}(S_0,S_2), C_{12}(S_1,S_2)} \E_0^N [U( - E_0^M[C_{01}(S_0,S_1)|S_0] - E_0^M[C_{02}(S_0,S_2)|S_0], \\&  C_{01}(S_0,S_1) - E_1^M[C_{12}(S_1,S_2)|S_1],  S_2+ C_{02}(S_0,S_2)+C_{12}(S_1,S_2) |S_0]
 \end{align*}
 
 Since the bond holding can be incooporated into the contracts, the problem is implified to
 \begin{align*}
-&\mathcal{U}^N_0 (0,0, S_2|S_0) \\&= \max_{C_{01}(S_0,S_1), C_{02}(S_0,S_2), C_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C_{01}(S_0,S_1)|S_0] - \E_0^M[C_{02}(S_0,S_2)|S_0], \\&C_{01}(S_0,S_1) - \E_1^M[C_{12}(S_1,S_2)|S_1], S_2+ C_{02}(S_0,S_2)+C_{12}(S_1,S_2)\big{)} |S_0\big{]}
+&\mathcal{U}^N_0 (0,0, t(S_2)|S_0) \\&= \max_{C_{01}(S_0,S_1), C_{02}(S_0,S_2), C_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C_{01}(S_0,S_1)|S_0] - \E_0^M[C_{02}(S_0,S_2)|S_0], \\&C_{01}(S_0,S_1) - \E_1^M[C_{12}(S_1,S_2)|S_1], t(S_2)+ C_{02}(S_0,S_2)+C_{12}(S_1,S_2)\big{)} |S_0\big{]}
 \end{align*}
 Further more it can be shown that the contract beween time 0 and time 2 is redundant because we can use variable substitution as follow:
 \[ C'_{12}(S_1,S_2) = C_{12}(S_1,S_2) + C_{02}(S_0,S_2) \]
 \[C'_{01}(S_0,S_1) = C_{01}(S_0,S_1) + \E_1^M[C_{02}(S_0,S_2)|S_1] \]
 Then we have
-\[ \E_0^M[C'_{01}(S_0,S_1)|S_0] =  \E_0^M[C_{01}(S_0,S_1)|S_0] + E_0^M[\E_1^M[C_{02}(S_0,S_2)|S_1]|S_0] = \E_0^M[C_{01}(S_0,S_1)|S_0] +\E_0^M[C_{02}(S_0,S_2)|S_0] \]
-because $S_0$ is a function of $S_1$.  And we also have
+\begin{align*}
+\E_0^M[C'_{01}(S_0,S_1)|S_0] &=  \E_0^M[C_{01}(S_0,S_1)|S_0] + E_0^M[\E_1^M[C_{02}(S_0,S_2)|S_1]|S_0] \\
+& = \E_0^M[C_{01}(S_0,S_1)|S_0] +\E_0^M[C_{02}(S_0,S_2)|S_0] 
+\end{align*}
+The second equation is due to the fact that $S_0$ is a function of $S_1$.  And we also have
 \[C_{01}(S_0,S_1) - \E_1^M[C_{12}(S_1,S_2)|S_1] = C'_{01}(S_0,S_1) - \E_1^M[C'_{12}(S_1,S_2)|S_1]\]
 
-
-{\remark Contracts across multiple periods can always be replicated by contracts of adjacent periods.}
-
-Thus the maximum utility problem is reduced to
-\begin{align} \label{eqn:maxUti(0,0,S2)}
-&\mathcal{U}^N_0 (0,0, S_2|S_0)\nonumber \\&= \max_{C'_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C'_{01}(S_0,S_1)|S_0] , C'_{01}(S_0,S_1) - \E_1^M[C'_{12}(S_1,S_2)|S_1], S_2+C'_{12}(S_1,S_2)\big{)} |S_0\big{]} 
+Thus, the maximum utility problem is reduced to
+\begin{align} \label{eqn:maxUti(0,0,t(S2))}
+\mathcal{U}^N_0 (0,0, t(S_2)|S_0)\nonumber = \max_{C'_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} &- \E_0^M[C'_{01}(S_0,S_1)|S_0] , C'_{01}(S_0,S_1) \\ &
+- \E_1^M[C'_{12}(S_1,S_2)|S_1], t(S_2)+C'_{12}(S_1,S_2)\big{)} |S_0\big{]} 
 \end{align}
 
 
-{\lemma The certainty equivalent value of two period is
-\[PCEV_0^N(0,0,S_2|S_0) = \E_0^M[S_2|S_0] \]
+{\lemma The certainty equivalent value of three periods is
+\[PCEV_0^N(0,0,t(S_2)|S_0) = \E_0^M[t(S_2)|S_0] \]
 }
-\proof By Equation~ (\ref{eqn:maxUti(0,0,S2)}) and variable substitution $C''_{12}(S_1,S_2) = C'_{12}(S_1,S_2) + S_2$
+\proof By Equation~ (\ref{eqn:maxUti(0,0,t(S2))}) and variable substitution $C''_{12}(S_1,S_2) = C'_{12}(S_1,S_2) + t(S_2)$
 \begin{align*}
-&\mathcal{U}^N_0 (0,0, S_2|S_0)\nonumber \\&= \max_{C'_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C'_{01}(S_0,S_1)|S_0] ,\\& C'_{01}(S_0,S_1) - \E_1^M[C''_{12}(S_1,S_2)-S_2|S_1], C''_{12}(S_1,S_2)\big{)} |S_0\big{]} \\
-& = \max_{C''_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} \E_0^M[S_2|S_0]- \E_0^M[C''_{01}(S_0,S_1)|S_0] , \\&C''_{01}(S_0,S_1) - \E_1^M[C''_{12}(S_1,S_2)|S_1], C''_{12}(S_1,S_2)\big{)} |S_0\big{]}
+&\mathcal{U}^N_0 (0,0, t(S_2)|S_0)\nonumber \\&= \max_{C'_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} - \E_0^M[C'_{01}(S_0,S_1)|S_0] ,\\& C'_{01}(S_0,S_1) - \E_1^M[C''_{12}(S_1,S_2)-t(S_2)|S_1], C''_{12}(S_1,S_2)\big{)} |S_0\big{]} \\
+& = \max_{C''_{01}(S_0,S_1),C''_{12}(S_1,S_2)} \E_0^N \big{[}U\big{(} \E_0^M[t(S_2)|S_0]- \E_0^M[C''_{01}(S_0,S_1)|S_0] , \\&C''_{01}(S_0,S_1) - \E_1^M[C''_{12}(S_1,S_2)|S_1], C''_{12}(S_1,S_2)\big{)} |S_0\big{]}
 \end{align*}
-where the second equation is by variable substitution $C''_{01}(S_0,S_1) = C'_{01}(S_0,S_1) + E_1^M[S_2|S_1]$ and $E_0^M[E_1^M[S_2|S_1]|S_0] = \E_0^M[S_2|S_0]$ because $S_0$ is a function of $S_1$.  And finally the definition of the present certainty equivalent value concludes the proof.
+where the second equation is by variable substitution $C''_{01}(S_0,S_1) = C'_{01}(S_0,S_1) + E_1^M[t(S_2)|S_1]$ and $E_0^M[E_1^M[t(S_2)|S_1]|S_0] = \E_0^M[S_2|S_0]$ because $S_0$ is a function of $S_1$.  And finally the definition of the present certainty equivalent value concludes the proof.
 \endproof
 
 \subsection{Multiple Period Cash Flow}
@@ -57,20 +106,188 @@ We start with definition of the maximum utility for a give cash flow under finan
 {\definition A hedging contract $C_{ij}(S_i,S_j)$ is an agreement between a decision maker and the other party, which becomes effective at time $i$ and expires at time $j$; It represents that the decision maker pays the other party a  cash price $P_{ij}(C_{ij})$ at time $i$ and receives from the other party a security price dependent cash $C_{ij}(S_i,S_j)$ at time $j$.  }
 
 
-{\proposition Under complete market assumption, the hedging contract cash price at time $i$ is
+{\proposition \label{prop:derPrice}
+ Under complete market assumption, the hedging contract cash price at time $i$ is
 \begin{align}
 P_{ij}(C_{ij}) = E_i^M[C_{ij}(S_i,S_j)|S_i] \quad \forall i< j.
 \end{align}
 }
 
-The maximum utility under probability measure $N$ of a cash flow that is a function of the security price can then be expressed as follow,
-\begin{align}
-&\mathcal{U}^N_i (X_i(S_i),\cdots, X_N(S_N)|S_i) \\&= \max_{C_{kj}(S_k,S_j) \forall i\leq k <j, i< j \leq N} \E_i^N \big{[}U\big{(}- \sum_{k=i+1}^N P_{ik} (C_{ik})+X_i(S_i), \nonumber \\ &-\sum_{k=i+1}^N P_{i+1,k} (C_{i+1,k})+X_{i+1}(S_{i+1}) + C_{i,i+1}(S_i,S_{i+1}), \cdots, \nonumber\\&
-X_N(S_N) + \sum_{k=i}^{N-1} C_{k,N}(S_k,S_N) \big{)}|S_i\big{]} \nonumber
+The maximum utility under probability measure $\bm{N}$ of a cash flow that is a function of the security price can then be expressed as follow,
+\begin{align} \label{eqn:maxUtiFhMultiFlow}
+&\mathcal{U}^{\bm{N}}_n (X_n(S_n),\cdots, X_N(S_N)|S_n) \\&= \max_{C_{ij}(S_i,S_j) \forall n\leq i <j, n< j \leq N} \E_i^{\bm{N}} \big{[}U\big{(}- \sum_{i=n+1}^N P_{ni} (C_{nk})+X_n(S_n), \nonumber \\ &-\sum_{i=n+2}^N P_{n+1,i} (C_{n+1,i})+X_{n+1}(S_{n+1}) + C_{n,n+1}(S_n,S_{n+1}), \cdots, \nonumber\\&
+X_N(S_N) + \sum_{i=n}^{N-1} C_{iN}(S_i,S_N) \big{)}|S_n\big{]} \nonumber
 \end{align}
-The present certainty equivalent value under probability measure $N$ is then  defined as
-\begin{align}
-\mathcal{U}^N_i(PCEV_i^N(X_i(S_i),\cdots,X_N(S_N)|S_i), 0, \cdots, 0) = \mathcal{U}^N_i (X_i(S_i),\cdots, X_N(S_N)|S_i) 
+The present certainty equivalent value under probability measure $\bm{N}$ is then  defined as
+\begin{align}\label{eqn:pcevFhMultiFlow}
+\mathcal{U}^{\bm{N}} _n(PCEV_n^{\bm{N}}(X_n(S_n),\cdots,X_N(S_N)|S_n), 0, \cdots, 0) = \mathcal{U}^{\bm{N}}_n (X_n(S_n),\cdots, X_N(S_N)|S_n) 
 \end{align}
-We next show what is the format of this present certainty equivalent value. 
+These definitions are parallel to definitions Equation (1) and (2) where the bond trading strategy is replaced by derivative trading on the security. We next demonstrate the present certainty equivalent value under any utility function.
+
+Since there are many derivative to achieve an optimal consumption cash flow, we first 
+show that some derivative contracts are redundant. 
+{\lemma \label{lem:derRedundancy}
+If the  security price is a Markov process, the cash flow of any derivative contracts of two or more periods can be replicated by the cash flow of derivative contracts of adjacent periods.}
+
+\proof
+It is equivalent to show that for a given derivative $C_{ij}(S_i,S_j), \forall j \geq i+2$ , we can construct  a series of derivatives $C_{k,k+1}(S_k,S_{k+1}), \forall i \leq k<j$ to replicate its cash flow. We prove this by induction, consider the premise  $j=i+2$ first. The cash flow generated by the $C_{i,i+2}(S_i,S_{i+2})$ is in Table~\ref{tbl:cftwoperiods}. 
+\begin{table}[htdp]
+\caption{Cash flow generated by derivative $C_{i,i+2}(S_i,S_{i+2})$}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+period & cash flow \\ \hline
+ $i$ & $-\E_i^M[C_{i,i+2}(S_i,S_{i+2})|S_i]$ \\ \hline
+$i+1$ & 0 \\ \hline
+ $i+2$ & $C_{i,i+2}(S_i,S_{i+2})$ \\ \hline
+\end{tabular}
+\end{center}
+\label{tbl:cftwoperiods}
+\end{table}%
+To generate the same cash flow in period $i$, we buy the following derivative in period $i$
+\[C_{i,i+1} (S_i, S_{i+1}) = \E_{i+1}^M[C_{i,i+2}(S_i,S_{i+2})|S_{i+1}] \]
+because we pay for this derivative at period $i$ the price
+\[ -\E_i^M[\E_{i+1}^M[C_{i,i+2}(S_i,S_{i+2})|S_{i+1}]|S_0] =- \E_i^M[C_{i,i+2}(S_i,S_{i+2})|S_i] \] 
+The equality follows from the Markov property.
+
+To generate the same cash flow in period $i+2$, we buy the following derivatives in period $i+1$  
+\[C_{i+1,i+2}(S_{i+1},S_{i+2}) = C_{i,i+2}(S_{i},S_{i+2}|S_{i+1}) \]
+where $C_{i,i+2}(S_{i},S_{i+2}|S_{i+1})$ represents payoff in period $i+2$ of contract $C_{i,i+2}$ if the current period is $i+1$. Now by construction, this derivative generate the same cash flow as $C_{i,i+2}$ in period $i+2$. To complete the proof of premise, we need only to show that the cash flow in period $i+1$ is 0 under those two replicating derivatives. The cash flow in period $i+1$ is
+\begin{align*}
+& C_{i,i+1}(S_i,S_{i+1}) - \E_{i+1}^M[C_{i+1,i+2}(S_{i+1},S_{i+2}) |S_{i+1}] \\ &
+=C_{i,i+1}(S_i,S_{i+1})- E_{i+1}^M[C_{i,i+2}(S_i,S_{i+2})|S_{i+1}] =0 
+\end{align*}
+ 
+ Thus, we have completed the proof for $j = i+2$. Now assume that the Lemma is true for any $j  \geq i + 2$, we proceed to show it is true for $j+1$. 
+ 
+ First we apply the same steps as the case of $i+2$, we have that the contract $C_{i,j+1}(S_i,S_{j+1})$ can be replicated by contract $C_{i,j}(S_i,S_j)$ and $C_{j,j+1}(S_j,S_j+1)$. Applying the induction hypothesis on the contract $C_{ij}$ completes the proof. 
+\endproof
+
+Lemma~\ref{lem:derRedundancy} reduces the number of derivative contracts and we focus on the derivatives that have one period valid lift, it allows us to derive the PCEV and optimal consumption cash flow in a clear way.
+
+{\theorem \label{the:pcevFh} 
+The PCEV of cash flows that are the functions of an underlying security is their total expected value under risk neutral measure, i.e.,
+\begin{align}
+PCEV_n(X_n(S_n), \cdots, X_N(S_N)|S_n) =  \E_n^M[\sum_{i=n}^N X_i(S_i) |S_n].
+\end{align}
+}
+
+\proof
+From Proposition~\ref{prop:derPrice} and Lemma~\ref{lem:derRedundancy}, the maximum utility in Equation~(\ref{eqn:maxUtiFhMultiFlow}) becomes
+\begin{align*}
+ & \max_{C_{i,i+1}(S_i,S_{i+1}) \forall n \leq i < N} \E_n^{\bm{N}} [U ( -\E_n^M[C_{n,n+1}(S_n,S_{n+1}|S_n] + X_n(S_n),\cdots, \\ 
+ & C_{i-1, i}(S_{i-1},S_i) + X_i(S_i) - \E_{i}^M[C_{i,i+1}(S_i,S_{i+1})|S_i], \cdots, C_{N-1,N}(S_{N-1},S_N) + X_N(S_N)|S_n]
+\end{align*}
+Applying the following variable substitution
+\[ C'_{i-1,i} = C_{i-1,i} + \E_{i}^M[ \sum_{k=i}^N X_k(S_k) |S_i] \quad \forall n\leq i \leq N \]
+The maximum utility becomes,
+\begin{align*}
+&\max_{C'_{i,i+1}(S_i,S_{i+1}) \forall n \leq i < N} \E_n^{\bm{N}} [ U(-E_n^M[-\E_n^M [C'_{n,n+1}(S_n,S_{n+1}) |S_n] + \E_n^M[\sum_{i=n}^N X_i(S_i) |S_n], \\
+&\cdots, C'_{i-1,i}(S_{i-1},S_i) - E_i^M[C'_{i,i+1}(S_i,S_{i+1}), \cdots, C'_{N-1,N} (S_{N-1},S_N) ) |S_n]
+\end{align*}
+The definition of PCEV according to Equation~(\ref{eqn:pcevFhMultiFlow}) completes the proof.
+\endproof
+
+
+We now proceed to study the optimal consumption stream and its optimal trading strategies.  We assume that the utility function is additive exponential. 
+
+{\lemma If the utility function is additive exponential and the natural probability measure coincides with risk neutral measure, the optimal consumption cash flows is the same in each period and under reach random realization. 
+}
+
+\proof 
+Theorem~\ref{the:pcevFh} implies that a stream of optimal consumption cash flows of a stream of income cash flows are the same as the optimal consumption cash flows of the income cash flows' present certainty equivalent value. Thus it suffices if we have
+formally for a consumption from period $n$ to $N$
+\begin{align}
+\mathcal{U}_n(PCEV,0, \cdots, 0) &= (N-n+1)u(\frac{PCEV}{N-n+1} )\\ 
+CF_{i} & = \frac{PCEV}{N-n+1} \forall n\leq i\leq N 
+\end{align}
+where $CF_i$ is the optimal consumption cash flow in period $i$.
+We prove this by induction. 
+
+We start with the premises that $n=N-1$, then the utility maximization problem when $S_{N-1} = s_i$ is
+\begin{align*}
+\max_{C_{N-1,N}(S_{N-1},S_N)} \{ &u(PCEV -\E^M_{N-1}[C_{N-1,N}(S_{N-1},S_N)|S_{N-1}=s_i]) \\&+ \E_{N-1}^M[u(C_{N-1,N}(S_{N-1},S_N))|S_{N-1}=s_i]\}
+\end{align*}
+For convenience, let 
+\[CF_{ij} = C_{N-1,N}(S_{N-1} =s_i, S_{N} = s_j), \quad  P_{ij} = \text{Prob} (S_{N-1} =s_i, S_{N} = s_j) \]
+Thus, the one period problem becomes,
+\[ \max_{CF_{ij}} \{ u(PCEV- \sum_{j}(P_{ij}CF_{ij})) +\sum_{j}P_{ij}u(CF_{ij}) \}\]
+The first order optimality condition implies
+\[ P_{ij}u(PCEV- \sum_{j}(P_{ij}F_{ij})) = P_{ij} u(CF_{ij}) \forall j \] 
+Therefore,
+\[CF_{ij} =  PCEV/2, \forall j \]
+and the maximum utility becomes 
+\[2u(PCEV /2) \]
+
+Now suppose the theorem is true for $n+1$, we next show its truth for $n$. 
+
+
+By Lemma~\ref{lem:derRedundancy}, we apply Equation~(\ref{eqn:maxUtiFhMultiFlow}) to the PCEV cash flow at $n$ and let $S_n = s_i$.
+\begin{align*}
+\max_{C_{i,i+1}(S_i,S_{i+1}), \forall n \leq i < N} \E_{n}^M[ &u_{n} (PCEV - \E_{n}^M[C_{n,n+1}(S_{n},S_{n+1})|S_{n}]) +\cdots+ \\
+& u_i( C_{i-1,i}(S_{i-1},S_i) - \E_{i}^M[C_{i,i+1}(S_{i},S_{i+1})|S_i]) + \cdots +  \\
+&u_N(C_{N-1,N}(S_{N-1},S_N))|S_n]
+\end{align*}
+Since the lemma is true for optimal consumption from period $n$ to $N$, applying the induction hypothesis to the above problem, we have
+\begin{align*}
+\max_{C_{n,n+1}(S_n=s_i,S_{n+1})} \E_{n}^M[ &u_{n} (PCEV - \E_{n}^M[C_{n,n+1}(S_{n},S_{n+1})|S_{n}=s_i]) \\& + (N-n) u(\frac{C_{n,n+1}(S_n,S_{n+1})}{N-n})|S_n=s_i]
+\end{align*}
+For convenience, lets define
+\[ CF_{ij} = \frac{C_{n,n+1}(S_n=s_i,S_{n+1}=s_j)}{N-n}, P_{ij} = \text{Prob} (S_n=s_i,S_{n+1}=s_j)\]
+Then the problem becomes,
+\begin{align*}
+\max_{CF_{ij}} \{u(PCEV-(N-n)\sum_{j} [P_{ij}CF_{ij}]) + \sum_{j} P_{ij}u(CF_{ij}) \}
+\end{align*}
+The first order necessary condition implies that
+\[P_{ij} u(PCEV-(N-n)\sum_{j} [P_{ij}CF_{ij}]) = P_{ij}u(CF_{ij}), \forall j \]
+Therefore, we have
+\[PCEV - (N-n) CF_{ij} = CF_{ij} \forall j \]
+The optimal $CF_{ij} = PCEV/(N-n+1)$ and substituting it back to the objective function completes the proof.
+\endproof
+
+We now proceed to study the optimal consumption cash flow and maximum utility under the natural probability measure. 
+
+{\lemma Under natural probability measure and the optimal trading, the optimal consumption cash flow and maximum utilities for periods $n$ to $N$ are
+\begin{align}
+\mathcal{U}_n(PCEV_n, 0,\cdots, 0) &= (N-n+1) u\big{(}\frac{PCEV}{N-n+1} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{p_{ik}^M})]\big{)} \\
+CF_{ij} &= \alpha + \ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M}) \\
+\alpha &= \frac{PCEV}{N-n+1} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]\
+\end{align}
+where the risk neutral probability $P_{ik}^M =$ prob ($S_{j} = s_i, S_{j+1} = s_k$) for all $n\leq j < N$ and $P_{ik}^N$ is the natural probability.
+}
+
+\proof We prove by induction. We first prove the premise, i.e., $n = N-1$. The utility maximization problem under natural probability  is
+\[ \max_{CF_{ij}} \{ u(PCEV- \sum_{j}(P_{ij}^MCF_{ij})) +\sum_{j}P^N_{ij}u(CF_{ij}) \}\]
+The first order optimality condition implies
+\begin{align*}
+P_{ij}^Mu(PCEV- \sum_{k}(P_{ik}^M CF_{ik})) &= P_{ij}^N u(CF_{ij}) \forall j\\
+u( PCEV- \sum_{k}(P_{ik}^M CF_{ik})) & = u(CF_{ij} - \ln(P_{ij}^N/P_{ij}^M)) 
+\end{align*}
+Therefore,
+\[CF_{ij} =  \alpha + \ln(\frac{P_{ij}^{\bm{N}}}{P_{ij}^M}) , \forall j \quad \alpha = (PCEV - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})])/2 \]
+
+Suppose the lemma is true for $n-1$, we want to show it is true for $n$. By induction hypothesis we have in period $n$
+\begin{align*}
+\max_{C_{n,n+1}(S_n=s_i,S_{n+1})} \E_{n}^N[ &u (PCEV - \E_{n}^M[C_{n,n+1}(S_{n},S_{n+1})|S_{n}=s_i]) \\& + (N-n) u(\frac{C_{n,n+1}(S_n,S_{n+1})}{N-n}-\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})])|S_n=s_i]
+\end{align*}
+Let $CF_{ij} =\frac{C_{n,n+1}(S_n=s_i,S_{n+1}=s_j)}{N-n}$, the above problem becomes
+\begin{align*}
+\max_{CF_{ij}} \{u(PCEV-(N-n)\sum_{j} [P_{ij}^M CF_{ij}]) + \sum_{j} P_{ij}^Nu(CF_{ij}-\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})) \}
+\end{align*}
+The first order optimality condition implies that
+\begin{align*}
+P_{ij}^M u(PCEV-(N-n)\sum_{j} [P_{ij}^M CF_{ij}])&= P_{ij}^Nu(CF_{ij} -\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})) \\
+u(PCEV-(N-n)\sum_{j} [P_{ij}^M CF_{ij}]) &= u(CF_{ij} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]-\ln (P_{ij}^N/P_{ij}^M) )
+\end{align*}
+Thus let $\alpha = CF_{ij} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]-\ln (P_{ij}^N/P_{ij}^M)$, we have
+\[ PCEV - (N-n) \alpha - (N-n+1)\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]  = \alpha\]
+Solving for $\alpha$ and substituting back complete the proof.
+\endproof
+
+
+
+
+
+
+
 
