@@ -249,9 +249,8 @@ We now proceed to study the optimal consumption cash flow and maximum utility un
 
 {\lemma Under natural probability measure and the optimal trading, the optimal consumption cash flow and maximum utilities for periods $n$ to $N$ are
 \begin{align}
-\mathcal{U}_n(PCEV_n, 0,\cdots, 0) &= (N-n+1) u\big{(}\frac{PCEV}{N-n+1} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{p_{ik}^M})]\big{)} \\
-CF_{ij} &= \alpha + \ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M}) \\
-\alpha &= \frac{PCEV}{N-n+1} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]\
+\mathcal{U}_n(PCEV_n, 0,\cdots, 0) &= (N-n+1) u\big{(}\frac{PCEV}{N-n+1} - t_{N-n+1}\big{)} \\
+t_i = \frac{(i-1)(t_{i-1} + \tau)}{i}, &\tau = \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})],  t_1 = 0 
 \end{align}
 where the risk neutral probability $P_{ik}^M =$ prob ($S_{j} = s_i, S_{j+1} = s_k$) for all $n\leq j < N$ and $P_{ik}^N$ is the natural probability.
 }
@@ -263,28 +262,31 @@ The first order optimality condition implies
 P_{ij}^Mu(PCEV- \sum_{k}(P_{ik}^M CF_{ik})) &= P_{ij}^N u(CF_{ij}) \forall j\\
 u( PCEV- \sum_{k}(P_{ik}^M CF_{ik})) & = u(CF_{ij} - \ln(P_{ij}^N/P_{ij}^M)) 
 \end{align*}
-Therefore,
-\[CF_{ij} =  \alpha + \ln(\frac{P_{ij}^{\bm{N}}}{P_{ij}^M}) , \forall j \quad \alpha = (PCEV - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})])/2 \]
+The optimal cash flow implies that the cash flow in period $N-1$ is $(PCEV - \tau)/2$. Thus, the optimal utility is
+\[2u(PCEV/2 - \tau /2)\] 
 
-Suppose the lemma is true for $n-1$, we want to show it is true for $n$. By induction hypothesis we have in period $n$
+Suppose the lemma is true for $n+1$, we want to show it is true for $n$. By induction hypothesis we have in period $n$
 \begin{align*}
-\max_{C_{n,n+1}(S_n=s_i,S_{n+1})} \E_{n}^N[ &u (PCEV - \E_{n}^M[C_{n,n+1}(S_{n},S_{n+1})|S_{n}=s_i]) \\& + (N-n) u(\frac{C_{n,n+1}(S_n,S_{n+1})}{N-n}-\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})])|S_n=s_i]
+\max_{C_{n,n+1}(S_n=s_i,S_{n+1})} \E_{n}^N[ &u (PCEV - \E_{n}^M[C_{n,n+1}(S_{n},S_{n+1})|S_{n}=s_i]) \\& + (N-n) u(\frac{C_{n,n+1}(S_n,S_{n+1})}{N-n} - t_{N-n})|S_n=s_i]
 \end{align*}
-Let $CF_{ij} =\frac{C_{n,n+1}(S_n=s_i,S_{n+1}=s_j)}{N-n}$, the above problem becomes
+Let $CF_{ij} =C_{n,n+1}(S_n=s_i,S_{n+1}=s_j)$, the above problem becomes
 \begin{align*}
-\max_{CF_{ij}} \{u(PCEV-(N-n)\sum_{j} [P_{ij}^M CF_{ij}]) + \sum_{j} P_{ij}^Nu(CF_{ij}-\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})) \}
+\max_{CF_{ij}} \{u(PCEV-\sum_{j} [P_{ij}^M CF_{ij}]) + (N-n) \sum_{j} P_{ij}^Nu(\frac{CF_{ij}}{N-n}-t_{N-n}) \}
 \end{align*}
 The first order optimality condition implies that
 \begin{align*}
-P_{ij}^M u(PCEV-(N-n)\sum_{j} [P_{ij}^M CF_{ij}])&= P_{ij}^Nu(CF_{ij} -\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})) \\
-u(PCEV-(N-n)\sum_{j} [P_{ij}^M CF_{ij}]) &= u(CF_{ij} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]-\ln (P_{ij}^N/P_{ij}^M) )
+P_{ij}^M u(PCEV-\sum_{j} [P_{ij}^M CF_{ij}] ) )&= P_{ij}^Nu(\frac{CF_{ij}}{N-n} -t_{N-n}) \\
+u(PCEV-\sum_{j} [P_{ij}^M CF_{ij}]) &= u(CF_{ij}/(N-n) - t_{N-n}- \ln (P_{ij}^N/P_{ij}^M) )
 \end{align*}
-Thus let $\alpha = CF_{ij} - \sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]-\ln (P_{ij}^N/P_{ij}^M)$, we have
-\[ PCEV - (N-n) \alpha - (N-n+1)\sum_{k}[P_{ik}^M\ln(\frac{P_{ik}^{\bm{N}}}{P_{ik}^M})]  = \alpha\]
+Thus let $\alpha = CF_{ij}/(N-n) -t_{N-n}-\ln (P_{ij}^N/P_{ij}^M)$, we have
+\[ PCEV - (N-n) \alpha -(N-n)(t_{N-n} +\tau)  = \alpha\]
 Solving for $\alpha$ and substituting back complete the proof.
 \endproof
 
-
+In summary the optimal trading strategy is a linear combination\\
+(a) converting the uncertain cash flow to PCEV under risk neutral measure using derivatives that have the opposite cash payout as the cash flow in each period.\\
+(b) using optimal derivative contract to consume the PCEV so that the utility is maximized.\\
+The optimal consumption cash flow equalizes the expected utility in each period.
 
 
 
