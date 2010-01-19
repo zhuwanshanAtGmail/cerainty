@@ -3,7 +3,7 @@
 \setcounter{MaxMatrixCols}{30}%
 \usepackage{amsfonts}%
 \usepackage{amssymb}%
-\usepackage{graphicx}%[draft] %draft replaces figure with a boundex rectangle box
+\usepackage[draft]{graphicx}%[draft] %draft replaces figure with a boundex rectangle box
 \usepackage{pdfsync}
 \usepackage{bm}
 \usepackage{setspace}  % to change the spacing option
@@ -42,6 +42,15 @@
 
 %% add by Wanshan Zhu %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\E}{\mathrm{E}}
+\newcommand{\xiv}{\mbox{\boldmath$\xi$}}
+\newcommand{\etav}{\mbox{\boldmath$\eta$}}
+\newcommand{\lambdav}{\mbox{\boldmath$\lambda$}}
+\newcommand{\alphav}{\mbox{\boldmath$\alpha$}}
+\newcommand{\rhov}{\mbox{\boldmath$\rho$}}
+\newcommand{\rhob}{\mbox{\boldmath$\bar{\rho}$}}
+\newcommand{\qv}{\mbox{\boldmath$q$}}
+\newcommand{\sv}{\mbox{\boldmath$s$}}
+\newcommand{\sigmav}{\mbox{\boldmath$\sigma$}}
 %% end of Wanshan Zhu's editing %%%%%%%%%%%%%%%%%%%%
 
 \date{\today}
@@ -60,12 +69,12 @@
 
 \section{Introduction}
 
-\emph{ One could argue that all firms should make decision based on risk-neutral measures. As widely observed and highlighted by examples above, firms take uncertainty into account in both short and long term decisions Smith and Nau 1995 describe in detail the rational behind risk-sensitive decision making, they note that the decision makers are firm's managers, the managers has their own risk profiles, thus even the large public company are risk-sensitive.}
+\emph{ One could argue that all firms should make decision based on risk-neutral measures. As widely observed and highlighted by examples above, firms take uncertainty into account in both short and long term decisions Smith and Nau 1995 describe in detail the rational behind risk-sensitive decision making, they note that the decision makers are firm's managers, the managers have their own risk profiles, thus even the large public company are risk-sensitive.}
 
 Other reasons for risk aversion and impropriety of NPV include \\
 (1) incomplete market\\ 
-(2) consumer may not diversify\\
-(3) other cost related to the variation of cash flow, including bankruptcy cost etc..
+(2) consumers may not diversify their risks\\
+(3) existence of other costs related to the variation of cash flows, including bankruptcy cost, etc..
 
 
 \section{Literature Review}
@@ -85,12 +94,12 @@ Our basic model differs from some of the risk-averse literature in that we expli
 Similarly to Smith and Nau (1995), the MRN's beliefs are captured by his subjective probability of the random sources, while his preference is captured by a non-decreasing concave utility function. MRN's goal is to maximize his expected utility for consumptions. Smith and Nau use an additive exponential utility function to represent the decision maker's preferences.
 
 
-The cash consumption takes place at the end of each period. The cash consumed is  a result of (a) operation cash flow and (b) cash flow from security trading.  and its quantity is determined by the operation cash flow and the security trading cash flow. The operational cash flow is affected by two decisions: the upfront allocation of capacity and production and transshipment quantities in each period.  The security trading cash flow is the result of the MRN's trading of securities in the financial market.
+The cash consumption takes place at the end of each period. The cash consumed is  a result of (a) operation cash flow and (b) cash flow from security trading. The operational cash flow is affected by two decisions: the up-front allocation of capacity and production and transshipment quantities in each period.  The security trading cash flow is the result of the MRN's trading of securities in the financial market.
 
-The financial market has two traded securities, a risk free bond and a foreign currency. To simplify the notation and analysis, we assume that the foreign currency and bond pay the same dividend rate $r$.  (Note: can we generalize to a different dividend rate in foreign currency???). The MRN's trading strategies are defined in space of  borrowing and lending the risk free bond and the foreign currency in each period. In practice, while all MRNs do borrow and lend of risk-free bonds, not all of them engage in trading of risky foreign currency in order to hedge the exchange rate risk. That is, not all are involved in financial hedging.
+The financial market has two traded securities, a risk-free bond and a foreign currency. To simplify the notation and analysis, we assume that the foreign currency and bond pay the same dividend rate $r$.  (Note: can we generalize to a different dividend rate in foreign currency???). The MRN's trading strategies are defined in space of  borrowing and lending the risk-free bond and the foreign currency in each period. In practice, while all MRNs do borrow and lend risk-free bonds, not all of them engage in trading of risky foreign currency in order to hedge the exchange rate risk. That is, not all are involved in financial hedging.
 
 
-Once the operational decisions and trading strategies are decided, the randomness comes from two sources: the product demand and the exchange rate uncertainty. We express the exchange rate as the value of the foreign currency in domestic currency. Without loss of generality, the random demand is assumed to be independent of the exchange rate because any correlation can be decomposed into a perfectly correlated source and an independent source. The price of the foreign currency measured in domestic currency is modeled as a Markovian process, consistent with the model in Hull (1998).
+Once the operational decisions and trading strategies are decided, the randomness comes from two sources: the product demand and the exchange rate uncertainty. We express the exchange rate as the value of the foreign currency in domestic currency. Without loss of generality, the random demand is assumed to be independent of the exchange rate because any correlation can be decomposed into a perfectly correlated source and an independent source. The exchange rate is modeled as a Markovian process, consistent with the model in Hull (1998).
 
 
 Smith (1998) shows that without financial hedging, but with optimal trading in the risk-free bond, maximizing MRN's expected consumption utility is equivalent to the maximizing  MRN's Present Certainty Equivalent Value in a general setting. We proceed to show that it is true in our setting without financial hedging.
@@ -100,22 +109,23 @@ Smith (1998) shows that without financial hedging, but with optimal trading in t
 
 \subsection{Definition of Present Certainty Equivalent Value}
 
-The Present Certainty Equivalent Value of an uncertain cash flow is a deterministic cash value in the initial period such that  the maximum expected utility generated in all periods by it in combination with bond investment is the same as the utility generated by the uncertain cash flow with bond investment. To operationalize this definition, we use he following notation:
+The Present Certainty Equivalent Value of an uncertain cash flow is a deterministic cash value in the initial period such that  the maximum expected utility generated in all periods by it in combination with bond investment, across all possible bond instruments, is the same as the utility generated by the uncertain cash flow with bond investment, also across all possible bond investments. To operationalize this definition, we use he following notation:
 \begin{itemize}
 \item $n\in \{0,1, \cdots, N\}$: period index
 \item $X_n$: period $n$ uncertain cash flow that represents the decision maker's private belief
 \item $x_n$: realization of $X_n$
-\item $\beta_n$:  cumulative shares of risk-free bond held in period $n$, after realization of $X_n$
+\item $\beta_n$:  cumulative shares of risk-free bond held in period $n$, after any purchases of additional bonds in period $n$
 \item $U_n$: utility function that evaulates the decision maker's preferences for consumptions in periods $n$ to $N$.
-\item $\mathcal{U}_n$: the maximum expected utility generated by the cash flow combined with  bond investment for periods $n$ to $N$.
+\item $\mathcal{U}_n$: the maximum expected utility generated by the cash flows combined with  bond investments for periods $n$ to $N$.
 \item $PCEV_n$: the present certainty equivalent value in period $n$ for  cash flows in period $n$ to $N$.
 \end{itemize}
-Note that the cumulative bond investment $\beta_n$ is a strategy that depends on the realization of cash flow in the past. Furthermore $\beta_N=0$ implies that there is no consumption after period $N$ and all the borrowing has to be repaid in full in period N. In each period, the sequence of events is that MRN
+Note that the cumulative bond investment, $\beta_n$, is a strategy that depends on the realization of cash flows in the past. Furthermore $\beta_N=0$ implies that there is no consumption after period $N$ and all the borrowing has to be repaid in full in period N. In each period, the sequence of events is that
 \begin{itemize}
-\item[1] receives income cash.
-\item[2] enters financial trade.
-\item[3] receives trade cash.
-\item[4] consumes the net cash.
+\item[0] Any uncertainty for period $n$ is resolved.
+\item[1] MRN receives income cash.
+\item[2] MRN enters financial trade.
+\item[3] MRN receives or pay out trade cash.
+\item[4] MRN consumes the net cash.
 \end{itemize}
 
 
@@ -128,7 +138,7 @@ Note that the cumulative bond investment $\beta_n$ is a strategy that depends on
 %\end{figure}
 
 
-For clarity of exposition we first assume that the risk-free bond pays $0$ dividend if held for any period of time. This implies that the price of the bond is $1$ is each period.
+For clarity of the exposition we first assume that the risk-free bond pays $0$ dividend if held for any period of time. This implies that the price of the bond is $1$ is each period.
 
 \begin{definition} The maximum expected utility for future uncertain cash flows and a given initial bond holding of $\beta_{n-1}$ that carries over from the past, is defined as follows:
 \begin{align} \label{eqn:maxUti}
@@ -142,21 +152,20 @@ For clarity of exposition we first assume that the risk-free bond pays $0$ divid
     \mathcal{U}_n(PCEV_n(X_n, \cdots, X_N|\beta_{n-1}), 0,\cdots,0|\beta_{n-1})=\mathcal{U}_n(X_n,\cdots, X_{N}|\beta_{n-1})
 \end{align}
 \end{definition}
-In general, calculating PCEV based on the above two definitions may be not easy. Therefore, we first assume that  utility function is time additive, that is,
+In general, calculating PCEV based on the above two definitions may be not easy. Therefore, we first assume that  \\
+(a) Utility function is time additive
 \begin{align}\label{eqn:addUti}
  U_n(x_n, \cdots, x_{N}) = \sum_{i = n}^Nu(x_n)
 \end{align}
-For time additive utility functions,  (\ref{eqn:maxUti}) becomes:
+Applying that,  (\ref{eqn:maxUti}) becomes:
 \begin{align} \label{eqn:maxAddUti}
     \mathcal{U}_n(X_n,\cdots, X_{N}|\beta_{n-1}) = \max_{\beta_n, \cdots, \beta_{N-1},\beta_N = 0} \sum_{i=n}^N  \E [ u( X_i + \beta_{i-1}-\beta_i)]
 \end{align}
-
-
-We further assume that the utility function has constant absolute risk aversion, that is,
+(b) Utility function has constant absolute risk aversion, that is, it is exponential
 \begin{align}\label{eqn:expUti}
 u(x) = -\exp(-x)\end{align}
 
-This is exponential utility function and it has the following well-known properties which will be used repeatedly. 
+For exponential utility function, the following are well-known properties and will be used repeatedly. 
 \begin{proposition} \label{prop:exp}
 The exponential utility function $u$ satisfies: \\
 (i) $u(x+y) = -u(x)u(y)$ \\
@@ -166,7 +175,7 @@ The exponential utility function $u$ satisfies: \\
 
 To study PCEV of a stream of uncertain cash flows,  we first consider properties of an uncertain cash flow in one  period.
 \begin{lemma} \label{lem:randomX_n}
-If the utility function is time additive and exponential, then
+If the utility function is time additive, concave and stationary, then
 \begin{align}
  \mathcal{U}_n(X_n,0, \cdots, 0|\beta_{n-1}) &=(N-n+1) \E_{X_n} [u(\frac{X_n+\beta_{n-1}}{N-n+1})]
 \end{align}
@@ -179,20 +188,15 @@ The corresponding optimal bond shares held in each periods are
 \begin{align*}
 \E\big{[}\max_{\beta_n, \cdots, \beta_{N-1}, \beta_N = 0} \{u(X_n +\beta_{n-1} - \beta_n) + \sum_{i=n+1}^N u(\beta_i - \beta_{i+1})\}|X_n\big{]}
 \end{align*}
-The first order optimality condition is
-\begin{align*}
-u'(X_n+\beta_{n-1} - \beta_n) &= u'(\beta_n - \beta_{n+1}) \\
-u'(\beta_{i} - \beta_{i+1}) &= u'(\beta_{i+1} - \beta_{i+2}) \quad \forall i \in \{n, \cdots, N-2\}
-\end{align*}
-This system equation has a unique solution of bond shares in Equation~(\ref{eqn:beta_iOpt}). 
-Thus, these bond shares held in each period are optimal and the maximum utility is obtained.
+Concavity implies that an non-equal values can be equalized by their average. 
 \endproof
 
-Intuitively if the decision maker has some income cash in the initial period, then  consuming this cash in equal installment in all periods maximizes his total consumption utility. Since this intuition holds true for the constant cash, e.g., $PCEV_n$, in the initial period, we have
+Intuitively if the decision maker has some income cash in the initial period, then  consuming this cash in equal installments in all periods maximizes his total consumption utility. Since this intuition holds true for the constant cash, e.g., $PCEV_n$, in the initial period, we have
 
-\begin{lemma} The $PCEV_n$ of an uncertain cash in initial period $n$ is
-\begin{align}
-PCEV_n(X_n,0,\cdots, 0|\beta_{n-1}) = (N-n+1)u^{-1}\big{(} \E [u(\frac{X_n}{N-n+1})]\big{)}
+\begin{lemma} \label{lem:pcev-Xn}
+The $PCEV_n$ of an uncertain cash in initial period $n$ is
+\begin{align} \label{eqn:pcev-Xn}
+PCEV_n(X_n,0,\cdots, 0|\beta_{n-1}) = (N-n+1)u^{-1}\big{(} \E [u(\frac{X_n}{N-n+1})]\big{)} 
 \end{align}
 and the $PCEV_n$ is independent of initial wealth $\beta_{n-1}$.
 \end{lemma}
@@ -211,35 +215,35 @@ The last equality follows from (i) in Proposition~\ref{prop:exp}.  Finally becau
 
 
 
-This lemma implies that the $PCEV_n(X_n,0,\cdots,0|\beta_{n-1})$ is independent of $\beta_{n-1}$. Therefore, we will write $PCEV_n$ without condition on $\beta_{n-1}$.
-This Lemma and the utility function Proposition (i) and (iii) immediate imply the following:
+Based on Lemma~\ref{lem:pcev-Xn}, we will write $PCEV_n$ without conditioning on $\beta_{n-1}$.
+This Lemma and the utility function Proposition~\ref{prop:exp}  (i) and (iii) immediate imply the following:
 \begin{lemma}\label{lem:delta}
 If $\delta$ is a deterministic cash flow, then
 \[PCEV_n(X_n+\delta,0,\cdots,0) = PCEV_n(X_n,0,\cdots,0) + \delta\]
 \end{lemma}
 
-With this $\delta$-property, we are ready to generalize the independence property to multiple future uncertain cash flows and to develop a recursive procedure for computing its PCEV.
+With these properties, we are ready to generalize the independence property to multiple future uncertain cash flows and to develop a recursive procedure for computing its PCEV.
 
 \begin{lemma}\label{lemma:indCF}
 If the cash flow in each period is independent, then $PCEV_n$ is independent of $\beta_{n-1}$ and can be computed recursively, that is,
 \begin{align}
-&PCEV_n(X_n,\cdots,X_N|\beta_{n-1}) = PCEV_n(X_n,\cdots, X_N) \\
-&PCEV_n(X_n, \cdots, X_N|\beta_{n-1}) = PCEV_n(X_n, 0, \cdots, 0) + PCEV_{n+1} (X_{n+1}, \cdots, X_N)
+&PCEV_n(X_n,\cdots,X_N|\beta_{n-1}) = PCEV_n(X_n,\cdots, X_N) \label{eqn:pcev-ind} \\
+&PCEV_n(X_n, \cdots, X_N|\beta_{n-1}) = PCEV_n(X_n, 0, \cdots, 0) + PCEV_{n+1} (X_{n+1}, \cdots, X_N) \label{eqn:pcev-recur}
 \end{align}
 \end{lemma}
 
-\proof: The Lemma is true when $n=N$. Now suppose they are true for all $n
-\leq N$, we proceed to show both statements are true for $n-1$. We start with the second statement, which at $n-1$ becomes:
+\proof The Lemma is true when $n=N$. Suppose it holds a given $n
+\leq N$. We will show that both equations (\ref{eqn:pcev-ind}) and (\ref{eqn:pcev-recur}) hold for $n-1$. We start with (\ref{eqn:pcev-recur}), which becomes:
 \[PCEV_{n-1}(X_{n-1},X_n, \cdots, X_N|\beta_{n-2}) = PCEV_{n-1}(X_{n-1},0,\cdots, 0) + PCEV_n(X_n, \cdots, X_N)\]
-It is equivalent to show that the maximum utilities generated by the two sides of the above equations are equal. We start with the maximum utility generated by the left side. By definition Eq.~(\ref{eqn:maxUti}) for $n-1$, this maximum utility for any given bond shares $\beta_{n-2}$  is:
+It is sufficient to show that the maximum utilities generated by the two sides of the above equation are equal. We start with the left side. By ~(\ref{eqn:maxUti}) for $n-1$, we have:
 \begin{eqnarray*}
 &&\mathcal{U}_{n-1}(PCEV_{n-1}(X_{n-1},\cdots,X_N|\beta_{n-2}),0,\dots,0 |\beta_{n-2})  \\&&= \mathcal{U}_{n-1}(X_{n-1},\cdots,X_N|\beta_{n-2}) = \max_{  \beta_{n-1}, \cdots, \beta_{N-1},\beta_N=0} \E[\sum_{i=n-1}^N u(X_i + \beta_{i-1}-\beta_i)] \\
 && = \max_{\beta_{n-1}} \{\E_{X_{n-1}}[ u(X_{n-1}+\beta_{n-2}-\beta_{n-1})+ \max_{\beta_{n}, \cdots,\beta_{N-1}, \beta_N=0 }\{ \E [\sum_{i=n}^N u(X_i + \beta_{i-1} - \beta_i)]\}]\} \\
-&& = \max_{\beta_{n-1}} \{\E_{X_{n-1}}[ u(X_{n-1}+\beta_{n-2}-\beta_{n-1})+   \mathcal{U}_n(X_n,\cdots, X_N |\beta_{n-1}) ]\} \text{by Eq.~(\ref{eqn:maxUti})}\\
+&& = \max_{\beta_{n-1}} \{\E_{X_{n-1}}[ u(X_{n-1}+\beta_{n-2}-\beta_{n-1})+   \mathcal{U}_n(X_n,\cdots, X_N |\beta_{n-1}) ]\} \quad  \text{by ~(\ref{eqn:maxUti})}\\
 && =\max_{\beta_{n-1}} \{\E_{X_{n-1}}[ u(X_{n-1}+\beta_{n-2}-\beta_{n-1})+ \mathcal{U}_n(PCEV_n(X_n, \cdots, X_N),0,\cdots,0)|\beta_{n-1} )]\}\\
 &&= \max_{\beta_{n-1}, \cdots,\beta_{N-1}, \beta_N=0 } \{\E[u(X_{n-1}+\beta_{n-2} - \beta_{n-1}) \\&& + u(PCEV_n(X_n, \cdots, X_N) + \beta_{n-1}-\beta_n) + \sum_{i=n+1}^N u( \beta_{i-1} - \beta_i)]\}
 \end{eqnarray*}
-where the last equality follows from the definition Eq.~(\ref{eqn:maxUti}) again and the second to the last equality from the definition Eq.~(\ref{eqn:PCEV}) and induction assumption that $PCEV_n$ is independent of $\beta_{n-1}$. Using variable substitution $\beta'_{n-1} = \beta_{n-1} + PCEV_n(X_n, \cdots, X_N)$,  the above expression becomes
+where the last equality follows from ~(\ref{eqn:maxUti}) again and the second to the last equality from ~(\ref{eqn:PCEV}) and induction assumption that $PCEV_n$ is independent of $\beta_{n-1}$. Using variable substitution $\beta'_{n-1} = \beta_{n-1} + PCEV_n(X_n, \cdots, X_N)$,  the above expression becomes
 \begin{eqnarray*}
 &=& \max_{ \beta'_{n-1}, \cdots, \beta_{N-1},  \beta_N=0}\{ \E[u(X_{n-1}+ PCEV_{n}(X_n,\cdots,X_N) +\beta_{n-2}- \beta'_{n-1})\\
 &&+ u(\beta'_{n-1}-\beta_n) + \sum_{i=n+1}^N u(\beta_{i-1}-\beta_i)] \} \\
@@ -247,38 +251,39 @@ where the last equality follows from the definition Eq.~(\ref{eqn:maxUti}) again
 &=& \mathcal{U}_{n-1}(PCEV_{n-1}(X_{n-1},0,\cdots,0) + PCEV_n(X_n,\cdots,X_N) ,0\cdots,0|\beta_{n-2})
 \end{eqnarray*}
 
-The second to the last equality follows from the Eq.~(\ref{eqn:maxUti}).
-The last equality follows from the delta property in Lemma~\ref{lem:delta} because $PCEV_n$ is a deterministic cash flow, which concludes the induction proof of the second statement. The truth of the first statement for $n-1$ follows immediately from the truth of the second statement.
+The second to the last equality follows from ~(\ref{eqn:maxUti}).
+The last equality follows from Lemma~\ref{lem:delta} because $PCEV_n$ is a deterministic cash flow, which concludes the induction proof of (\ref{eqn:pcev-recur}). Statement (\ref{eqn:pcev-ind}) for $n-1$ follows immediately from (\ref{eqn:pcev-recur}).
 \endproof
 
 
 This lemma immediately imply
 
-\begin{theorem} If the uncertain cash flow is independent in each period, then
+\begin{theorem} \label{theo:indCash} 
+If the uncertain cash flows are independent in all periods, then
 \[PCEV_n(X_n, \cdots, X_N)  = \sum_{i=n}^N PCEV_i(X_i,0,\cdots,0)\]
 \end{theorem}
 
 
-\subsection{Markov Modulated Cash Flow Example for Two Periods}
+\subsection{Markov-Modulated Cash Flow Example for Two Periods}
 
-In this section we consider the cash flow to be a Markov Process. Since the future cash flow's distribution depends on realization of the past cash flow, both the maximum utility and the PCEV depend on the past cash flow realization. Since the cash flow is a Markov process, these values depend only on the cash flow realization in the immediate past period. We have to change maximum utility definition Eq.~(\ref{eqn:maxUti}) and PCEV definition Eq.~(\ref{eqn:PCEV}) slightly to reflect this dependency as follow:
+In this section we consider the cash flow to be a Markov Process. Since the future cash flow's distribution depends on the realization of the past cash flow, both the maximum utility and the PCEV depend on the past cash flow realization. Since the cash flow is a Markov process, these values depend only on the cash flow realization in the last period. We have to refine  utility definition ~(\ref{eqn:maxUti}) and PCEV definition~(\ref{eqn:PCEV}) to reflect the dependency on last cash flow, $x_{n-1}$.
 
-Similar to Eq.~(\ref{eqn:maxUti}), the maximum utility is
+The maximum utility becomes:
 \begin{align} \label{eqn:maxUtiMK}
     &\mathcal{U}_n(X_n,\cdots, X_{N}|x_{n-1},\beta_{n-1}) \nonumber \\
     & = \max_{\beta_n, \cdots, \beta_{N-1}} \E [U_n(X_n+\beta_{n-1}-\beta_n, \cdots, X_i + \beta_{i-1}-\beta_i, \cdots, X_N + \beta_{N-1})|X_{n-1}=x_{n-1} ]
 \end{align}
 
-Similar to Eq.~(\ref{eqn:PCEV}), the present certainty equivalent value definition becomes:
+The present certainty equivalent value becomes:
 \begin{align} \label{eqn:PCEVMK}
     \mathcal{U}_n(PCEV_n(X_n, \cdots, X_N|x_{n-1},\beta_{n-1}), 0,\cdots,0|\beta_{n-1})=\mathcal{U}_n(X_n,\cdots, X_{N}|x_{n-1},\beta_{n-1})
 \end{align}
 
 
-We first study a two-period problem so that we can see the structural properties that will be generalized to $N$ periods. Let $N=1$. We face two cash flows $X_0, X_1$, where $X_1$'s distribution is a function of $X_0$.
+We first study a two-period problem to observe the structural properties that will be generalized to $N$ periods. Let $N=1$. We face two cash flows $X_0, X_1$, where $X_1$'s distribution is a function of $X_0$.
 
 \subsubsection{$PCEV_1(X_1|x_0,\beta_0(x_0))$}
-By definition Eq.~(\ref{eqn:maxUtiMK}), the maximum utility generated by PCEV is
+By definition~(\ref{eqn:maxUtiMK}), the maximum utility generated by PCEV is
 \[\mathcal{U}_1(PCEV_1(X_1|x_0,\beta_0(x_0))|\beta_0(x_0)) = u(PCEV_1(X_1|x_0,\beta_0(x_0)) + \beta_0(x_0))\]
 and similarly the maximum utility generated by the uncertain cash flow $X_1$ is,
 \begin{eqnarray*}
@@ -286,63 +291,63 @@ and similarly the maximum utility generated by the uncertain cash flow $X_1$ is,
 &=&\E_{X_1}[-u(X_1)u(\beta_0)|X_0=x_0]\\
 &=&-\E_{X_1}[u(X_1)|X_0=x_0]u(\beta_0(x_0)|X_0=x_0)
 \end{eqnarray*}
-By the PCEV definition Eq.~(\ref{eqn:PCEVMK}), we have:
-\[PCEV_1(X_1|x_0,\beta_0(x_0)) + \beta_0(x_0) = u^{-1}(\E_{X_1}[u(X_1)|X_0=x_0]) + \beta_0(x_0)\]
-Therefore the PCEV again does not depend on the bond investment carry-over from the past and we have:
-\begin{align}\label{eqn:MKLast}
-PCEV_1(X_1|x_0) =u^{-1}(\E_{X_1}[u(X_1)|X_0=x_0])
-\end{align}
-\subsubsection{$PCEV_0(X_0, 0|\beta_{-1})$}
+From ~(\ref{eqn:PCEVMK}), we have:
+\[PCEV_1(X_1|x_0,\beta_0(x_0)) = u^{-1}(\E_{X_1}[u(X_1)|X_0=x_0]) \]
+%Therefore the PCEV again does not depend on the bond investment carry-over from the past. and we have:
+%\begin{align}\label{eqn:MKLast}
+%PCEV_1(X_1|x_0) =u^{-1}(\E_{X_1}[u(X_1)|X_0=x_0])
+%\end{align}
+%\subsubsection{$PCEV_0(X_0, 0|\beta_{-1})$}
 
-Now we discuss a single cash flow at time 0 with initial wealth $\beta_{-1}$. Again by definition Eq.~(\ref{eqn:maxUtiMK}), the utility generated by the certain cash flow is:
-\begin{eqnarray*}
-\mathcal{U}_0(PCEV_0(X_0,0|\beta_{-1}),0|\beta_{-1}) &=& \max_{\beta_0}\{u(PCEV_0(X_0,0|\beta_{-1})+\beta_{-1}-\beta_0)+u(\beta_0)\}\\
-&=& 2u((PCEV_0(X_0,0|\beta_{-1})+ \beta_{-1})/2)
-\end{eqnarray*}
-Again by Eq.~(\ref{eqn:maxUtiMK}), the utility generated by the single uncertain cash flow is:
-\begin{eqnarray*}
-\mathcal{U}_0(X_0,0|\beta_{-1}) &=& \max_{\beta_0(X_0)} \{\E[u(X_0 + \beta_{-1}-\beta_0(X_0) + u(\beta_0(X_0)) ]\} \\
-&=& 2\E[u((X_0+\beta_{-1})/2)]\\
-&=& -2\E[u(X_0/2)]u(\beta_{-1}/2)
-\end{eqnarray*}
-The last inequality follows from independency of $\beta_{-1}$ on $X_0$ and the property (i) of the exponential utility function, and  the second to the last inequality from the first order optimality condition and property (ii) of the exponential utility function.
+%Now we discuss a single cash flow at time 0 with initial wealth $\beta_{-1}$. Again by definition Eq.~(\ref{eqn:maxUtiMK}), the utility generated by the certain cash flow is:
+%\begin{eqnarray*}
+%\mathcal{U}_0(PCEV_0(X_0,0|\beta_{-1}),0|\beta_{-1}) &=& \max_{\beta_0}\{u(PCEV_0(X_0,0|\beta_{-1})+\beta_{-1}-\beta_0)+u(\beta_0)\}\\
+%&=& 2u((PCEV_0(X_0,0|\beta_{-1})+ \beta_{-1})/2)
+%\end{eqnarray*}
+%Again by Eq.~(\ref{eqn:maxUtiMK}), the utility generated by the single uncertain cash flow is:
+%\begin{eqnarray*}
+%\mathcal{U}_0(X_0,0|\beta_{-1}) &=& \max_{\beta_0(X_0)} \{\E[u(X_0 + \beta_{-1}-\beta_0(X_0) + u(\beta_0(X_0)) ]\} \\
+%&=& 2\E[u((X_0+\beta_{-1})/2)]\\
+%&=& -2\E[u(X_0/2)]u(\beta_{-1}/2)
+%\end{eqnarray*}
+%The last inequality follows from independency of $\beta_{-1}$ on $X_0$ and the property (i) of the exponential utility function, and  the second to the last inequality from the first order optimality condition and property (ii) of the exponential utility function.
 
-By PCEV definition Eq.~(\ref{eqn:PCEVMK}), we can find the PCEV:
-\begin{eqnarray*}
-PCEV_0(X_0,0|\beta_{-1}) + \beta_{-1} &=& 2\{u^{-1}(-\E[u(X_0/2)]u(\beta_1/2))\}\\
-&=& 2u^{-1}(\E[u(X_0/2)]) + \beta_{-1} \text{by Property (iii)}
-\end{eqnarray*}
-Therefore we have the PCEV value independent of past investment (initial wealth) and specifically,
-\begin{align}\label{eqn:MKfirst}
-PCEV_0(X_0,0) = 2u^{-1}(\E[u(X_0/2)])
-\end{align}
+%By PCEV definition Eq.~(\ref{eqn:PCEVMK}), we can find the PCEV:
+%\begin{eqnarray*}
+%PCEV_0(X_0,0|\beta_{-1}) + \beta_{-1} &=& 2\{u^{-1}(-\E[u(X_0/2)]u(\beta_1/2))\}\\
+%&=& 2u^{-1}(\E[u(X_0/2)]) + \beta_{-1} \text{by Property (iii)}
+%\end{eqnarray*}
+%Therefore we have the PCEV value independent of past investment (initial wealth) and specifically,
+%\begin{align}\label{eqn:MKfirst}
+%PCEV_0(X_0,0) = 2u^{-1}(\E[u(X_0/2)])
+%\end{align}
 
-\subsubsection{$PCEV_0(X_0,X_1|\beta_{-1})$}
-Finally we study the PCEV of two uncertain cash flows with initial wealth. We start with definition Eq.~(\ref{eqn:maxUtiMK}) for PCEV,
-\begin{eqnarray*}
-\mathcal{U}_0(PCEV_0(X_0,X_1|\beta_{-1}),0|\beta_{-1}) &=& \max_{\beta_0}\{u(PCEV_0(X_0,X_1|\beta_{-1})+\beta_{-1}-\beta_0)+u(\beta_0)\}\\
-&=& 2u((PCEV_0(X_0,X_1|\beta_{-1})+ \beta_{-1})/2)
-\end{eqnarray*}
-Now we use definition Eq.~(\ref{eqn:maxUtiMK}) for the two uncertain cash flows,
- \begin{eqnarray*}
-\mathcal{U}_0(X_0,X_1|\beta_{-1}) &=& \max_{\beta_0(X_0)} \{\E_{X_0,X_1}[u(X_0 + \beta_{-1}-\beta_0(X_0) + u(X_1 + \beta_0(X_0)) ]\} \\
-&=& \max_{\beta_0(X_0)} \{\E_{X_0} [u(X_0+ \beta_{-1} - \beta_0(X_0)) + \E_{X_1}[u(X_1+\beta_0(X_0))|X_0]]\}\\
-& = & \max_{\beta_0(X_0)} \{\E_{X_0} [u(X_0+ \beta_{-1} - \beta_0(X_0)) + u(PCEV_1(X_1|X_0) + \beta_0(X_0))]\}\\
-&=& 2\E_{X_0}[u((X_0+PCEV_1(X_1|X_0) +\beta_{-1})/2)]\\
-&=& -2\E_{X_0}[u((X_0+PCEV_1(X_1|X_0)) /2)]u(\beta_{-1}/2)
-\end{eqnarray*}
+%\subsubsection{$PCEV_0(X_0,X_1|\beta_{-1})$}
+%Finally we study the PCEV of two uncertain cash flows with initial wealth. We start with definition Eq.~(\ref{eqn:maxUtiMK}) for PCEV,
+%\begin{eqnarray*}
+%\mathcal{U}_0(PCEV_0(X_0,X_1|\beta_{-1}),0|\beta_{-1}) &=& \max_{\beta_0}\{u(PCEV_0(X_0,X_1|\beta_{-1})+\beta_{-1}-\beta_0)+u(\beta_0)\}\\
+%&=& 2u((PCEV_0(X_0,X_1|\beta_{-1})+ \beta_{-1})/2)
+%\end{eqnarray*}
+%Now we use definition Eq.~(\ref{eqn:maxUtiMK}) for the two uncertain cash flows,
+% \begin{eqnarray*}
+%\mathcal{U}_0(X_0,X_1|\beta_{-1}) &=& \max_{\beta_0(X_0)} \{\E_{X_0,X_1}[u(X_0 + \beta_{-1}-\beta_0(X_0) + u(X_1 + \beta_0(X_0)) ]\} \\
+%&=& \max_{\beta_0(X_0)} \{\E_{X_0} [u(X_0+ \beta_{-1} - \beta_0(X_0)) + \E_{X_1}[u(X_1+\beta_0(X_0))|X_0]]\}\\
+%& = & \max_{\beta_0(X_0)} \{\E_{X_0} [u(X_0+ \beta_{-1} - \beta_0(X_0)) + u(PCEV_1(X_1|X_0) + \beta_0(X_0))]\}\\
+%&=& 2\E_{X_0}[u((X_0+PCEV_1(X_1|X_0) +\beta_{-1})/2)]\\
+%&=& -2\E_{X_0}[u((X_0+PCEV_1(X_1|X_0)) /2)]u(\beta_{-1}/2)
+%\end{eqnarray*}
 
-Using the PCEV definition Eq.~(\ref{eqn:PCEVMK}), we have:
-\[PCEV_0(X_0,X_1|\beta_{-1}) + \beta_{-1} = 2u^{-1}(\E_{X_0}[u((X_0+PCEV_1(X_1|X_0)) /2)]) + \beta_{-1} \]
-Thus we have the PCEV is independent of initial wealth, and we further have,
-\begin{align}
-PCEV_0(X_0,X_1) &=& 2u^{-1}(\E_{X_0}[u((X_0+PCEV_1(X_1|X_0)) /2)])\nonumber \\
-&=& PCEV_0(X_0 + PCEV_1(X_1|X_0),0)  \text{by Eq.~(\ref{eqn:MKfirst})}
-\end{align}
+%Using the PCEV definition Eq.~(\ref{eqn:PCEVMK}), we have:
+%\[PCEV_0(X_0,X_1|\beta_{-1}) + \beta_{-1} = 2u^{-1}(\E_{X_0}[u((X_0+PCEV_1(X_1|X_0)) /2)]) + \beta_{-1} \]
+%Thus we have the PCEV is independent of initial wealth, and we further have,
+%\begin{align}
+%PCEV_0(X_0,X_1) &=& 2u^{-1}(\E_{X_0}[u((X_0+PCEV_1(X_1|X_0)) /2)])\nonumber \\
+%&=& PCEV_0(X_0 + PCEV_1(X_1|X_0),0)  \text{by Eq.~(\ref{eqn:MKfirst})}
+%\end{align}
 
 
 \subsection{PCEV of Markov Stochastic Cash Flow}
-We want to show the definitions in Eq.~(\ref{eqn:maxUtiMK}) and Eq.~(\ref{eqn:PCEVMK}), and the time additive utility function imply  first the PCEV value is independent of initial wealth and second the PCEV value can be computed recursively. In order to study these properties of a stream of cash flows, we start with a single cash flow.
+We show here ~(\ref{eqn:maxUtiMK}) and ~(\ref{eqn:PCEVMK}), and the time additive utility function imply,  first, that the PCEV value is independent of initial wealth, and second, that the PCEV value can be computed recursively. In order to study these properties of a stream of cash flows, we start with a single cash flow. Base on (\ref{eqn:pcev-Xn}), we have
 \begin{lemma}\label{lem:oneCF-PCEV}
 If utility function is time additive exponential, then
 \begin{align}
@@ -350,16 +355,16 @@ If utility function is time additive exponential, then
 &PCEV_n(X_n,0,\cdots,0|x_{n-1}) = PCEV_n(X_n,0,\cdots,0|x_{n-1},\beta_{n-1})
 \end{align}
 \end{lemma}
-\proof For any cash flow $Y_n$ that may depend on $x_{n-1}$, we have by Eq.~(\ref{eqn:maxUtiMK}),
-\begin{align}
-\mathcal{U}_n(Y_n,0,\cdots,0|x_{n-1},\beta_{n-1}) =  -(N-n+1)\E_{Y_n}[u(\frac{Y_n}{N-n+1})|X_{n-1}=x_{n-1}]) u(\frac{\beta_{n-1}}{N-n+1})
-\end{align}
-The equality follows from the Property (i) and (ii) of the exponential utility function and the first order optimality condition.
+%\proof For any cash flow $Y_n$ that may depend on $x_{n-1}$, we have by Eq.~(\ref{eqn:maxUtiMK}),
+%\begin{align}
+%\mathcal{U}_n(Y_n,0,\cdots,0|x_{n-1},\beta_{n-1}) =  -(N-n+1)\E_{Y_n}[u(\frac{Y_n}{N-n+1})|X_{n-1}=x_{n-1}]) u(\frac{\beta_{n-1}}{N-n+1})
+%\end{align}
+%The equality follows from the Property (i) and (ii) of the exponential utility function and the first order optimality condition.
 
-Since $Y_n$ is arbitrary, We can let $Y_n = PCEV_n(X_n,0,\cdots,0|x_{n-1},\beta_{n-1})$. Since it is a deterministic cash flow, the above expression is reduced to
-\[-(N-n+1)u(\frac{ PCEV_n(X_n,0,\cdots,0|x_{n-1},\beta_{n-1})}{N-n+1}) u(\frac{\beta_{n-1}}{N-n+1}) \]
-Now letting $Y_n = X_n$ and using Eq.~(\ref{eqn:PCEVMK}) imply the first statement. The second statement follows from the first statement immediately.
-\endproof
+%Since $Y_n$ is arbitrary, We can let $Y_n = PCEV_n(X_n,0,\cdots,0|x_{n-1},\beta_{n-1})$. Since it is a deterministic cash flow, the above expression is reduced to
+%\[-(N-n+1)u(\frac{ PCEV_n(X_n,0,\cdots,0|x_{n-1},\beta_{n-1})}{N-n+1}) u(\frac{\beta_{n-1}}{N-n+1}) \]
+%Now letting $Y_n = X_n$ and using Eq.~(\ref{eqn:PCEVMK}) imply the first statement. The second statement follows from the first statement immediately.
+%\endproof
 
 Now we are ready to study the PCEV of a stream of cash flows:
 
@@ -371,9 +376,9 @@ If the decision maker's preference is represented by the time additive utility f
 \end{align}
 \end{theorem}
 \proof
-We prove above statements by induction. Truth for $n=N$ is easily verified by previous Lemma because it is a single cash flow case. Now suppose truth holds for $n+1$, we proceed to show the truth of the second statement for $n$ first.
+We prove above statements by induction. The statements hold for $n=N$ by previous Lemma~\ref{lem:oneCF-PCEV},  because it is a single cash flow case. Now suppose they hold for a given $n+1$. We first show statement (2) for $n$.
 
-By Eq.(\ref{eqn:maxUtiMK}) and Eq.(\ref{eqn:PCEVMK}), the maximum utility generated by the PCEV in the left side of the second statement is:
+By (\ref{eqn:maxUtiMK}) and (\ref{eqn:PCEVMK}), the maximum utility generated by the PCEV in the left side of statement (2) is:
 \begin{eqnarray*}
     &&\mathcal{U}_n(X_n,\cdots, X_{N}|x_{n-1},\beta_{n-1}) \nonumber \\
     & =& \max_{\beta_n(X_n), \cdots, \beta_{N-1}(X_{N-1})} \E [U_n(X_n+\beta_{n-1}-\beta_n, \cdots, X_i + \beta_{i-1}-\beta_i, \cdots, X_N + \beta_{N-1})|X_{n-1}=x_{n-1} ]\\
@@ -381,45 +386,48 @@ By Eq.(\ref{eqn:maxUtiMK}) and Eq.(\ref{eqn:PCEVMK}), the maximum utility genera
     &=& \max_{\beta_n(X_n)} \big{\{}\E_{X_n} [ \{u(X_n + \beta_{n-1} - \beta_{n})\\ && +\max_{\beta_{n+1}(X_{n+1}),  \cdots, \beta_{N-1}(X_{N-1}), \beta_N=0}\E [\sum_{i=n+1}^Nu(X_i + \beta_{i-1}-\beta_i)|X_{n}]\}|X_{n-1}=x_{n-1}]\big{\}} \\
     &=& \max_{\beta_n(X_n)} \big{\{}\E_{X_n} [ \{u(X_n + \beta_{n-1} - \beta_{n}) + \mathcal{U}_{n+1}(X_{n+1},\cdots, X_N|X_n,\beta_n)\}|X_{n-1}=x_{n-1}]\big{\}} \\
     &=&  \max_{\beta_n(X_n)} \big{\{}\E_{X_n} [ \{u(X_n + \beta_{n-1} - \beta_{n})\\
-    &&  + \mathcal{U}_{n+1}(PCEV_{n+1}(X_{n+1},\cdots, X_N|X_n,\beta_n),0,\cdots,0|\beta_n\}|X_{n-1}=x_{n-1}]\big{\}}\\
+    &&  + \mathcal{U}_{n+1}(PCEV_{n+1}(X_{n+1},\cdots, X_N|X_n,\beta_n),0,\cdots,0|X_n,\beta_n\}|X_{n-1}=x_{n-1}]\big{\}}\\
     &=& \max_{\beta_n(X_n), \beta_{N-1},\beta_N=0 } \big{\{}\E_{X_n} [ \{u(X_n + \beta_{n-1} - \beta_{n})  \\
 && + u(PCEV_{n+1}(X_{n+1},\cdots, X_N|X_n,\beta_n) + \beta_n-\beta_{n+1})
-+\sum_{i=n+2}^N u(\beta_{i-1}-\beta_i)\}|X_{n-1}=x_{n-1}]\big{\}}
++\sum_{i=n+2}^N u(\beta_{i-1}-\beta_i)\}|X_n, \beta_n, X_{n-1}=x_{n-1}]\big{\}}
 \end{eqnarray*}
-By induction hypothesis $PCEV_{n+1}$ is independent of $\beta_n$, we can use the variable substitution $\beta'_n = \beta_n + PCEV_{n+1}(X_{n+1},\cdots, X_N|X_n,\beta'_n)$, the above expression then becomes:
+By induction hypothesis $PCEV_{n+1}$ is independent of $\beta_n$, using variable substitution $\beta'_n = \beta_n + PCEV_{n+1}(X_{n+1},\cdots, X_N|X_n,\beta'_n)$, the above expression becomes:
 \[ \mathcal{U}_n(X_n + PCEV_{n+1}(X_{n+1},\cdots,X_N|X_n,\beta'_n), 0, \cdots, 0|x_{n-1},\beta_{n-1}) \]
-The definition Eq.(~\ref{eqn:PCEVMK}) concludes the proof of the second statement. The truth of the first statement follows from the second statement and Lemma~\ref{lem:oneCF-PCEV}.
+(~\ref{eqn:PCEVMK}) concludes the proof of statement (2).  Statement (1) follows from  statement (2) and Lemma~\ref{lem:oneCF-PCEV}.
 \endproof
 
-The independence requires the property of time additive and exponential property, but recursing requires the Markov property and time additive.
+Theorem \ref{theo:PCEVMK} implies that we need to compute the PCEV value recursively when the future cash flow depends on the realization of the past cash flow. This is in contrast to Theorem \ref{theo:indCash}, which states that each cash flow's PCEV can be computed independently.
 
 \section{PCEV with Financial Hedging of a Financial Asset}
 
-In this section we consider the uncertainty of the decision maker's cash flow comes only from a financial security that is traded in the market. At the beginning of each period, the security price is realized through market trading, but its future price is uncertain depending on realization of uncertain future events. A typical example is the value of another county's currency that is traded in the currency exchange market. 
+In this section we consider the uncertainty of the decision maker's cash flow  that comes from a financial security traded in the market. At the beginning of each period, the security price is realized through market trading, while its future price is uncertain depending on realization of uncertain future events. A typical example is the value of another county's currency that is traded in the currency exchange market. 
 
-Since the financial security future price is the only source of uncertainty and it is traded in a market, the decision maker can increase his utility by financial hedging that is to buy or sell the security in the market.  When a well functioning financial market is in equilibrium, there is no arbitrage opportunities in trading strategy because any arbitrage opportunity vanishes when it is exploited. If the financial market consists of a risky financial security and a risk free bond and has no arbitrage, there exits a risk neutral measure such that all derivatives (contingent claims) on the risky security can be priced at present by taking expectation under this risk neutral measure. Formally for two period,    
-\begin{proposition}
+Since the future price of financial security is the only source of uncertainty and it is traded in a market, the decision maker can increase his utility by financial hedging (buying or selling the security in the market). A well functioning financial market has no arbitrage opportunities. If the financial market consists of a risky financial security and a risk-free bond and has no arbitrage, then there exits a risk-neutral measure such that all derivatives (contingent claims) on the risky security can be priced by taking expectation under this risk-neutral measure. Formally for two periods we have    
+\begin{assumption}
 If there is no arbitrage opportunity in the trading of the risky security and the risk free bond return is 0, then there exits a risk neutral measure $M$ such that:\\
 (a) $\E_0^M [S_1|S_0] = S_0 $ \\
-(b) Let $C_{01}(S_0,S_1)$ be any derivative that is written on the security at time 0 and expires at time 1, then its price is $\E_0^M[C_{01}(S_0,S_1)|S_0]$ at period 0.
-\end{proposition}
+(b) Let $C_{01}(S_0,S_1)$ be any derivative that is written on the security at time 0 and expires at time 1.  Then, its price is $\E_0^M[C_{01}(S_0,S_1)|S_0]$ at period 0.
+\end{assumption}
 
-With this property of the security market, we proceed to study the properties of the present certainty equivalent value with financial hedging. Financial hedging is defined as any activity in the financial market that involves buying and selling the risky security, in combination with or without the risk free bond trading.
+In this section we define financial hedging as any activity in the financial market that involves buying and selling the risky security, in combination with or without the risk-free bond trading.
 
 
 \subsection{A Single Uncertain Cash Flow - One Period Problem}
-We start by considering the simplest case of a single uncertain cash flow in period 1 because the present time 0's cash flow is certain. In this simple case, the decision maker has cash flow 0 at period 0 and  at period 1 cash flow $X_1$ that is a function of the security's price $S_1$. The present certainty equivalent value of this cash flow $(0, X_1(S_1))$ is defined through the maximum utility that the decision maker generates in combination with financial hedging. In analogy to Equation~\ref{eqn:maxUti} the maximum utility is
+We consider the simplest case of a certain cash flow 0 in period 0, and a uncertain cash flow in period 1, $X_1$, that is a function of the security's price $S_1$. The present certainty equivalent value of this cash flow $(0, X_1(S_1))$ is defined through the maximum utility that the decision maker generates in combination with financial hedging.
+
 \begin{align} \label{eqn:maxUtiFH2Pd}
     &\mathcal{U}^N_0(0, X_{1}(S_1)|\beta_{-1},S_0) \nonumber \\
     & = \max_{\beta_0(S_0), C_1(S_0,S_1)} \E_0^N \big{[}U\big{(}\beta_{-1}-\beta_0(S_0)-\E_0^M[C_{01}(S_0,S_1)|S_0],  \nonumber \\ & X_1(S_1)+ C_{01}(S_0,S_1) + \beta_{0}(S_0)\big{)}|S_0 \big{]}
 \end{align}
 
-Now in analogy to Equation~\ref{eqn:PCEV}, the $PCEV_0$ with financial hedging is defined as,
+In Equation~\ref{eqn:maxUtiFH2Pd}, the first expectation is taken with respect to information at time 0 and natural probability of the security uncertainty, while the second expectation with respect to market risk neutral probability. To distinguish between the two different probability, we let $N$ be the superscript standing for natural probability measure. 
+
+Similarly to ~\ref{eqn:PCEV}, the $PCEV^N_0$ with financial hedging is defined as,
 \begin{align} \label{eqn:PCEV-FH2Period}
 \mathcal{U}^N_0(PCEV_0^N, 0|\beta_{-1},S_0) = \mathcal{U}^N_0(0, X_1(S_1) |\beta_{-1},S_0)
 \end{align}
 
-In Equation~\ref{eqn:maxUtiFH2Pd}, the first expectation is taken with respect to information at time 0 and natural probability of the security uncertainty, while the second expectation with respect to market risk neutral probability. To distinguish between the two different probability, we let $N$ be the superscript standing for natural probability measure. 
+
 %
 %
 %\begin{lemma} Under risk neutral probability measure, a single period problem has the property:
@@ -437,9 +445,9 @@ In Equation~\ref{eqn:maxUtiFH2Pd}, the first expectation is taken with respect t
 %\subsubsection{A two-period problem}
 
 
-We now study whether the present certainty equivalent value is the same under the two different probability measures in a simplest example. In this example, the decision maker's two period cash flow is $0$ in period $0$ and $S_1$ in period $1$.
+We now study whether the present certainty equivalent value depends on the probability measures, in this simple example.
 
-Figure~\ref{assetPrice} shows a risky asset whose value evolves from a deterministic $S_0=2$ in period $0$ to an uncertain $S_1$ in period $1$. Under natural probability measure (Figure~\ref{assetPrice} (a)), when the probability for the asset price to go up 0.7 or down is 0.3,  it is evident that the asset price has a positive average return because the $\E_0^N (S_1|S_0) = 3.1 > S_0$.  
+Figure~\ref{assetPrice} shows a risky asset whose value evolves from a deterministic $S_0=2$ in period $0$ to an uncertain $S_1$ in period $1$. Under natural probability measure (Figure~\ref{assetPrice} (a)), it is evident that the asset price has a positive average return because the $\E_0^N (S_1|S_0) = 3.1 > 2 = S_0=\E_0^M[S_1|S_0]$.  
 
 \begin{figure}
 \includegraphics[scale=0.6]{assetPrice.pdf}\newline
@@ -447,39 +455,33 @@ Figure~\ref{assetPrice} shows a risky asset whose value evolves from a determini
 \label{assetPrice}%
 \end{figure}
 \bigskip
-\subsubsection{ Maximum Utility under Risk Neutral and Natural Probability Measures}
 
-By Equation~\ref{eqn:maxUtiFH2Pd}, the maximum utility of the simple cash flow is:
-\begin{align*}
-\mathcal{U}^N_0 (0, S_1|\beta_{-1},S_0) = &\max_{\beta_0(S_0), C_{01}(S_0,S_1)} \E_0^N \big{[}U\big{(}\beta_{-1} - \beta_0 - E_0^M[C_{01}(S_0,S_1)|S_0], 
-\\&S_1+ C_1(S_0,S_1) + \beta_0(S_0)\big{)}|S_0\big{]}
-\end{align*}
-Now we solve the above optimization problem for the example given in Figure~\ref{assetPrice}. Since there are only two realizations of the asset price, for notation clarity, let
+Since there are only two realizations of the asset price, for notation clarity, let
 \[ x_1 = C_{01}(2,4), x_2 = C_{01}(2,1), \beta_{-1} = 0 \]
-Further more, the decision variable $\beta_0$ is redundant and can be ignored. When utility function is additive exponential, these notation reduces the problem to be
+We use (~\ref{eqn:maxUtiFH2Pd}) to find PCEV, the decision variable $\beta_0(S_0)$ is redundant and can be ignored. When utility function is additive exponential, those notation reduces the problem to
 \[ \max_{x_1,x_2} \{ u(-1/3 x_1 - 2/3 x_2) + p_1^Nu(4+x_1) + p_2^Nu(1+x_2)\}\]
-Since the objective function is concave, the first order condition suffices for solving optimal contract,
+Since the objective function is concave, verifying the first order condition suffices for finding the optimal contract,
 \begin{align}
 &-1/3u'(-1/3x_1-2/3 x_2) + p_1^Nu'(4+x_1) = 0\\
 &-2/3u'(-1/3x_1-2/3 x_2) + p_2^Nu'(1+x_2) = 0
 \end{align}
-Since the utility is exponential, we have $u'(x_1) =-u(x_1)$, thus the above equations become
+Since the utility is exponential, we have $u'(x_1) =-u(x_1)$. Thus, we have
 \begin{align}
 &1/3u(-1/3x_1-2/3 x_2) = p_1^Nu(4+x_1)\\
 &2/3u(-1/3x_1-2/3 x_2) = p_2^Nu(1+x_2) 
 \end{align}
 And the maximum utility is 
 \[\mathcal{U}^N_0(0, S_1|S_0,0) = 2u(-1/3x_1-2/3x_2) = 2u(-(p_1^M x_1+p_2^M x_2)) \]
-These optimal contract depends on the probability measure, and consequently the corresponding maximum utility clearly depends on the probability measure too.  We first proceed to analyze the optimal contract and maximum utility when the natural probability measure coincides with the risk neutral probability measure because it is easier to solve. 
+These optimal contract, and consequently the corresponding maximum utility, clearly depend on the probability measure.  We first assume that the natural probability measure coincides with the risk neutral probability measure. 
 
-{\proposition If the $N=M$, then $x_1 = -3$, $x_2 = 0$. }
+{\example If the $N=M$, then $x_1 = -3$, $x_2 = 0$. }
 
 This solution represents the decision maker shorts a call option on the asset at time 0: if the asset value turns out to be 4, he will pay 3 to the counter party; else he pays nothing. The value of this call option is $1$ under risk neutral measure. With this call option, the decision maker consumes 1\$ in period 0 and 1\$ in period 1, regardless of the realization of the risky asset price. 
 
 
 What would happen if the Natural probability measure is different from the risk neutral measure:
 
-{\proposition If $p^N_1 = 0.7$ and $p_2^N =0.3$, then $x_1 = -2.55$ and $x_2 = -0.40$ }
+{\example If $p^N_1 = 0.7$ and $p_2^N =0.3$, then $x_1 = -2.55$ and $x_2 = -0.40$ }
 
 This financial transaction can be viewed as the decision maker shorts a digital call option that pays the counter party 2.15\$ if the asset value goes up to 4\$ and 0\$ otherwise at time 1. He also borrows 0.40\$. This combination of transactions, allows him to consume equally between period 0 and period 1.
 
@@ -497,10 +499,9 @@ Under the optimal consumption cash flow, the maximum utility is,
 This maximum utility implies that in each period 0 and 1, the utility is the same. 
 
 \subsubsection{ Present Certainty Equivalent Value}
-In this section we show that independent of the probability measure, the present certainty equivalent value of the cash flow $(0, S_1)$ is  $\E_0^M [S_1]$, the present expected value of $S_1$ under risk-neutral measure. We start with the study of the maximum utility under a present certainty equivalent value under a natural probability measure.
+In this section we show that independent of the probability measure, the present certainty equivalent value of the cash flow $(0, S_1)$ is  $\E_0^M [S_1|S_0]$, the present expected value of $S_1$ under risk-neutral measure. We start with the study of the maximum utility under a present certainty equivalent value under a natural probability measure.
 
-By Equation~\ref{eqn:maxUtiFH2Pd}, the maximum utility of the present certainty equivalent value $PCEV_0^N$  is:
-
+By (\ref{eqn:maxUtiFH2Pd}), the left hand side of (\ref{eqn:PCEV-FH2Period}) becomes
 \begin{align*}
 &\mathcal{U}^N_0 (PCEV_0^N, 0|\beta_{-1},S_0)  \nonumber \\&= \max_{\beta_0(S_0), C_{01}(S_0,S_1)} \E_0^N [U(\beta_{-1} + PCEV_0^N - \beta_0(S_0) - E_0^M[C_{01}(S_0,S_1)|S_0], \\&C_{01}(S_0,S_1) + \beta_0(S_0))|S_0]
 \end{align*}
@@ -646,9 +647,84 @@ This completes the proof of the PCEV.
 
 \include{multiplePeriodFH}
 
+\section{Income Cash Flow  with Two Random Sources}
+In this section we consider the MRN faces two random sources. One source is from the uncertainty of demand and the other is from the exchange rate.  Let\\
+$\alpha_i$: the production strategy in period $i$\\
+$D_i$: the product demand in period $i$\\
+$S_i$: the exchange rate value in period $i$ \\
+We will assume that the demand distribution and the exchange rate distribution are independent of each of other. 
+
+
+Formally, the uncertain income cash flows are only functions of the operations decisions and the demand and the exchange rate.
+\begin{align}
+X_n(\alpha_n, D_n,S_n), \cdots, X_i(\alpha_i, D_i,S_i), \cdots X_N(\alpha_N,D_N,S_N)
+\end{align}
+Since the MRN's goal is to maximize his PCEV, We need to transform the income cash flow into consumption cash flow through financial instruments. Thus we need to discuss the MRN's consumption decisions. 
+
+\subsection{PCEV with Bond Investment}
+In this section we make the assumption that the decision maker uses only bond to change the income cash flow into consumption cash flow. MRN stops consumption after period $N$, thus the bond investment in period $N$ is 0. Therefore, for a given production strategy, the MRN's maximum utility is
+\begin{align}
+& \mathcal{U}_n(X_n(\alpha_n, D_n,S_n), \cdots, x_N(\alpha_N,D_N,S_N)|\beta_{n-1}) =  \max_{\beta_n, \cdots, \beta_{N-1},\beta_N =0}\E[U(X_n(\alpha_n,D_n,S_n) +\beta_{n-1}-\beta_n, \nonumber \\
+&\cdots, X_i(\alpha_i,D_i,S_i) + \beta_{i-1}-\beta_i, \cdots, X_N(\alpha_N,D_N,S_N)+\beta_{N-1} - \beta_{N} )]
+\end{align} 
+The corresponding definition of PCEV then is
+\begin{align}
+\mathcal{U}_n(PCEV_n, 0, \cdots, 0|\beta_{n-1} ) = \mathcal{U}_n(X_n(\alpha_n, D_n,S_n), \cdots, x_N(\alpha_N,D_N,S_N)|\beta_{n-1})
+\end{align}
+To build our intuition on the optimal operation strategy and the optimal consumption plan, we start with the simplest case. Since a single period problem has no bond investment decisions, it does not capture the key feature of our model. Our simplest case with bond investment thus is a two period problem. Assuming initial wealth is 0 and the utility function is additive and stationary, we have
+\begin{align*}
+\max_{\beta_1} \E[u(X_1(\alpha_1, D_1, S_1)-\beta_1) + u( \beta_1)]
+\end{align*} 
+It is evident that the optimal $\beta_1$ equalizes the two period cash flows, thus the MRN's utility as a function of the operation decision becomes
+\[2\E [u(X_1(\alpha_1,D_1,S_1)/2)]\]
+Now the optimal decision to maximize the decision maker's utility is
+\[ \max_{\alpha_1} \{2\E [u(X_1(\alpha_1,D_1,S_1)/2)]\} \]
+When the operations decision is made after the realization of demand and exchange rate, the problem becomes
+\begin{align*}
+ 2\E [\max_{\alpha_1} \{u(X_1(\alpha_1,D_1,S_1)/2)\}]
+\end{align*}
+If the utility function is increasing concave, we have
+\begin{align*}
+2\E [u(\max_{\alpha_1} \{(X_1(\alpha_1,D_1,S_1)\}/2)]
+\end{align*}
+Which implies that the whole problem can be solved by finding the optimal operations decisions in each period first and then using financial instruments to make the optimal consumption decision. 
 %{\definition}
+We now generalize this idea into the MRN's operation and consumption problem for multiple periods.
 
+\subsection{MRN's Income Cash Flow}
+In each period, MRN's income cash flow is determined by his operation decisions in each period and the uncertain demand and exchange rate. To express the MRN's one period cash flow, we use the following notation.
+\begin{itemize}
+    \item $h$ and $o$ superscripts of home and overseas markets or facilities, respectively,
+    \item $d^j$ market $j$ demand, $\bm{d} = \{d^h, d^o \} $,
+    \item $k^j$ capacity of facility $j$,   $\bm{k} = \{k^h,k^o\}$,
+    \item $z^{j}$ quantity produced in facility $j$ for market $j$, $\bm{z} = \{z^{h},z^o\}$,
+    \item $x^{j}$ quantity produced in the other facility and transshipped to market $j$, $\bm{x} = \{x^h,x^o\}$,
+    \item $i$:  subscript index of the period number, counting backwards,
+\end{itemize} 
+Thus, the income cash flow in period $i$ is
+\begin{align}
+J_i(\bm{z}_i,\bm{x}_i, s_i) =  (p-c)z_i^{d}+ (p-cs_i-t)x_i^{d} + s_i(p-c)z_i^{o}+(s_i p-c-t)x_i^{o} 
+\end{align}
+where the production quantity and transshipment are subject to the demand and capacity constraint. For brevity, we suppress the index $i$. The operation decision feasible set in each period is a function of the demand and the capacity.
+\begin{align}
+A(\bm{k},\bm{d}) = \{\bm{z} + \bm{x} \leq \bm{d}, z^j + x^{l \neq j} \leq k^j \; \forall j \in\{h,o\}\; \forall l \in \{h,0\} , \bm{z}\geq 0, \bm{x} \geq 0\}
+\end{align}
+MRN's objective then is to maximize the present certainty equivalent value of his income cash flows.
+\begin{align}
+\max_{(\bm{z}_i\bm{x}_i) \in A(\bm{k},\bm{d}_i), \forall i}\{PCEV_n(J_n(\bm{z}_n,\bm{x}_n,s_n),\cdots, J_i(\bm{z}_i,\bm{x}_i,s_i), \cdots, J_N(\bm{z}_N,\bm{x}_N,s_N))\} \end{align}
+Since the present certainty equivalent value of the MRN is a determined by his utility function and his consumption cash flows, we must consider his trading strategy in the financial market. We first consider the MRN trades only bond to optimize his consumption.
 
+\subsection{MRN's PCEV Maximization with Bond Investment}
+
+When MRN uses bond trading to optimize his consumption, his present certainty equivalent value maximization problem becomes
+\begin{align*}
+\max_{(\bm{z}_i\bm{x}_i) \in A(\bm{k},\bm{d}_i) \forall i}\big{\{} \max_{\beta_i,\forall i<N, \beta_N=0}\{&\E[U(J_n(\bm{z}_n,\bm{x}_n,S_n)+\beta_n-\beta_{n-1}, \cdots,\\ & J_i(\bm{z}_i,\bm{x}_i,S_i)+ \beta_{i-1} - \beta_i, \cdots,J_N(\bm{z}_N,\bm{x}_N,S_N)+\beta_{N-1} ) ] \}\big{\}}
+\end{align*}
+If the utility function is additive, the above problem becomes
+\begin{align*}
+&\max_{(\bm{z}_i\bm{x}_i) \in A(\bm{k},\bm{d}_i) \forall i, \beta_i,\forall i<N, \beta_N=0}\big{\{} \E[\sum_{i=1}^N u_i( J_i(\bm{z}_i,\bm{x}_i,S_i)+ \beta_{i-1} - \beta_i) ] \big{\}} \\
+& =\max_{\beta_i,\forall i<N, \beta_N=0}\big{\{} \E [\sum_{i=1}^N \max_{(\bm{z}_i\bm{x}_i) \in A(\bm{k},\bm{d}_i)}\{u_i(J_i(\bm{z}_i,\bm{x}_i,S_i)+ \beta_{i-1} - \beta_i)\} ] \big{\}} 
+\end{align*}
 
 
 
