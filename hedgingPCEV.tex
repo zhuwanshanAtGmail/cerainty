@@ -135,15 +135,14 @@
 % Full title. Sample:
 % \TITLE{Bundling Information Goods of Decreasing Value}
 % Enter the full title:
-\TITLE{Optimal Operational {\it versus} Financial Hedging for a Risk-averse Firm
-\\ \small{\today} }
+\TITLE{Optimal Operational {\it versus} Financial Hedging for a Risk-averse Firm}
 
 % Block of authors and their affiliations starts here:
 % NOTE: Authors with same affiliation, if the order of authors allows,
 %   should be entered in ONE field, separated by a comma.
 %   \EMAIL field can be repeated if more than one author
 \ARTICLEAUTHORS{%
-\AUTHOR{Wanshan Zhu}
+\AUTHOR{ \today \\Wanshan Zhu}
 \AFF{Lee Kong Chian School of Business, Singapore Management University, Singapore 178899, \EMAIL{adamzhu@smu.edu.sg}} %, \URL{}}
 \AUTHOR{Roman Kapuscinski}
 \AFF{University of Michigan Business School, Ann Arbor, MI 48109, \EMAIL{kapuscin@bus.umich.edu}}
@@ -154,7 +153,7 @@
 
 
 \ABSTRACT{%
-A Multinational Risk-averse Newsvendor (MRN) produces goods at home and sells both overseas and at home, over multiple periods.  The MRN's total utility is influenced by uncertain exchange rate, as well as uncertain demand.  Intuitively exchange rate risk should be managed by a finance department as financial risk, while uncertain demand risk should be managed by an operations department as a part of operational risk.  Traditionally this is the practice of many firms.  In this paper, we consider both of these risks jointly and investigate the effectiveness of two specific alternatives that allow MRN to reduce the total risk.  The risk is captured through a concave utility function.
+A Multinational Risk-averse Newsvendor (MRN) produces goods at home and sells both overseas and at home, over multiple periods.  The MRN's risks are driven by uncertain exchange rate, as well as uncertain demand.  Intuitively exchange rate risk should be managed by a finance department as financial risk, while uncertain demand risk should be managed by an operations department as a part of operational risk.  Traditionally this is the practice of many firms.  In this paper, we consider both of these risks jointly and investigate the effectiveness of two specific alternatives that allow MRN to reduce the total risk and to maximize the present certainty equivalent value of the cash flows.
 
 The first alternative is general financial hedging contracts (including futures, forwards, and swaps).  The second one is operational hedging, which is based on optimally allocating production capacity between domestic and overseas facilities.  We characterize the optimal capacity allocation decisions, financial hedging decisions, and the underlying production and transshipment decisions in a generalized model.  Then, we compare the relative weaknesses and strengths of financial hedging and operational hedging.  Our analysis allows for both price sensitive and price insensitive demand.  We show that general lessons are similar in both cases.
 
@@ -165,7 +164,7 @@ The first alternative is general financial hedging contracts (including futures,
 %  existence of optimal policies; semi-Markov decision process; cyclic schedule}
 
 % Fill in data. If unknown, outcomment the field
-\KEYWORDS{operational hedging, financial hedging, operations management, risk analysis, utility optimization}
+\KEYWORDS{operational hedging, financial hedging, operations management, risk analysis, present certainty equivalent value - PCEV}
 
 %\HISTORY{This paper was first submitted on April 12, 1922 and has been with the authors for 83 years for 65 revisions.}
 
@@ -175,15 +174,15 @@ The first alternative is general financial hedging contracts (including futures,
 
 \section{Introduction \label{sect:intro}}
 
-Over the past two decades firms increasingly take advantage of overseas markets to both produce and sell goods.  Overseas markets may, however, expose firms to the risk of an uncertain and even volatile exchange rate.  Hedging against exchange-rate risk is beneficial as it reduces earnings fluctuations and, thus, directly reduces the chances of a financial distress.  The company with decreased exposure to financial distress will have a lower cost of capital and a larger credit line, when it needs debt to finance its operation and, thus, will provide a larger tax shield for the equity shareholder.  Both the lower cost of capital and the larger tax shield are believed to increase the shareholder's value, as discussed by Brealey and Myers \cite{Brealey2003}.
+Over the past two decades firms increasingly take advantage of overseas markets to both produce and sell goods.  Overseas markets may, however, expose firms to the risk of an uncertain and even volatile exchange rates.  Hedging against exchange-rate risk is beneficial as it reduces earnings fluctuations and, thus, directly reduces the chances of a financial distress.  The company with decreased exposure to financial distress will have a lower cost of capital and a larger credit line, when it needs debt to finance its operation and, thus, will provide a larger tax shield for the equity shareholder.  Both the lower cost of capital and the larger tax shield are believed to increase the shareholder's value, as discussed by Brealey and Myers \cite{Brealey2003}.
 
 Two alternative tools are available for the MRN to hedge her exchange rate exposure.  The first is financial hedging, which is often intended to explicitly target exchange rate risks, or more specifically the variance of firms' overseas revenues or costs.  The second one is operational hedging, which assumes that total production capacity can be allocated between domestic and overseas facilities so that net foreign cash flow can be reduced, and hence, exchange rate risks are reduced.
 
-In the past two decades, as the result of breakthroughs in information technology, the variety of financial hedging contracts has grown tremendously and the cost to engage in them has become low.  Consequently, many multinational enterprises have been using some of these contracts, often futures or forward contracts, to reduce their exchange risk exposures.  For example, CISCO SYSTEMS, INC. states in its annual report \cite{cisco} ``The Company conducts business on a global basis in several currencies.  As such, it is exposed to adverse movements in foreign currency exchange rates.  The Company enters into foreign exchange forward contracts to minimize the short-term impact of foreign currency fluctuations on foreign currency receivables, investments, and payables.  The gains and losses on the foreign exchange forward contracts offset the transaction gains and losses on the foreign currency receivables, investments, and payables recognized in earnings." It seems intuitive that the financial hedging allows the MRN to benefit from all the advantages the profitable overseas market while not suffering from the consequences of a volatile exchange rate.  A significant portion of finance literature studies the effects of financial hedging assuming risk-averse decision maker \cite{Fhedge1, Fhedge2}.
+In the past two decades, as the result of breakthroughs in information technology, the variety of financial hedging contracts has grown tremendously and the cost to engage in them has become low.  Consequently, many multinational enterprises have been using some of these contracts, often futures or forward contracts, to reduce their exchange risk exposures.  For example, CISCO SYSTEMS, INC. states in its 2009 annual report \cite{cisco}  `` To reduce variability in operating expenses and service cost of sales caused by non-U.S.-dollar denominated operating expenses and costs, we hedge certain foreign currency forecasted transactions with currency options and forward contracts. " It seems intuitive that the financial hedging allows the MRN to benefit from all the advantages the profitable overseas market while not suffering from the consequences of a volatile exchange rate.  A significant portion of finance literature studies the effects of financial hedging assuming risk-averse decision maker \cite{Fhedge1, Fhedge2}.
 
-Operational hedging has experienced similar rapid growth.  Increasing number of global firms place production facilities in multiple locations.  The underlying idea is that capacity is divided between domestic and overseas locations.  Transshipment is possible, but used only when needed.  While operational hedging may incur higher initial cost due to the need to establish overseas production capacity, it may also benefit the MRN in two ways.  First, it allows the MRN to take advantage of the exchange rate movement by producing at a cheaper location.  Second, it reduces the exchange rate risk exposure by using a part of overseas revenue for overseas operations costs.  The operational hedging has been studied extensively in operations management literature with risk-neutral assumptions.  For example, Li {\it et al.} \cite{Li2001} study the operational policies of domestic and overseas facilities impacted by the exchange rate fluctuations.  The operations management literature, however, is not quite consistent in terms of what is labeled as operational hedging.  The recent working paper \cite{boyabatli2004} suggests that (a) operational hedging usually encompasses many types of activities that have nature of real options (usually supply chain options related to sourcing, production, and postponement decisions) and which usually exploit uncertainty, and also often is characterized by ``mitigating risks by counterbalancing actions'' (see \cite{vanmieghem2003}); and (b) in finance literature and, to a big degree in operations literature, switching production or sourcing location is the most prevalent type of operational hedging (which is exactly our definition of operational hedging).
+Operational hedging has experienced similar rapid growth.  Increasing number of global firms place production facilities in multiple locations.  The underlying idea is that capacity is divided between domestic and overseas locations.  Transshipment is possible, but used only when needed.  While operational hedging may incur higher initial cost due to the need to establish overseas production capacity, it may also benefit the MRN in two ways.  First, it allows the MRN to take advantage of the exchange rate movement by producing at a cheaper location.  Second, it reduces the exchange rate risk exposure by using a part of overseas revenue for overseas operations costs.  The operational hedging has been studied extensively in operations management literature with risk-neutral assumptions.  For example, Li {\it et al.} \cite{Li2001} study the operational policies of domestic and overseas facilities impacted by the exchange rate fluctuations.  The operations management literature, however, is not quite consistent in terms of what is labeled as operational hedging.  Bandaly et al. \cite{Bandaly_supply_2010}'s review paper reports that (a) operational approaches include geographic dispersion, switching production, capacity allocation postponepment, and various other operational options. These activities have nature of real options (usually supply chain options related to sourcing, production, and postponement decisions), exploit uncertainty, and often are characterized by ``mitigating risks by counterbalancing actions'' (see \cite{vanmieghem2003}); and (b) financial approaches include general financial hedges, currency derivatives, currency forward, currency options, exotic derivatives, and foreign debt. Our paper consider geographic dispersion and swithing production as financial hedging, and exotic currency derivatives as financial hedging.
 
-It is interesting to notice that most of financial literature considers only financial instruments to deal with exchange-rate risk, while most of operations literature considers only operational instruments.  It is intriguing that each of these streams treats one type of hedging as the only possible instrument and few efforts have been made to asses their relative strengths and weaknesses in an integrated framework.  The objective of this paper is to investigate what are the favorable conditions for the MRN to engage in either financial hedging or operational hedging, or both.
+It is interesting to notice that most of financial literature considers only financial instruments to deal with exchange-rate risk, while most of operations literature considers only operational instruments.  It is intriguing that each of these streams treats one type of hedging as the only possible instrument and few efforts have been made to assess their relative strengths and weaknesses in an integrated framework.  The objective of this paper is to investigate what are the favorable conditions for the MRN to engage in either financial hedging or operational hedging, or both.
 \begin{figure}[ht]
     \begin{center}
     \epsfig{file=modelGeneral.eps,width=4.5in,height=3.0in}
@@ -191,19 +190,19 @@ It is interesting to notice that most of financial literature considers only fin
     \caption{General Framework}\label{figure:frameGeneral}
 \end{figure}
 
-Our basic setting is similar to the ones described in Huchzermeier and Cohen \cite{Huchzermeier}, Dasu and Li \cite{Dasu}, Li, Porteus, and Zhang \cite{Li2001}.  In our basic model, one production location (e.g., domestic) has uncertain cost solely due to uncertain exchange rate and serves to satisfy the other location (e.g., overseas or both) demand.  Demand and exchange rate are both uncertain.  We consider distributing total capacity across domestic and foreign market.  Such allocation of capacity is labeled as operational hedging.  The papers above characterize how to run the multi-location system.  Even though often they do not state this, the question they consider can be labeled as, how to use operational hedging (the network of capacities, production quantities) to deal with demand and exchange rate uncertainties.  While they do not consider financial hedging, natural question is whether operational hedging is more appropriate or should financial hedging be used instead to deal with risks which nature is financial (such as currency rate exchange).  We consider a general case with both domestic and overseas demands (later, in numerical study, we consider a special case with overseas demand only).  Thus, we look at a broader framework with two production facilities (domestic and overseas) and two markets (domestic and overseas).  Demand in each market is uncertain and exchange rate changes from period to period according to Markov-modulated process.  The firm that does not consider operational hedging installs all (given) capacity in domestic facility.  Operational hedging is modeled as an initial allocation of capacity (once only, at the very beginning of the horizon) between the domestic and foreign locations instead of producing only domestically.  Financial hedging allows any general (costless) financial instrument with zero-expected value in any period of time, up-to $\tau$ periods forward.  We also explicitly assume risk aversion.  The basic model assumes that price is exogenous.  As an extension we consider price-sensitive demand, where MRN can adjust price from period to period.
+Our basic setting is similar to the ones described in Huchzermeier and Cohen \cite{Huchzermeier}, Dasu and Li \cite{Dasu}, Li et al.  \cite{Li2001}, Li and Wang \cite{li_outsourcing_2010}, and Dong et al. \cite{dong_global_2010}In our basic model, one production location (e.g., domestic) has uncertain cost solely due to uncertain exchange rate and serves to satisfy the other location (e.g., overseas or both) demand.  Demand and exchange rate are both uncertain.  We consider distributing total capacity across domestic and foreign market.  Such allocation of capacity is labeled as operational hedging.  The papers above characterize how to run the multi-location system.  Even though often they do not state this, the question they consider can be labeled as, how to use operational hedging (the network of capacities, production quantities) to deal with demand and exchange rate uncertainties.  While they do not consider financial hedging, natural question is whether operational hedging is more appropriate or should financial hedging be used instead to deal with risks which nature is financial (such as currency rate exchange).  We consider a general case with both domestic and overseas demands (later, in numerical study, we consider a special case with overseas demand only).  Thus, we look at a broader framework with two production facilities (domestic and overseas) and two markets (domestic and overseas).  Demand in each market is uncertain and exchange rate changes from period to period according to Markov-modulated process.  The firm that does not consider operational hedging installs all (given) capacity in domestic facility.  Operational hedging is modeled as an initial allocation of capacity (once only, at the very beginning of the horizon) between the domestic and foreign locations instead of producing only domestically.  Financial hedging allows any general financial instrument fairly priced in the efficient financial market.  We also explicitly assume risk aversion, which we capture by Present Certainty Equivalent Value (explained below).  The basic model assumes that price is exogenous.  As an extension we consider price-sensitive demand, where MRN can adjust price from period to period.
 
 The integrated modeling framework is illustrated in Figure \ref{figure:frameGeneral}.  The MRN produces in two facilities, a domestic facility (DF) and an overseas facility (OF).  The same product serves demands in both markets, domestic market (DM) and overseas market (OM).  DM's demand can be met, if needed, by OF's production using transshipment, and {\it vice versa}.
-Both hedges are special cases of the model: {\em financial hedging} means that we produce in DF only, while any using financial contracts; {\em operational hedging} means that we use produce both in DF and OF, but use no financial hedging.  To take into consideration the risk-averse attitude, the dynamics of hedging activities, the limitation of available resources, and the cost of transshipment, we make the following four assumptions, which generalize some other more restrictive assumptions in the literature.
+Both hedges are special cases of the model: {\em financial hedging} means that we produce in DF only, while allowed to use any financial contracts; {\em operational hedging} means that we produce both in DF and OF, but use no financial hedging.  To take into consideration the risk-averse attitude, the dynamics of hedging activities, the limitation of available resources, and the cost of transshipment, we make the following four assumptions, which generalize some other more restrictive assumptions in the literature.
 
 \begin{itemize}
-    \item {\em Assumption 1}: The MRN is risk-averse and her objective is to maximize total utility.  The risk-averseness is captured by maximizing concave utility function; in particular, the exponential utility function is assumed in numerical study.
+    \item {\em Assumption 1}: The MRN is risk-averse and her objective is to maximize the present certainty equivalent value (PCEV).  The risk-averseness is captured by  concave utility function that is used to derive PCEV; in particular, the exponential utility function is assumed.
     \item {\em Assumption 2}: The MRN makes decisions with long-term (multiple periods) view.
     \item {\em Assumption 3}: The MRN has finite capacity.  Thus, she may fail to satisfy some demand during periods with high demand.
-    \item {\em Assumption 4}: Transhipment is costly.
+    \item {\em Assumption 4}: Transshipment is costly.
 \end{itemize}
 
-Having introduced the problem, the rest of the paper seeks to analyze it.  As a background, Section \ref{sect:liter} contains discussion of literature.  In Section \ref{sect:basicModel} we present structural properties of optimal solution for the Basic Model; while in Section \ref{sect:priceModel}, we do so for the Price Model.  In Section \ref{sect:numer}, we analyze the results of numerical analysis and discuss the relative strengths and weaknesses of the financial and operational hedging in detail.  Finally, in Section \ref{sect:conclusion}, we present our conclusions.
+Having introduced the problem, the rest of the paper seeks to analyze it.  As a background, Section \ref{sect:liter} contains discussion of literature. In Section \ref{sect:pcev} we discuss the properties of PCEV. In Section \ref{sect:basicModel} we present structural properties of optimal solution for the Basic Model; while in Section \ref{sect:priceModel}, we do so for the Price Model.  In Section \ref{sect:numer}, we analyze the results of numerical analysis and discuss the relative strengths and weaknesses of the financial and operational hedging in detail.  Finally, in Section \ref{sect:conclusion}, we present our conclusions.
 
 
 
@@ -217,50 +216,172 @@ Three streams of literature are related to our problem.  The first stream introd
 
 Even though it is argued that a firm should be risk neutral to non-systematic risks because the shareholders may be able to diversify away those risks, Smith \cite{Smith2004} in his review of risk attitudes points out that many firms, including large public companies, are risk-averse.  Some practitioners of decision analysis (see Bickel et al.  \cite{Bickel2002}) suggest deriving a firm-wide risk-averse utility function.  In this paper we study the decisions of a risk-averse firm facing two uncertainties, stochastic demand and exchange rate over time.  Therefore, we start by discussing how the risk and time preference are modeled.
 
-Two major approaches to modeling the risk attitude are: (a) Value-at-Risk (VaR), and (b) various forms of utility functions.  VaR is defined as the maximum loss of value that a firm can incur for a given confidence level and a time interval.  Many financial firms use Value-at-Risk to manage day-to-day operations.  Manganelli and Engle \cite{Manganelli2001} provide a discussion of the VaR models and their uses in practice.
+Two major approaches to modeling the risk attitude are: (a) Value-at-Risk (VaR), and (b) various forms of utility functions.  VaR is defined as the maximum loss of value that a firm can incur for a given confidence level and a given time interval.  Many financial firms use Value-at-Risk to manage day-to-day operations.  Manganelli and Engle \cite{Manganelli2001} provide a discussion of the VaR models and their uses in practice. Tapiero \cite{tapiero_value_2005} applies the VaR to a single stage inventory control problem and finds that the target cost level can be interpreted as VaR. Recently Devalkar et al. \cite{devalkar_integrated_2010} applies VaR to study the optimal decisions of a firm that procures, trade, and process commodities.
 
-Most theoretical models of risk-averse behavior employ a utility function.  Levy \cite{Levy92} surveys the use of utility functions to define the risk.  This approach is based on translating a cash flow $x$ in a given period into utility function $U(x)$, which is concave and increasing.  Levy points out that, ranking risk by non-decreasing concave utility function is consistent with the natural definition of risk premium given by Arrow \cite{Arrow1951} and Pratt \cite{Pratt1964} -- the total utility serves as an index for risk.  Gerber and Pafumi \cite{Gerber1998} review the most often used utility functions: (i) linear, (ii) exponential, (iii) negative quadratic, and (vi) logarithmic.
+Most theoretical models of risk-averse behavior employ a utility function to study consumption.  Levy \cite{Levy92} surveys the use of utility functions to define the risk.  This approach is based on translating a cash flow $x$ in a given period into utility function $U(x)$, which is concave and increasing.  Levy points out that, ranking risk by non-decreasing concave utility function is consistent with the natural definition of risk premium given by Arrow \cite{Arrow1951} and Pratt \cite{Pratt1964} -- the total utility serves as an index for risk.  Gerber and Pafumi \cite{Gerber1998} review the most often used utility functions: (i) linear, (ii) exponential, (iii) negative quadratic, and (vi) logarithmic.
 
 Obviously, linear utility function means risk neutrality, and it is often implicitly assumed in models that do \emph{not} deal with risk.  Negative quadratic utility is most often used in finance literature, see survey by Steinbach \cite{Steinbach2001}.  The popularity of negative quadratic function is partly driven by technical reasons as the variance can serve as an index of risk only when the utility function is quadratic, or the random variable has Normal or Geometric Normal distribution.  Since the quadratic utility function has its obvious shortcomings (it penalizes superior performances and also the actual profits of firms are not necessarily normally distributed), a general concave utility function for risk-averse modeling has been widely used in economics, see survey by Fishburn \cite{Fishburn1989}, as well as in operations management, see Bouakiz and Sobel \cite{Bouakiz1992}, Smith \cite{Smith1998}, and Echkout and {\it et al.} \cite{Eeckhoudt1995}.  Some of the papers use the exponential utility function in order to provide closed-form solutions for their model, see Gerber and Pafumi \cite{Gerber1998}.
 
-While the approaches to one-period risk modeling are relatively well agreed on, it is less clear how to capture the time preference combined with risk aversion in any single period.  The fundamental issue here is the consistence of time preferences, {\it i.e.}, given risk preferences defined over different time periods and risk preferences on value at a single point in time, how does one make consistent risk-averse choices for all time periods? Samuelson \cite{Samuelson1937} first proposes a discounted utility model for decisions across time periods, where total utility is the discounted sum of utilities across all time points.  Later, Samuelson \cite{Samuelson1952} and Pollack \cite{Pollak} argue that, when risk preference is assumed independent of time, the additive utility across time does, in fact,  give consistent choices.  The above approaches are further generalized in works of Prakash \cite{Prakash1976} and Fishburn \cite{Fishburn1989}.  They show that under proper assumptions, the consistent choices are possible.  Prakash \cite{Prakash1976} shows that the consistence of preference across time can be completely determined if (1) The preference across time is specified by a continuous monotone function; and (2) the preference, at a fixed instant of time, is specified.  Fishburn {\it et al.} \cite{Fishburn1982} conclude that, if utility function is monotonic and continuous, then the resultant choice is consistent.  Assuming stationary condition (that is, if $x$ at time $t$ is preferred over $y$ at time $t + k$, then $x$ at time $s$ is preferred over $y$ at time $s +k$), they show that the utility can be expressed as $U(x,t) = \alpha^t f(x)$, where $1>\alpha>0$ and $f$ is an increasing function.  They also present other forms of utility functions under conditions weaker than the stationarity.  Obviously the discounted utility models satisfy the stationarity condition.  Frederick {\it et al.} \cite{Frederick2002} survey the popularity of theoretical economic analysis based on the discounted utility model, as well as some of its anomalies, pointed out by empirical examples.  They discuss a few minor modifications of the discounted utility model.  The distinctions they draw are that (1) the discount rate as a function of time may be decreasing, and (2) the utility across time may  be interdependent, {\it e.g.}, increasing sequence of payoffs is preferred over decreasing one.  Various versions of the above conditions are used in modeling analysis.  For example, Bouakiz and Sobel \cite{Bouakiz1992} use the expected utility of the total net present value; while this approach does not meet the stationary and separability condition, it meets the continuous and monotonic conditions.  Sobel \cite{Sobel2007} discusses benefits and drawbacks of discounted sum utilities vs. utility of net present value.  In our paper, we follow the most popular and most agreed-for discounted utility model.
+While the approaches to one-period risk modeling are relatively well agreed on, it is less clear how to capture the time preference combined with risk aversion in any single period.  The fundamental issue here is the consistence of time preferences, {\it i.e.}, given risk preferences defined over different time periods and risk preferences on value at a single point in time, how does one make consistent risk-averse choices for all time periods? Samuelson \cite{Samuelson1937} first proposes a discounted utility model for decisions across time periods, where total utility is the discounted sum of utilities across all time points.  Later, Samuelson \cite{Samuelson1952} and Pollack \cite{Pollak} argue that, when risk preference is assumed independent of time, the additive utility across time does, in fact,  give consistent choices.  The above approaches are further generalized in works of Prakash \cite{Prakash1976} and Fishburn \cite{Fishburn1989}.  They show that under proper assumptions, the consistent choices are possible.  Prakash \cite{Prakash1976} shows that the consistence of preference across time can be completely determined if (1) The preference across time is specified by a continuous monotone function; and (2) the preference, at a fixed instant of time, is specified.  Fishburn {\it et al.} \cite{Fishburn1982} conclude that, if utility function is monotonic and continuous, then the resultant choice is consistent.  Assuming stationary condition (that is, if $x$ at time $t$ is preferred over $y$ at time $t + k$, then $x$ at time $s$ is preferred over $y$ at time $s +k$), they show that the utility can be expressed as $U(x,t) = \alpha^t f(x)$, where $1>\alpha>0$ and $f$ is an increasing function.  They also present other forms of utility functions under conditions weaker than the stationarity.  Obviously the discounted utility models satisfy the stationarity condition.  Frederick {\it et al.} \cite{Frederick2002} survey the popularity of theoretical economic analysis based on the discounted utility model, as well as some of its anomalies, pointed out by empirical examples.  They discuss a few minor modifications of the discounted utility model.  The distinctions they draw are that (1) the discount rate as a function of time may be decreasing, and (2) the utility across time may  be interdependent, {\it e.g.}, increasing sequence of payoffs is preferred over decreasing one.
 
-In the risk-averse decision making literature, most papers consider only a single period.  The work of Chowdhry and Howe \cite{Chowdhry1999} is closest to our study, where financial and operational hedging is considered in a two-facility two-market single-period framework.  The paper shows that both uncertainty in demand and exchange rate is necessary for operational hedging to be useful.  The authors look at the form of financial contract and, for example justify that it mostly will not be in a form of a forward.  Our paper differs in several aspects.  Most importantly, our primary question of when financial and when operational hedging is most appropriate, is not directly answered (apart of the special case, when of no demand or no exchange-rate uncertainty).\footnote{Also, some of their assumptions are more restrictive than ours leading to not exactly the same conclusions.  First, they do not allow capacity shortage and do not consider the cost of transshipment.  Second, due to assuming single period, decisions have only short-term effect creating potential bias of ignoring dependencies between financial and operational decisions(due, for example, to the fact that in some future periods expected cost of domestic and overseas production might not be equal).}  Also, decision maker's objective function is slightly different in their setting.  Consequently, we are able to derive properties of financial hedging not available with mean-variance objective.  Their main finding, that operational hedging is necessary only when {\em both} exchange rate and demand are uncertain, is not true in general in our multi-period model.  We are also able to evaluate how a broader range of factors, such as transshipment costs, possibility of price elasticity, influence the relative benefit of financial and operational hedging.
+Even though the utility approach is mostly used to study the consumption decisions in economics and finance literature, it is also used in a few papers to evaluate a company's value and to study the operatons decisions. For example, Bouakiz and Sobel \cite{Bouakiz1992} use the expected utility of the total net present value; while this approach does not meet the stationary and separability condition, it meets the continuous and monotonic conditions.  Sobel \cite{Sobel2007} discusses benefits and drawbacks of discounted sum utilities vs. utility of net present value. However, using utility approach to evaluate a company's value by considering the operations decisions only has grave problems because it fails to account for the timing of uncertainty resolution, see Matheson and Howard (1968) and Mossion (1969). Furthermore, in the case of using expected utility of the total net present value, the optimal operations decisions are not time consistent.
 
-Despite different objective, Ding {\it et al.} \cite{Ding2004} bears some similarity to our work.  They study the joint decisions of the financial hedging and capacity allocation for one-facility two-market single-period model and use mean-variance as objective function.  Their work, however, {concentrates} on the effect of postponement of decisions and does not compare financial hedging to operational hedging.  Gaur and Seshadri \cite{Guar2004} consider a single-period one-facility model with demand and financial asset values being correlated.  Their purpose is to construct the optimal financial hedging contract.  Agrawal and Seshadri \cite{Agrawal2000} investigate joint price and production decisions in similar settings, when demand and financial asset values are correlated and find corresponding optimal hedging contract.
+
+Two modified utilty based approaches are developed to address the problems related to time consistency of decisions and to timing of uncertainty resolutions: recursive utilty function and present certainty equivalent value (PCEV). Kreps and Porteus (1978) first proposed recursive utility procedure to account for the tiing of uncertainty resolution. Epstein and Zin (1989) generalized their models to allow independent risk-aversion specifications for a given period and across periods. The Epstein-Zin framework has become the most popular model for dynamic asset pricing in economic and finance literature; it is discussed in textbooks including Singleton (2006) and Duffie (2001).  Present certianty equivalent value approach directly models the decision maker's decisions in both consumption and operations. Dreze and Modigliani (1972) studied the optimal consumption decision for a two-period uncertain income. Smith (1998) extended their model to multi-period and developed a recursive formula for PCEV using exponential utilty function. This recursive PCEV can be viewed as a special case of the recusrive utility in Epstein and Zin's framework. In our paper, we follow the most popular and most agreed-for discounted utility model and use PCEV to study the firm's decisions.
+
+In the risk-averse decision making literature, most papers consider only a single period.  The work of Chowdhry and Howe \cite{Chowdhry1999} and Hommel (2003) are very close to our study, where financial and operational hedging is considered in a two-facility two-market single-period framework.  Chowdhry and Howe show that both uncertainty in demand and exchange rate is necessary for operational hedging to be useful.  The authors look at the form of financial contract and, for example justify that it mostly will not be in a form of a forward. Later Hommel extend their work by explicitly modeling the cost of acquiring foreign production capacity by a quadratic function, and show that for operational hedging to add value, the exchange rate variability must exceed certain threshold value.  Our paper differs in several aspects.  Most importantly, our primary question of when financial and when operational hedging is most appropriate, is not directly answered (apart of the special case, when of no demand or no exchange-rate uncertainty).\footnote{Also, some of their assumptions are more restrictive than ours leading to not exactly the same conclusions.  First, they do not allow capacity shortage and do not consider the cost of transshipment.  Second, due to assuming single period, decisions have only short-term effect creating potential bias of ignoring dependencies between financial and operational decisions(due, for example, to the fact that in some future periods expected cost of domestic and overseas production might not be equal).}  Also, decision maker's objective function is slightly different in their setting.  Consequently, we are able to derive properties of financial hedging not available with mean-variance objective.  Their main finding, that operational hedging is necessary only when {\em both} exchange rate and demand are uncertain, is not true in general in our multi-period model.  We are also able to evaluate how a broader range of factors, such as transshipment costs, possibility of price elasticity, influence the relative benefit of financial and operational hedging.
+
+Despite different objective, Ding {\it et al.} (2007) bears some similarity to our work.  They study the joint decisions of the financial hedging and capacity allocation for one-facility two-market single-period model and use mean-variance as objective function.  Their work, however, {concentrates} on the effect of postponement of decisions and does not compare financial hedging to operational hedging. Chod et al (2010) also bears similarity to our work in considering both financial and operational hedging, and study whether financial hedging and operational flexibility are complementary or substitute. In their model, however, the financial instrument affect demands, not the cost and sales price. Gaur and Seshadri \cite{Guar2004} consider a single-period one-facility model with demand and financial asset values being correlated.  Their purpose is to construct the optimal financial hedging contract.  Agrawal and Seshadri \cite{Agrawal2000} investigate joint price and production decisions in similar settings, when demand and financial asset values are correlated and find corresponding optimal hedging contract.
 
 In our model, while we do not allow inventory to be carried across periods, the consecutive periods are still linked due to the dynamics of the exchange rate.  A few papers consider multiple periods, but they consider only one facility (and do not study operational hedging) or do not consider any form of risk aversion.  A paper that considers both financial and operational issues is Caldentey and Haugh \cite{Caldentey}, who study financial hedging in an incomplete market, where one financial asset and one operational value follow continuous-time correlated diffusion processes and a mean-variance objective function is used.  The focus, however, is not on comparison of two types of hedging, but instead on deriving financial hedging policy.  %We are not aware of any other papers comparing financial {\it versus} operational hedging.
 
-Other papers concentrate specifically on studying risk averseness.  Eeckhoudt {\it et al.} \cite{Eeckhoudt1995} consider a simple risk-averse one-facility news-vendor facing demand uncertainty.  They show that, employing a concave increasing utility function, a newsvendor orders less when she becomes more risk averse.  Chen {\it et al.} \cite{Chen2004} investigate a multiple-period problem and study the risk-averse effect on a firm's price, production, and consumption decisions.  Recent reviews by Boyabatli and Toktay \cite{boyabatli2004} and Van Mieghem \cite{vanmieghem2003} provide additional references.
+Other papers concentrate specifically on studying risk averseness without financial hedgings.  Eeckhoudt {\it et al.} \cite{Eeckhoudt1995} consider a simple risk-averse one-facility news-vendor facing demand uncertainty.  They show that, employing a concave increasing utility function, a newsvendor orders less when she becomes more risk averse. Their model is extended to multiple resource capacity investment by Van Mieghem (2007) and to multi-period by Chen {\it et al.} (2007). Boyabatli and Toktay (2010) further extend this model to consider the choice of flexible and dedicated technologies when the firm faces financial budget constraint.
 
 \medskip
 
-In the category of transshipment of product between facilities, most models consider risk-neutral decision making over an extended period of time.  Krishnan and Rao \cite{Krishnan1965} study a single-period two-location problem and include an extension to N-locations.  Tagaras \cite{Tagaras1992} uses a similar model to study the pooling effects of transshipment on service levels.  Li {\it et al.} \cite{Li2001} consider the production decisions when demand and exchange rate are uncertain.  They show that, for any current exchange rate, it is optimal to follow a primary/secondary plant policy, where the primary plant is more efficient and has a lower order-up-to level than the secondary plant.  They show that the order-up-to level is in general not monotonic in the exchange rate, even though the production cost is.  Hu {\it et al.} \cite{Hu2004a} \cite{Hu2004b} study a general transshipment problem in centralized and decentralized settings when capacity may be uncertain.
+In the category of transshipment of product between facilities, most models consider risk-neutral decision making over an extended period of time.  Krishnan and Rao \cite{Krishnan1965} study a single-period two-location problem and include an extension to N-locations.  Tagaras \cite{Tagaras1992} uses a similar model to study the pooling effects of transshipment on service levels.  Li {\it et al.} \cite{Li2001} consider the production decisions when demand and exchange rate are uncertain.  They show that, for any currency exchange rate, it is optimal to follow a primary/secondary plant policy, where the primary plant is more efficient and has a lower order-up-to level than the secondary plant.  They show that the order-up-to level is in general not monotonic in the exchange rate, even though the production cost is.  Hu {\it et al.} (2007, 2008) study a general transshipment problem in centralized and decentralized settings when capacity may be uncertain. Huang and Sosic (2010) study the game among retailers that order independently before demand realizes, and then tranship among them after demand realizes.
 
 \medskip
 
-Many operations management papers have addressed various versions of production capacity problems, some including exchange rate variability.  For example, Ayetkin and Birge \cite{Aytekin2004} study a single capacity allocation decision, followed by a series of production decisions, when exchange rate is uncertain, but demand is certain.  They show that a band control policy is optimal for production.
+Many operations management papers have addressed various versions of production capacity problems, some including exchange rate variability.  For example, Ayetkin and Birge \cite{Aytekin2004} study a single capacity allocation decision, followed by a series of production decisions, when exchange rate is uncertain, but demand is certain.  They show that a band control policy is optimal for production.Kazaz et al. (2005) studied the production decisions when a firm has production facility in two foreign countries and found that the company may underserve the demand even when it has enough capacity because the exchange rate and transshipment cost make serving demand not profitable. Dong et al (2010) study a firm's choice among facility networks of home only, foreign only or both when it faces the exchange rate and demand uncertainty, and show that the expected marginal profit determines the choices.
 
 \medskip
 
+Our paper is different from those cited above in that we allow a decision maker to be risk-averse and that financial hedging contracts are explicitly built into our multi-period operational model.  Our aim is to first understand the structure of optimal policies, and then to compare the relative strength of financial and operational hedging for various environments.  Within our model, based on optimal production decisions, we are able to derive pleasing properties of financial hedging -- it equalizes the consumption cash across periods and across exchange rate realizations. In the numerical study that follows, we compare the benefits due to operational hedging and due to financial hedging, show that in general operational hedging offers significantly higher benefits, and characterize the scenarios when it happens.  In order to measure systematically the effects of risk aversion, in the numerical study we use a family of exponential utility functions.
+
+\section{Present Certainty Equivalent Value \label{sect:pcev}}
+
+We use present certainty equivalent value (PCEV) to value the MRN's operations under various decisions because PCEV captures the decisions maker's risk preference that is sensitive to both uncertainty and the time at which the uncertainty is resolved. The standard expected utility method does not capture the impact of the timing of uncertainty resolution, as illustrated by an example in Smith (1998, page 1690), which is referred as the ``temporal risk problem''. While the recursive utility theorem by Epstein and Zin (1989) solves this problem, it is not in general consistent with the expected utility preference for consumption. The PCEV explicitly models the relevant borrowing and lending for consumption for a uncertain operational income cash flows, thus it is consistent with the consumption preference. This preference is modeled by an exponential utility function.
 
 
-Our paper is different from those cited above in that we allow a decision maker to be risk-averse and that financial hedging contracts are explicitly built into our multi-period operational model, the decision maker’s objective is to maximize the Present Certainty Equivalent Value his project by operational and financial decisions.  Our aim is to first understand the structure of optimal policies, and then to compare the relative strength of financial and operational hedging for various environments.  Within our model, based on optimal production decisions, we are able to derive properties of financial hedging, which allows recursive computation of present certainty equivalent values.  In the numerical study that follows, we compare the benefits due to operational hedging and due to financial hedging, show that in general operational hedging offers significantly higher benefits, and characterize the scenarios when it happens.  In order to measure systematically the effects of risk aversion, in the numerical study we use a family of exponential utility functions.
+PCEV is the lump-sum amount received with certainty today that makes the decision maker just indifferent to receiving the uncertain operational cash flows. The decision maker is indifferent when the maximum utilities generate by the PCEV and by the uncertain operational cash flows are the same. The PCEV is to be evaluated in a period after the realization of exchange rate, but before demand realization. the other events and decisions in each period. (1) Uncertainty of exchange rate resolves. (2) Uncertainty of demand resolves. (3) Make production and transshipment decisions. (4) Collect operational cash flow. (5) Trade risk-free bond or trade exchange rate derivatives (Financial hedging) and obtain investment cash. (6) Consume cash.
 
-The risk-aversion of MRN is captured by exponential utility function. For given operations decisions, MRN generates an uncertain operation cash flow. The value of the uncertain operation cash flow is captured by its corresponding present certainty equivalent value (PCEV). The present certainty equivalent value of an uncertain operation cash flow is, in very broad terms, equal to the certain cash flow that would result in the same expected utility. 
+We first derive the PCEV properties with risk-free bond trading and later with exchange rate derivative trading.
 
+
+\subsection{PCEV with Risk-free Bond}
+
+We let $n$ be the index of the current periods and count the periods backwards, the operations and consumption end in period 0. Let $f_i$ and $\beta_i$ be the cash generated in period $i$, respectively, from operations and from past investment. The cash consumption is period $i$ is then  $f_i + \beta_{i} -\beta_{i-1}/(1+r_f)$, where the last term is the price paid on the bond investment that pays cash $\beta_{i-1}$ in period $i-1$. Since consumption ends in period $0$, $\beta_{-1} =0$. Thus, for given initial wealth $\beta_{n}$,  the maximum consumption utility is
+\begin{eqnarray} \label{eqn:bondInv-rho}
+\mathcal{U}_n(f_n, \cdots, f_0|\beta_{n}) = \max_{\beta_{i} \forall 0 \leq i < n} \{\E [ \sum_{i=0}^n \big{(}-w_i \exp (-\frac{f_i + \beta_{i} -\beta_{i-1}/(1+r_f)}{\rho_i})\big{)}]\},
+\end{eqnarray}
+where $w_i$ is utility weight and $\rho_i$ is risk tolerance, which capture the decision maker's time and risk preferences for consumption respectively.  The expectation is taking on all the future uncertainties for given realized foreign currency value in period $n$.
+
+Since the decision maker is indifferent between PCEV and the operational cash flows, the maximum utility generated by PCEV is the same as the maximum utility generated by the operational cash flow, thus we have
+
+\begin{definition}\label{def:PCEV}
+The present certainty equivalent value at period $n$ of an uncertain operational cash flow $f_n, \cdots, f_0$ is defined as
+\begin{eqnarray} \label{eqn:PCEV}
+\mathcal{U}_n(PCEV_n(f_n, \cdots, f_0|\beta_{n}), 0, \cdots, 0|\beta_{n}) = \mathcal{U}_n(f_n, \cdots, f_0|\beta_{n}).
+\end{eqnarray}
+\end{definition}
+
+
+Using this definition, we first obtain the analytical solution of PCEV for a given single uncertain operational cash flow.
+
+\begin{lemma} \label{lem:pcev-Xn-gen}
+Let the effective risk tolerance $R_i =\sum_{j=0}^i (\rho_j(1+r_f)^{j-i})$ and the time weight present value equivalent $w^\prime_i = \sum_{j=0}^i(\rho_j \ln((1+r_f)^j \rho_j)/w_j)/(1+r_f)^{i-j})$, then for a given initial wealth $\beta_n$ and a given uncertain operational cash flow with $f_n$ in period $n$ and $0$ in all other periods, the optimal bond investment satisfies
+\begin{eqnarray}\label{eqn:beta-Xn}
+\frac{\beta_i + w_i^\prime}{R_i} = \frac{f_n+\beta_n + w_n^\prime}{R_n}, \; \forall 0\leq i< n;
+\end{eqnarray}
+the maximum utility is
+\begin{eqnarray} \label{eqn:Un-Xn}
+\mathcal{U}_n(f_n, 0, \cdots, 0|\beta_{n}) = \E[-R_n (1+r_f)^n \exp (-  \frac{f_n + \beta_n +w_n^\prime}{R_n})], \; \forall n \geq 0;
+\end{eqnarray}
+and the present certainty equivalent value is independent of $\beta_n$,
+\begin{eqnarray}
+PCEV_n(f_n,0,\cdots,0)=-R_n \ln\big{(} \E[\exp(-\frac{f_n}{R_n})]\big{)}, \; \forall n \geq 0. \label{eqn:pcev-Xn-gen}
+\end{eqnarray}
+\end{lemma}
+
+\proof We prove (\ref{eqn:beta-Xn}) and (\ref{eqn:Un-Xn}) first, then (\ref{eqn:pcev-Xn-gen}) will follow. By (\ref{eqn:bondInv-rho}), the left side of (\ref{eqn:Un-Xn}) is
+\begin{equation*}
+\max_{\beta_i, \forall 0 \leq i < n}\{\E[ -w_n \exp( - \frac{f_n + \beta_n - \beta_{n-1}/(1+r_f)}{\rho_n}) - \sum_{i=0}^{n-1}w_i \exp (-\frac{\beta_{i-1} -\beta_{i-1}/(1+r_f)}{\rho_i}) ]\}.
+\end{equation*}
+
+To this maximization problem, we apply variable substitutions as follow:
+\begin{equation*}
+\beta_i^{\prime} = \left\{ \begin{array}{ll}
+f_n + \beta_n + w_n^\prime, & \mbox{if}\; i = n; \\
+\beta_i + w_i^\prime, & \mbox{if} \;  0\leq i \leq n-1.
+\end{array}
+\right.
+\end{equation*}
+This  variable substitution transforms the maximization problem to be
+\begin{equation*}
+\max_{\beta_i^{\prime}, \forall 0 \leq i < n}\{\E[ - \sum_{i=0}^{n}(1+r_f)^i\rho_i \exp (-\frac{\beta^\prime_{i} -\beta^\prime_{i-1}/(1+r_f)}{\rho_i}) ]\}.
+\end{equation*}
+The first order necessary conditions are $[
+\beta^\prime_1 - \beta^\prime_0/(1+r_f)]/\rho_1 = \beta^\prime_0/\rho_0$ for $i=0$, and for $0 < i \leq n-1$, $[\beta^\prime_{i+1} -\beta^\prime_{i}/(1+r_f)]/\rho_{i+1}  = [\beta^\prime_{i} -\beta^\prime_{i-1}/(1+r_f)]/\rho_i$. These equations imply that the optimal decisions satisfy $\beta^\prime_i/R_i = \beta_{i+1}^\prime/R_{i+1}$ for all $ 0\leq i\leq n-1$. As a result, the risk adjusted consumption cash in all periods are equalized at
+\[ \frac{\beta_n^\prime-\beta_{n-1}^\prime/(1+r_f)}{\rho_n} = \frac{\beta_n^\prime-\beta_{n}^\prime R_{n-1}/[R_n(1+r_f)]}{\rho_n}  = \frac{\beta_n^\prime}{R_n},\]
+ where the last equation follows from $R_{n} = R_{n-1}/(1+r_f) + \rho_n$. As a result, the maximum utility is $\E[-(1+r_f)^nR_n \exp (- \frac{\beta^\prime_n}{R_n} )]$. We obtain (\ref{eqn:beta-Xn}) and (\ref{eqn:Un-Xn}) by substituting back the original decision variables. Finally, the PCEV's independence on $\beta_n$ and  (\ref{eqn:pcev-Xn-gen}) follow from (\ref{eqn:PCEV}).
+\qed
+
+The effective risk tolerance $R_n$ is the sum of discount risk tolerance in all periods from $n$ to $0$. It reflects the decision maker's ability to use bond investment spreading risk across time, he is effectively less risk averse to an earlier resolution of the cash flow uncertainty than  a later one. This effective risk tolerance captures the inter-temporal risk that a decision maker prefers earlier resolution of the uncertainties of the same cash flow.
+
+The time weight present value equivalent $w^\prime_i$ is the present value of cash equivalent values of the time weights in all periods $j \in \{0, \cdots, i\}$.
+The discount factor from period $j$ to $i$ is $1/(1+r_f)^{i-j}$, which is applied to the period $j$'s cash equivalent value of $w_j$. This value is $\rho_j\ln ((1+r_f)^j\rho_j)/w_j$ because $w_j = (1+r_f)^j \rho_j \exp(-(\rho_j\ln ((1+r_f)^j\rho_j/w_j))/\rho_j)$.
+
+The optimal investment in (\ref{eqn:beta-Xn}) implies that the decision maker spreads cash consumption across time in proportion to the effective risk tolerance. The cash consumption are adjusted by the time weight present value equivalent $w_i^\prime$.  As a result, the decision maker equalizes every period's discounted utility and her total expected utility then becomes (\ref{eqn:Un-Xn}). This maximum utility is the sum of utilities discounted by risk tolerance adjusted discount rate because $R_n(1+r_f)^n = \sum_{j=0}^n \rho_j(1+r)^{-j}$. The formula (\ref{eqn:pcev-Xn-gen}) shows that the PCEV depends on the effective risk tolerance, but not on the initial wealth, because intuitively  adding a certain cash, e.g., initial wealth and the time weight present value, does change the PCEV of an uncertain operational cash flow.
+
+We next extend these intuitions in the PCEV evaluation of a single period cash flow to any cash flows so that we have a clear understanding of the optimal bond investment strategy and general PCEV evaluation.
+
+{\lemma \label{lem:pcev-bond} For a general cash flow with operational cash flow $f_i$ in each periods for all $0\leq i \leq n$ and initial wealth $\beta_n$, then for all $n \geq 1$, the present certainty equivalent value is independent of $\beta_n$,
+\begin{eqnarray}\label{eqn:pcev-gen}
+PCEV_n(f_n, \cdots, f_0) = PCEV_n(f_n+\frac{PCEV_{n-1} (f_{n-1}, \cdots, f_0)}{1+r_f}, 0, \cdots, 0);
+\end{eqnarray}
+the optimal bond investment satisfies
+\begin{eqnarray}\label{eqn:beta-gen}
+\frac{\beta_{n-1} + w_{n-1}^\prime+PCEV_{n-1}(f_{n-1},\cdots,f_0)}{R_{n-1}} = \frac{f_n+\beta_n+ w_n^\prime -(\beta_{n-1} + w_{n-1}^\prime)/(1+r_f)}{\rho_n};
+\end{eqnarray}
+and the maximum utility is
+\begin{eqnarray} \label{eqn:Un-gen}
+\mathcal{U}_n(f_n,  \cdots, f_0|\beta_{n}) = \E[-R_n (1+r_f)^n \exp (-  (f_n + \beta_n + \frac{PCEV_{n-1}(f_{n-1},\cdots, f_0)}{1+r_f}+ w_n^\prime)/R_n)].
+\end{eqnarray}
+ }
+
+These results are extension of the results of Lemma~\ref{lem:pcev-Xn-gen}. Similarly, the optimal investment (\ref{eqn:beta-gen}) means that the risk tolerance and time weight adjusted consumption cash are spread equally across periods. As a result, the maximum utility (\ref{eqn:Un-gen}) is the sum of utilities discounted by risk tolerance adjusted discount rate.
+The PCEV (\ref{eqn:pcev-gen}) implies that the PCEV can be computed by adding discounted future PCEV to the current uncertain cash flow, and the discount rate depends on the risk free interest rate only. Using (\ref{eqn:pcev-gen}) and (\ref{eqn:pcev-Xn-gen}), we can evaluate the PCEV of any given uncertain operational cash flow when bond investment is allowed to improve the consumption utility.
+
+ \subsection{PCEV with Financial Hedging}
+When some uncertainties in the operational cash flow are due to exchange rate, the MRN can improve the PCEV by financial hedging, which is to buy foreign currency derivatives. This derivative is a future payoff as a function of the future realized value of the foreign currency. In order to obtain this future payoff, the MRN needs to pay the market price  of the derivatives, which is valued under risk neutral measure.
+
+Let $S_i$ be the value of foreign currency and $s_i$ be its realization, and let $\beta_{i-1}(S_{i-1})$ be investment payoff in period $i-1$ of a derivative that the MRN buys in period $i$, then its price is $\E[\beta_{i-1}(S_{i-1})|S_i]/(1+r_f)$. As a result of financial hedging, the consumption cash flow in period $i$ is $f_i + \beta_{i}(s_i) - \E[\beta_{i-1} (S_{i-1})|S_i]/(1+r_f)$. Let $\beta_{n}(s_n)$ be the initial cash  and let $\beta_{-1}(\cdot)=0$ due to end of consumption in period $0$, then the maximum utility of a uncertain operational cash flow becomes
+\begin{eqnarray} \label{eqn:maxU-FH}
+\mathcal{U}_n(f_{n},\cdots,f_0|\beta _{n}(s_n) )  =\max_{\beta_{i}(S_{i}), \forall 0\leq i< n} \{\E [\sum_{i=0}^n \big{(}-w_{i}\exp(-\frac{f_{i} + \beta_{i}(S_i)-\frac{\E[\beta_{i-1}(S_{i-1})|S_i]}{1+r_f}}{\rho_i})\big{)}  |S_n=s_n]\}.
+\end{eqnarray}
+
+The corresponding PCEV is then defined in (\ref{eqn:PCEV}) except the bond investment is replaced by exchange rate derivative investment. This definition implies that the $PCEV_n(\cdot)$ is a function of $s_n$. If an operational cash flow has cash in period $n$ only and 0 in all other periods, the derivative investment reduces to bond investment. Consequently, Lemma~\ref{lem:pcev-Xn-gen} remains true under financial hedging.
+
+We now develop a recursive equation for evaluating PCEV of any general cash flows with financial hedging.
+
+{\lemma \label{lem:pcev-FH}
+For a general cash flow with operational cash flow $f_i$ in each periods for all $0\leq i \leq n$ and initial wealth $\beta_n(s_n)$, then for all $n \geq 1$, the present certainty equivalent value is independent of $\beta_n(s_n)$,
+\begin{eqnarray}\label{eqn:pcev-FH}
+PCEV_n(f_n, \cdots, f_0) = PCEV_n(f_n+\frac{\E[PCEV_{n-1} (f_{n-1}, \cdots, f_0)|S_n=s_n]}{1+r_f}, 0, \cdots, 0);
+\end{eqnarray}
+the optimal derivative investment satisfies
+\begin{eqnarray}\label{eqn:beta-FH}
+\frac{\beta_{n-1}(s_{n-1}) + PCEV_{n-1}(f_{n-1},\cdots,f_0|s_{n-1}) + w_{n-1}^\prime}{R_{n-1}} = \frac{f_n+\beta_n(s_n)+\frac{\E[\beta_{n-1}(S_{n-1})|S_n=s_n]}{1+r_f}+ w_n^\prime}{\rho_n};
+\end{eqnarray}
+and the maximum utility is
+\begin{eqnarray} \label{eqn:Un-FH}
+\mathcal{U}_n(f_n,  \cdots, f_0|\beta_{n}(s_n)) = \E[-R_n (1+r_f)^n \exp (-  \frac{f_n + \beta_n + \frac{\E[PCEV_{n-1}(f_{n-1},\cdots, f_0)|S_n=s_n]}{1+r_f}+ w_n^\prime}{R_n})].
+\end{eqnarray}
+ }
+
+The results under derivative investment are different from the ones under bond investment, which is due to  the optimal derivation investment (\ref{eqn:beta-FH}).  This optimal derivative implies not only that the adjusted consumption cash are equalized across periods, which the optimal bond implies too, but also that the adjusted consumption are equalized across realization of exchange rate in any given periods. This latter equalization further improves the decision maker's present certainty equivalent value by adding, to the current uncertain cash flow, the expected future PCEV discounted at risk free rate, as shown by (\ref{eqn:pcev-FH}). Using (\ref{eqn:pcev-Xn-gen}) and (\ref{eqn:pcev-FH}), we can evaluate PCEV of any operational cash flow when financial hedging is used to improve consumption utility.
 
 \section{Basic Model \label{sect:basicModel}}
 
-In this section we describe the assumptions and the structural properties of the model that allows for both financial and operational hedging.  In every period firm faces demands in both markets.  Demands are independent from period to period, but not necessarily independent across locations.  The exchange rate follows a Markov-modulated process with a finite number of possible realizations.  After demand and exchange rate are realized, the firm decides production quantities as well as quantities to transship.  No inventory can be held from period to period.  The sales price is assumed to be exogenous.  This assumption is especially appropriate in competitive market, where the MRN may be forced to be a price taker.  (Next section allows MRN to set the price.) 
+In this section we describe the assumptions and the structural properties of the model that allows for both financial and operational hedging.  In every period firm faces demands in both markets.  Demands are independent from period to period, but not necessarily independent across locations.  The exchange rate follows a Markov-modulated process with a finite number of possible realizations.  After demand and exchange rate are realized, the firm decides production quantities as well as quantities to transship.  No inventory can be held from period to period.  The sales price is assumed to be exogenous.  This assumption is especially appropriate in competitive market, where the MRN may be forced to be a price taker (Next section allows MRN to set the price).
 
-We assume that the objective of the MRN is to maximize her PCEV for all periods of the planning horizon, and that she has finite total capacity.  To maximize PCEV, she has three decisions to make, initial decision regarding allocation of capacity (i.e., operational hedging), and then in every period decisions regarding financial hedging and production/transshipment.
+We assume that the objective of the MRN is to maximize her PCEV for all periods of the planning horizon, and that she has finite total capacity.  To maximize PCEV, she has three decisions to make, initial decision regarding allocation of capacity (i.e., operational hedging), and then in every period decisions regarding financial hedging that we studied in section 3 and production/transshipment.
 
-The first, operational hedging, decision is how to allocate the total capacity between DF and OF at the beginning of horizon.  Once this decision is made, DF's and OF's capacities do not change in any later periods.  The financial hedging decision is what financial contract, if any, to enter into. The production/transshipment decision determines how much to produce at each location and how much to transship from a location to the other market.
+The first, operational hedging, decision is how to allocate the total capacity between DF and OF at the beginning of horizon.  Once this decision is made, DF's and OF's capacities do not change in any later periods. The production/transshipment decision determines how much to produce at each location and how much to transship from a location to the other market. The financial hedging decision is what financial contract, if any, to enter into.
 
-In each period, the timing of decisions is as follows: (1) Uncertainties regarding demand and exchange rates are resolved.  (2) The production and transshipment decisions are made.  (3) The operational cash flow is recorded. (4) Financial hedging contracts are agreed on, the financial cash flows are recorded from these contracts.  Finally, the net cash is consumed.
 
-The following notation is used.  The first six symbols are illustrated in Figure \ref{figure:frameGeneral}.
+The following additional notation is used.  The first six symbols are illustrated in Figure \ref{figure:frameGeneral}.
 \begin{itemize}
     \item $d$ and $o$ superscripts of domestic and overseas markets or facilities, respectively,
     \item $\xi^j$ market $j$ demand, ${\xiv} = \{\xi^d, \xi^o \} $,
@@ -269,86 +390,29 @@ The following notation is used.  The first six symbols are illustrated in Figure
     \item $x^{j}$ quantity produced in the other facility and transshipped to market $j$, $\bold x = \{x^d,x^o\}$,
     \item $y^{j}= z^j + x^j$ total production quantity available to meet market $j$ demand, $\bold y = \{y^d,y^o\}$,
 %\newpage
+    \item $i$:  subscript index of the period number, counting backwards,
 
-\item $n$: the planning horizon
-\item $i$:  subscript index of the period number, counting backwards, $n\geq \geq 0$. 
-%   \item $M$: the number of possible realizations of exchange rates,
-%    \item $s^m$: possible values of the exchange rate, $m\in\{1,\cdots, M\}$,
-    \item $S_i$: exchange rate  (in \$/FX), spot price in period $i$,
-\item $s_i$: price realization of exchange rate in period $i$,
- \item $f_i$: the operations cash flow in period $i$,  it is a function of uncertain demand and exchange rate. 
-\item $\rho_i$: the risk tolerance in period $i$,
-
-\item $K$: total capacity, $K >0$,
+    \item $K$: total capacity, $K >0$,
     \item $p$: unit price, $p > 0$,
     \item $c$: unit production cost, $c \in (0, p)$,
     \item $t$: transportation cost, $t\geq 0$,
-    \item $u$: $-\exp(-x)$ the exponential utility function of MRN
-\item $R=1+r:$ the growth factor of the risk-free bond value for one period and $r$ is the risk-free interest rate.
-
-
 \end{itemize}
-The exchange rate $S_i$ is assumed to be independent of demand $\xiv$. The sale price $p$ is assumed to be exogenous in the Basic Model, which is relaxed in the Price Model, see Section \ref{sect:priceModel}. Finally, we assume that no inventory is carried over across periods.  Thus, the interaction across periods is through the exchange rates.\footnote{With length of single period being a month, a quarter, or longer (which is typical period length for non-financial firms involved in financial hedging) the inventories are usually not a significant element of decisions.} 
+The exchange rate $S_i$ is assumed to be independent of demand $\xiv$. The sale price $p$ is assumed to be exogenous in the Basic Model, which is relaxed in the Price Model, see Section \ref{sect:priceModel}. Finally, we assume that no inventory is carried over across periods.  Thus, the only interaction across periods is through the exchange rates and capacity.\footnote{With length of single period being a month, a quarter, or longer (which is typical period length for non-financial firms involved in financial hedging) the inventories are usually not a significant element of decisions.} The MRNís objective is to maximize the PCEV of all future operational cash flows.
 
-
-Since the MRN's consumption utility is a function of both his operations cash flow and his financial security investment, his PCEV is also affected by his security investment. Two  financial securities directly applicable to our framework are: a risk-free bond and the foreign currency. 
-%Trading risk-free bonds shifts the operational cash flow across time so that MRN avoids the risk of consuming too much at one time and too little at another. 
-Virtually all businesses trade risk-free bonds. A firm's cash used in a given period is usually different from cash generated by operation, so the firm borrows and lends cash in each period.  This is equivalent to selling and buying risk-free bonds.
-Since the operational cash flow is a function of the foreign currency value, it is natural for firms operating in multiple countries to consider trading the foreign currency, as it reduces the variability of the operations cash flow. 
-
-
-We first study the maximum utility and PCEV when the MRN trades only risk-free bonds.  Later, we add trading of foreign currencies.
-
-
-\subsection{Present Certainty Equivalent Value with Risk-free Bond Investment}The MRN makes bond investment decision by changing number of shares of his bond holding from $\beta_{i+1}$ to $\beta_{i}$.Note that $\beta_i$ is a trading policy that depends on the realization of uncertain operations cash flow up to period $i$. Since MRN completes all consumption by the end of period $0$, $\beta_0=0$. $\beta_{i+1}$  is the MRN's initial wealth. We assume that a bond share's value at time $n$ is 1, it becomes $R^{n-i}$ in period $i$ because its value grows by a factor of $R$ in each period. MRN's bond investment decision generates cash $(\beta_{i+1}-\beta_{i})R^{n-i}$ because he sells $ \beta_{i+1}-\beta_{i}$ in period $i$.   Thus, in period $i$ the MRN has consumption cash $f_i + (\beta_{i+1} - \beta_i)R^{n-i}$. The MRN has an time additive exponential utility, her utility function of period $i$ is    \begin{eqnarray}  u_{ni}(x) =\frac{\rho_i}{R^{n-i}} u(x/\rho_i).\end{eqnarray}$\frac{\rho_i}{R^{n-i}}$ is the weight of period $i$'s utility, it can be viewed as a risk-adjusted discounting factor. This discounting factor is convenient for us to derive the values of PCEV. Other discounting factor will be discussed later. For a given uncertain cash flow, the MRN's maximum expected utility is\begin{eqnarray} \label{eqn:bondInv-rho}\mathcal{U}_n(f_n, \cdots, f_0|\beta_{n+1}) = \max_{\beta_{i} \forall 1 \leq i \leq n, \beta_0} \{\E_n[ \sum_{i=0}^n u_{ni}(f_i + (\beta_{i+1}-\beta_i)R^{n-i})]\}\end{eqnarray}Since the MRN achieves the same maximum expected consumption utility through the PCEV of an uncertain cash flow, we have\begin{definition}\label{def:PCEV}The present certainty equivalent value, $PCEV_n$, at time $n$ of an uncertain operational cash flow is defined as\begin{eqnarray} \label{eqn:PCEV}\mathcal{U}_n(PCEV_n(f_n, \cdots, f_0|\beta_{n+1}), 0, \cdots, 0) = \mathcal{U}_n(f_n, \cdots, f_0|\beta_{n+1})\end{eqnarray}\end{definition}Using above definition, we first study the maximum utility and optimal bond investment with $0$ cash flow in each period. {\lemma \label{lem:maxU-cash0} The maximum utility of zero operations cash for given initial wealth $\beta_{n+1}$ and the optimal shares are\begin{eqnarray}\mathcal{U}_n(0,0,\cdots,0|\beta_{n+1}) &=& \frac{\sum_{i=0}^n \rho_i R^i}{R^n} u(\frac{R^n}{\sum_{i=0}^n \rho_iR^i}\beta_{n+1}) \label{eqn:U-cash0},\\\beta_i^* & = &\beta_{n+1} \frac{\sum_{j=0}^{i-1}\rho_j R^j}{\sum_{j=0}^n \rho_j R^j} \label{eqn:beta-0}.\end{eqnarray}}Note that the first order condition implies that at the optimum, the utility, in each period without time weight, is the same. Thus the maximum utility equals the period 0's utility multiplied by the sum of all the time weights. Lemma \ref{lem:maxU-cash0} allow us to characterize the PCEV of a uncertain cash flow at time $n$ only:\begin{lemma} \label{lem:pcev-Xn-gen}The $PCEV_n$ of an uncertain cash in initial period $n$ is\begin{eqnarray} \label{eqn:pcev-Xn-gen}PCEV_n(f_n,0,\cdots,0|\beta_{n+1}) = \varrho_n u^{-1}\big{(} \E_n[u(\frac{f_n}{\varrho_n})]\big{)} ,\end{eqnarray}and independent of $\beta_{n+1}$, where $\varrho_n = \sum_{i=0}^n \rho_i/R^{n-i}$ .\end{lemma}The effective risk tolerance $\varrho_n$ is the sum of discount risk tolerance in all periods. It reflects the MRN’s ability to use bond investment spreading risk across time. If the MRN has more periods for future assumption, he is effectively less risk averse to the uncertainty cash flow now than the uncertainty cash flow in the future. This effective risk tolerance captures the inter-temporal risk that a decision maker prefers early resolution of uncertainties.  To complete the PCEV evaluation of a general cash flow, we develop the following recursive equations.{\lemma For a general cash flow, its PCEV is \begin{eqnarray}PCEV_n(f_n, \cdots, f_0|\beta_{n+1}) = PCEV_n(f_n+\frac{PCEV_{n-1} (f_{n-1}, \cdots, f_0)}{R}, 0, \cdots, 0), \label{eqn:pcev-recur-gen}\end{eqnarray}and independent of $\beta_{n+1}$. }We have shown that, using a risk adjusted discount factor for utility time weight, the PCEV of uncertain operational cash flows can be computed recursively by discounting future PCEV. We have completed the recursive formula for the PCEV under bond investments.  In the next section, we present the PCEV formulas under currency derivative investment.\subsection{Present Certainty Equivalent Value with Financial Hedging}The financial hedging is actions that a MRN engages in exchange rate derivative investment to reduce the risks of exchange rate fluctuation. When the MRN has cash flows from operations in both home country and foreign country, financial hedging will reduce his risks and increase the PCEV of his operations cash flows. In this section, we study the optimal exchange rate derivative that allows the MRN to achieve maximum consumption utility and the corresponding PCEV.  An exchange rate derivative bought in period $i$ can be represented as a payoff function in period $i-1$ contingent on the realization of exchange rate, i.e.,   $\alpha_i(S_{i-1})$. Since the exchange rate market is complete, the exchange rate derivative price in period $i$ is $\E_i^S[\alpha_i(S_{i-1})]/R$, where $\E_i^S$ represents the expectation condition on $S_i$ under exchange rate risk neutral measure. Using exchange rate derivatives, the consumption cash equals $f_{i} + \alpha_{i+1}(S_i)-\frac{\E_i^S[\alpha_i(S_{i-1})]}{R}$, the operational cash plus the payoff of past derivatives minus the price of future derivatives. As a result, the maximum utility of given operational cash flows is\begin{eqnarray} \label{eqn:maxU-FH}\mathcal{U}_n(f_{n},\cdots,f_0|\alpha_{n+1}(s_n) )  =\max_{\alpha_{i}(S_{i-1})} \{\E_{n}^{\xi,S}[\sum_{i=0}^n u_{ni}(f_{i} + \alpha_{i+1}(S_i)-\frac{\E_i^S[\alpha_i(S_{i-1})]}{R})  |S_n=s_n]\}\end{eqnarray} where $\alpha_{n+1}(s_n)$ is the carry-over derivative  that expires in period $n$. $\alpha_0 =0$ imposes no consumption after period $0$. The corresponding PCEV is then defined in (\ref{eqn:PCEV}) except the bond investment is replaced by exchange rate derivative investment. We first study the maximum utility of 0 cash flow and the corresponding optimal exchange rate derivatives.
-
-\begin{lemma}\label{lem:0-cash-FH}For any $n \geq 1$,  the maximum utility of 0 cash flow is\begin{eqnarray} \label{eqn:maxUti-0cash-FH}\mathcal{U}_n(0,\cdots,0|\alpha_{n+1}(s_n)) = \varrho_n u(\frac{\alpha_{n+1}(s_n)}{\varrho_n} ).\end{eqnarray}The corresponding optimal derivative satisfies\begin{eqnarray} \frac{\rho_{n}}{\varrho_{n-1}}\alpha_n( s_{n-1})+ \frac{\E_n^S[\alpha_n( S_{n-1})]}{R} = \alpha_{n+1}(s_n). \label{eqn:optim-beta}\end{eqnarray}\end{lemma}
-
-The optimal derivative investment has the same impact on the consumption as the optimal bond investment in the previous section, the resulted optimal consumption streams across periods are equalized. We now can characterize the  PCEV of a single cash flow in period $n$. 
-
-\begin{lemma} \label{lem:pcev-Xn-gen-FH}
- $PCEV_n$ of a single cash flow in period $n$ is
-\begin{eqnarray} \label{eqn:pcev-Xn-gen-FH}
-PCEV_n(f_n,0,\cdots, 0|\alpha_{n+1}(s_n)) = \varrho_n u^{-1}\big{(} \E_{n}^\xi [u(\frac{f_n}{\varrho_n})]\big{)},
+\begin{eqnarray}\label{eqn:capacityAlloc}
+\max_{k^d + k^o \leq K, k^d \geq 0, k^o \geq 0} PCVE_n(f_n(s_n,\bold{k},\bold{\xi}_n), \cdots, f_i(S_i,\bold{k},\bold{\xi}_i), \cdots, f_0(S_0,\bold{k},\bold{\xi}_0)),
 \end{eqnarray}
- and is independent of past payoff $\alpha_{n+1}(s_n)$.
-The optimal derivative in period $n$ satisfies
-\begin{eqnarray} \label{eqn:alpha-opt-Xn-FH}
-\frac{\rho_n R^{n-1}}{\sum_{i=0}^{n-1}\rho_i R^i}\alpha_n( s_{n-1})+ \frac{\E_n^S[\alpha_n( S_{n-1})]}{R} = \alpha_{n+1}(s_n) + f_n(s_n,D_n).
+where the one period maximum operational cash is
+\begin{eqnarray}
+f_i(s_i,\bold k, \xiv_i) &=& \max_{(\bold{z,x}) \in A (\bold {k, \xiv_i})} \{(p-c)z^{d}+ (p-cs_i-t)x^{d} + s_i(p-c)z^{o}+(s_i p-c-t)x^{o} \},\label{eqn:profit} \\
+ A(\bold{k,\xiv_i}) &=& \{ (\bold {z,x}): \; z^{j} + x^{l\neq j} \leq k^j \; \forall j\in \{d,o\}\; \forall l\in \{d,o\}, \; \bold z+ \bold x \leq \xiv_i,\; \bold z \geq 0, \; \bold x \geq 0\}. \label{eqn:prodCt}
 \end{eqnarray}
-\end{lemma} 
-Note that $PCEV_n$ is a function of the exchange rate $s_n$. We now generalize the recursive equation for general cash flows.
 
-{\lemma \label{lem:recur-FH}
-The PCEV of a general cash flow satisfies
- \begin{eqnarray}
-PCEV_n(f_n,\cdots,f_0|\alpha_{n+1}(s_n))
-= PCEV_n(f_n+\frac{\E_n^S[PCEV_{n-1} (f_{n-1}, \cdots, f_0)|S_n=s_n]}{R}, 0, \cdots, 0),  \label{eqn:pcev-recur-gen-FH}
-\end{eqnarray}
-and is independent of $\alpha_{n+1}(s_n)$. 
-The optimal derivative in period $n$ satisfies
-\begin{eqnarray} \label{eqn:alpha-opt-rec-FH}
-f_n + \alpha_{n+1}(s_n) = \frac{\E_n^S[\alpha_n( S_{n-1})]}{R}+\frac{\rho_n}{\varrho_{n-1}}(PCEV_{n-1}(f_{n-1}, \cdots, f_0)+\alpha_n( s_{n-1})).
-\end{eqnarray}
-}
+The objective function in (\ref{eqn:profit}) is revenue minus costs for given production decisions ($\bold{z,x}$) in period $i$.  The constraints on ($\bold{z,x}$) in (\ref{eqn:prodCt}) force the production at each facility not to exceed its capacity, and sales at each market not to exceed its demand. The resulted maximum operational cash is a function of the exchange rate and demand only of period $i$ because the production and transshipment decisions of a period are to maximize the operational cash of that period, they have no impact on other periodís operational cash.
 
-Similar to recursive equation under bond investment, the PCEV of total cash flow is the PCEV of the current period cash plus a recursive discount PCEV of future operational cash. However, the discounting of the PCEV of future cash flow. The PCEV of the future cash flow operates on uncertain demand only, the optimal derivative causes the PCEV to be discounted on expectation of risk neutral measure. {\bf We should use an example to explain the differences and the role of optimal exchange rate derivatives.}   
+To analyze the problem, we need some initial properties of the profit function $f$ in (\ref{eqn:profit}).  These are building blocks for studying later the properties of capacity decisions.  The period index $i$ is suppressed for exchange rate, {\it i.e.}, $s= s_i$, unless specified otherwise.
 
-While Lemma~\ref{lem:0-cash-FH} and~\ref{lem:maxU-cash0} holds for any concave utility function $u$, the recursive equations are true only for exponential utility function. 
-
-We have derived PCEV recursive formula (\ref{eqn:pcev-Xn-gen}),(\ref{eqn:pcev-recur-gen}),(\ref{eqn:pcev-Xn-gen-FH}), and (\ref{eqn:pcev-recur-gen-FH}) for a specificity time weight scheme, it is actually true for any time weight because it is independent of any deterministic cash flows.   The PCEV is independence on the initial wealthy, it is independent on any deterministic cash in each period. Since multiplying any deterministic time weight $k_i\geq 0$ is equivalent to adding $-\ln(k_i)$ in the cash flow, the PCEV is independent of time weight $k_i$. 
-
-Since the present certainty equivalent value is a function of operational cash flow in each period, we next characterize the operational cash flow in each period.  
-
-\subsection{Operational Cash Flow and Optimal Operational Decisions}
-
-Since the MRN's objective is to maximize the PCEV of operational cash flows across periods, we study the operational decisions in each period in this section. Since PCEV is monotone increasing in cash flow of each period and the operational decisions of transshipment and production in one period have no impact on other periods, these operations decisions can be made independently to maximize each periods operational cash flow. In each period, the operational cash flow is the revenue {from} sales to both markets minus the cost of production and transportation, thus the operational cash flow maximization problem is:
-
-\begin{eqnarray}f_i(s_i,\bold k, \xiv_i) &=& \max_{(\bold{z,x}) \in A (\bold {k, \xiv_i})} \{(p-c)z^{d}+ (p-cs_i-t)x^{d} + s_i(p-c)z^{o}+(s_i p-c-t)x^{o} \}\label{eqn:profit} \\ A(\bold{k,\xiv_i}) &=& \{ (\bold {z,x}): \; z^{j} + x^{l\neq j} \leq k^j \; \forall j\in \{d,o\}\; \forall l\in \{d,o\}, \; \bold z+ \bold x \leq \xiv_i,\; \bold z \geq 0, \; \bold x \geq 0\} \label{eqn:prodCt}\end{eqnarray}
-
-We know characterize the maximum operational cash flow and its corresponding optimal production and transshipment decisions. 
-
-{\lemma $f_i$ is non-decreasing and concave in $(\bold k, \xiv_i$).
+{\lemma $f$ is non-decreasing and concave in $(\bold k, \xiv$).
 \label{lemma:conProfit}}
 
 \proof See Appendix.  \qed
@@ -356,21 +420,25 @@ We know characterize the maximum operational cash flow and its corresponding opt
 Lemma \ref{lemma:subProfit} below formally states that the groups of capacity and demand decisions are complementary, but within each group (demands or capacities) they are substitutes.
 
 
-{\lemma $f_i$ is submodular in $(\bold k, -\xiv_i)$.
+{\lemma $f$ is submodular in $(\bold k, -\xiv)$.
 \label{lemma:subProfit}}
 
-\proof For simplicity of the presentation, let $\alpha_{jl}$ be the coefficient of decision variable in (\ref{eqn:profit}) , {\it i.e.}, $\alpha^{d}_{d} = p-c, \; \alpha_{od} = p-cs-t,\; \alpha^{d}_{o} = sp -c -t, \; \alpha_{oo} = s(p-c)$.  To prove submodularity, we first write the dual of the production problem:
-\begin{eqnarray*}
+\proof For simplicity of the presentation, let $\alpha_{jl}$ be the coefficient of decision variable of objective function in (\ref{eqn:profit}), {\it i.e.}, $\alpha_{dd} = p-c, \; \alpha_{od} = p-cs-t,\; \alpha_{do} = sp -c -t, \; \alpha_{oo} = s(p-c)$.  To prove submodularity, we first write the dual of the production problem:
+\begin{equation*}
+\begin{array}{lll}
     f(s,\bold k, \xiv) &=& \min_{(\etav, \lambdav) \in B (\alphav)} G (\etav, \lambdav, \bold k ,\xiv)  \\
     G(\etav,\lambdav,\bold k, \xiv) &=& \etav \bold k + \lambdav \xiv \\
     B (\alphav) &=& \{\eta_j+\lambda_l  \leq \alpha_{jl} \; \forall j \in \{d,o\}, \; \forall l \in \{d,o\},\;  \etav \geq 0,\; \lambdav \geq 0 \}
-\end{eqnarray*}
+\end{array}
+\end{equation*}
 To see the relationship between $\bold k$ and $-\xiv$, we substitute $\bar{\xiv} = - \xiv$ and $\bar{\etav} = - \etav$.  Then, the dual problem becomes:
-\begin{eqnarray*}
+\begin{equation*}
+\begin{array}{lll}
     f(s,\bold k, \xiv) &=& \min_{(\bar{\etav}, \lambdav) \in B_1 (\alphav)} G (\bar{\etav}, \lambdav, \bold k ,\bar{\xiv})  \\
     G(\bar{\etav},\lambdav,\bold k, \bar{\xiv}) &=& -\bar{\etav} \bold k - \lambdav \bar{\xiv} \\
-    B_1(\alphav) &=& \{-\bar{\eta}_j+\lambda_l  \leq \alpha_{jl} \; \forall j \in \{d,o\}, \; \forall l \in \{d,o\},\;  \bar{\etav} \leq 0,\; \lambdav \geq 0 \}
-\end{eqnarray*}
+     B_1(\alphav) &=& \{-\bar{\eta}_j+\lambda_l  \leq \alpha_{jl} \; \forall j \in \{d,o\}, \; \forall l \in \{d,o\},\;  \bar{\etav} \leq 0,\; \lambdav \geq 0 \}
+\end{array}
+\end{equation*}
 The objective function $G$ is submodular in $(\bar{\etav},\bold k,\lambdav, \bar{\xiv})$ and the constraint set $B_1$  is a sublattice of $(\bar{\etav},\lambdav)$.  Since minimizing submodular function over a sublattice preserves submodularity, $f$ is submodular in $(\bold{k}, -\xiv)$.  \qed
 
 
@@ -397,7 +465,7 @@ For any feasible $\bold y^*$, we need $\bold x \leq \bold y^*$.  Thus, a transsh
 \begin{eqnarray}
     f(s,\bold {k},\xiv) &=& \max_{\bold{x} \in A_2(\bold{k},\xiv)} (s-1)c(x^o -x^d)-t(x^o + x^d)+ (p-c)((k^d + x^d-x^o)\wedge \xi^d) \nonumber\\
     && + s(p-c)((k^o+x^o-x^d)\wedge \xi^o)  \label{eqn:transship}\\
-    A_2(\bold{k},\xiv) &=& \{\bold{x}:\;  \xiv \geq \bold x \geq 0, \;\; x^o  \leq k^d,\; x^d \leq k^o\} \label{eqn:A2}
+     A_2(\bold{k},\xiv) &=& \{\bold{x}:\;  \xiv \geq \bold x \geq 0, \;\; x^o  \leq k^d,\; x^d \leq k^o\} \label{eqn:A2}
 \end{eqnarray}
 The above problem can be interpreted as an assignment of capacity to locations.  Through the assignment, the new available quantities ideally reach the targets, {\it i.e.}, the demand in both markets.
 
@@ -405,7 +473,7 @@ To further characterize the optimal solution of the transshipment decisions, let
 
 
 {\theorem Optimal transshipment decisions are $x^{d*} = (k^o\wedge \xi^d \wedge \bar{x}^d)^+$ and $x^{o*} = (k^d\wedge \xi^o \wedge \bar{x}^o)^+$, where
-\begin{equation}
+\begin{eqnarray}
 \bar{x}^d= \left\{
   \begin{array} {ll}
   -\infty  \quad & \mbox {if $\bar{t}^d \leq -\bar{p}$}\\
@@ -417,8 +485,8 @@ To further characterize the optimal solution of the transshipment decisions, let
   \bar{t}^d \geq -\bar{p}$}\\
   \infty \quad &\mbox {if $\bar{t}^d \geq s\bar{p}$}
   \end{array} \right.
-\end{equation}
-\begin{equation} \bar{x}^o= \left\{
+\end{eqnarray}
+\begin{eqnarray} \bar{x}^o= \left\{
   \begin{array} {ll}
   -\infty \quad & \mbox {if $\bar{t}^o \leq -s\bar{p}$}\\
   -\bar{k}^o \quad & \mbox{ if $\bar{K} \geq 0$ and $0 \geq
@@ -430,7 +498,7 @@ To further characterize the optimal solution of the transshipment decisions, let
   \bar{t}^o \geq -s\bar{p}$}\\
   \infty \quad &\mbox {if $\bar{t}^o \geq \bar{p}$.}
   \end{array} \right.
-\end{equation}
+\end{eqnarray}
 \label{pro:bSol}}
 
 \proof  See Appendix.
@@ -448,15 +516,19 @@ Note that many papers (including Chowdhry and Howe \cite{Chowdhry1999}) assume c
 
 \medskip
 
-Having characterized the properties and optimal solutions of the production and transshipment decisions, we now proceed to study the capacity allocation decisions so that the MRN maximizes his PCVE:\begin{eqnarray}\label{eqn:capacityAlloc}\max_{k^d + k^o \leq K, k^d \geq 0, k^o \geq 0} PCVE_n(f_n(s_n,\bold{k},\bold{\xi}_n), \cdots, f_i(s_i,\bold{k},\bold{\xi}_i), \cdots, f_0(S_0,\bold{k},\bold{\xi}_0))\end{eqnarray} 
+Having characterized the properties and optimal solutions of the production and transshipment decisions, we now proceed to study the properties of the optimal capcity decision that maximizes MRNís PCEV.
 
-\begin{theorem}\label{thm:capacity}There is a unique optimal capacity allocation solution to (\ref{eqn:capacityAlloc}). \end{theorem}\proof It suffices to show that this maximization problem is equivalent to a problem of maximizing a concave function of $\bold{k}$ in that they have the same optimal $\bold{k}$. Since $u$ is increasing, (\ref{eqn:bondInv-rho}) and (\ref{eqn:PCEV})  implies that $\mathcal {U}_n(PCEV_n(f_n, \cdots, f_0), 0, \cdot, 0)$ is increasing in $PCEV_n(f_n, \cdots, f_0)$. As a result, maximizing $PCEV_n(f_n,\cdots, f_0)$ is equivalent to maximizing $\mathcal {U}_n(PCEV_n(f_n, \cdots, f_0), 0, \cdot, 0)$, and again because of (\ref{eqn:PCEV}) it is equivalent to maximizing $\mathcal {U}_n(f_n, \cdots, f_0)$. 
+\begin{theorem} \label{the:baseCap}
+There is a unique optimal capacity allocation solution to (\ref{eqn:capacityAlloc}).
+\end{theorem}
 
-$\mathcal {U}_n(f_n, \cdots, f_0)$ is indeed jointly concave in $\bold{k}$. In its expression (\ref{eqn:bondInv-rho}), $f_i$ is concave in $\bold{k}$ by (\ref{lemma:conProfit}) and $u_{ni}$ is increasing concave, $u_{ni}(f_i+(\beta_{i+1}-\beta_i)R^{n-i})$ is thus concave because an increasing concave function of a concave function is also concave. Linear combination and expectation of concave functions are concave. Finally maximization of a concave function is concave. The same argument applies to the exchange rate derivative investment.
-\qed 
+\proof It suffices to show that this maximization problem is equivalent to a problem of maximizing a concave function of $\bold{k}$ in that they have the same optimal $\bold{k}$. Since the utility function is increasing in consumption cash, (\ref{eqn:bondInv-rho}) and (\ref{eqn:Un-Xn}) implies that $\mathcal {U}_n(PCEV_n(f_n, \cdots, f_0), 0, \cdot, 0)$ is increasing in $PCEV_n(f_n, \cdots, f_0)$. As a result, maximizing $PCEV_n(f_n,\cdots, f_0)$ is equivalent to maximizing $\mathcal {U}_n(PCEV_n(f_n, \cdots, f_0), 0, \cdot, 0)$, and because of (\ref{eqn:PCEV}) it is equivalent to maximizing $\mathcal {U}_n(f_n, \cdots, f_0)$.
+
+$\mathcal {U}_n(f_n, \cdots, f_0)$ is indeed jointly concave in $\bold{k}$. In its expression (\ref{eqn:bondInv-rho}), $f_i$ is concave in $\bold{k}$ by (\ref{lemma:conProfit}) and $-w_i \exp(-(f_i+\beta_{i}-\beta_{i-1}/(1+r-f))/\rho_i) $ is thus concave in $\bold{k}$ because an increasing concave function of a concave function is also concave. Linear combination and expectation of concave functions are concave. Finally maximization of a concave function is concave. The same argument applies to the exchange rate derivative investment.
+\qed
 
 
-So far we have completely characterized structural properties and optimal solutions of the Basic Model.  We showed that, when the objective function has a very general form of utility and allowing the most general financial-hedging contracts, the problem behaves in an intuitive way with concave and submodular production and transshipment decisions.  The optimal financial contracts which we identified, bring utilities realized at various exchange rates closer to their geometric average, which is the utility of expected scanario.  This allows us to justify the diminishing benefits of capacity and substitutability of capacity across locations, for most cases.  The results also set the stage for a very efficient identification of optimal policies.
+So far we have completely characterized structural properties and optimal solutions of the Basic Model.  We showed that the problem behaves in an intuitive way with concave and submodular production and transshipment decisions.  The optimal financial hedging contracts (\ref{eqn:beta-FH}) which we identified, spread cash consumption across time and across different realization of exchange rate. The results also set the stage for a very efficient identification of optimal capacity allocation decisions.
 
 In this section, we assumed that the price is fixed.  In many situations, price is a decision variable used to influence demand.  In the following section we study how allowing to change the price, in addition to production and transshipment, influences the optimal policy.
 %{\pro If $\frac{\partial f(x_i,\bold {k, \xi})}{\partial
@@ -495,7 +567,7 @@ Since for any case when shortage takes place, it is beneficial to increase price
 
 %\proof Clearly $J(\bold {p,y,x})$ increases in price and, thus, optimal $p$ is at the upper bound. \qed
 
-Lemma \ref{lemma:priceSol} states that the optimal price is set to sell all products.  It transforms a {price, production, and transhipment decision} problem into a production/transshipment-decision-only problem:
+Lemma \ref{lemma:priceSol} states that the optimal price is set to sell all products.  It transforms a {price, production, and transshipment decision} problem into a production/transshipment-decision-only problem:
 \begin{eqnarray}
 f(s,\bold {k},\xiv) &=& \max_{(\bold{y,x}) \in A_1(\bold{k},\xiv)}
 G(\bold{x,y},\xiv) \label{eqn:fPSales}\\
@@ -518,7 +590,7 @@ Lemma \ref{lemma:priceFcon} allows us, later, to claim concavity of both { finan
 
 \proof The objective function $G$ is concave in $\bold y$.  Thus, the unconstrained optimal $\bold y = \bar{\bold y}$.  Therefore, the optimal constrained solution can be expressed as $y^{d*} = (x^d\vee \bar{y}^d)\wedge \xi^d \wedge (k^d+x^d-x^o)$ and $y^{o*} = (x^o\vee \bar{y}^o)\wedge \xi^o \wedge (k^o+x^o-x^d)$. \qed
 
-Lemma \ref{lemma:solPSales} states that $\bar{\bold y}$ serve as optimal sales target levels, which are independent of the transshipment decisions $\bold x$, and that actual sales will be limited by the constraints in the capacity and transshipment.  To further explore structural properties, optimal sales are substituted into the objective function of the problem.  With definition $\bar{t}^d \equiv (c-cs-t)b/2$ and $\bar{t}^o \equiv (cs-c-t)b/(2s)$, the cost difference of cross sales due to transshipment (these definitions differ slightly from those in the previous section), the price and production/transhipment decision problem is simplified to a transshipment-decision-only problem:
+Lemma \ref{lemma:solPSales} states that $\bar{\bold y}$ serve as optimal sales target levels, which are independent of the transshipment decisions $\bold x$, and that actual sales will be limited by the constraints in the capacity and transshipment.  To further explore structural properties, optimal sales are substituted into the objective function of the problem.  With definition $\bar{t}^d \equiv (c-cs-t)b/2$ and $\bar{t}^o \equiv (cs-c-t)b/(2s)$, the cost difference of cross sales due to transshipment (these definitions differ slightly from those in the previous section), the price and production/transshipment decision problem is simplified to a transshipment-decision-only problem:
 \begin{eqnarray}
 f(s,\bold{k},\xiv) &=& [(\bar{y}^)d^2 + s(\bar{y}^o)^2 +
 \max_{\bold {x} \in
@@ -613,9 +685,8 @@ which is illustrated in Figure \ref{fig:xoPrice}.
 $\bar{x}^o$ is obtained after $G'^o(x^o)$ is analyzed in the same
 way as $G'^d(x^d)$. }
 
-Having characterized the properties of optimal price and production and transshipment decisions, we now analyze capacity decisions. Since the one-period profit function $f$ is jointly concave in capacity, Theorem~\ref{thm:capacity} holds too in the price model. 
-
-In summary for the Price Model, structural properties (concavity and submodularity), similar to those in Basic Model, are proved for all decisions.  In addition, the optimal price is always market clearing.  The optimal sales targets are independent of production and transshipment.  Sales targets and total profits decrease in price sensitivity.
+In summary, for Price Model, structural properties (concavity and submodularity), similar to those in Basic Model, are proved for all decisions.  In addition, the optimal price is always market clearing.  The optimal sales targets are independent of production and transshipment.  Sales targets and total profits decrease in price sensitivity.
+Having characterized the properties of optimal price and production and transshipment decisions, concavity of Lemma \ref{lemma:priceFcon} implies that Theorem~\ref{the:baseCap} continues to hold, i.e., there is a unique optimal {capacity decision}.
 
 
 As the structural properties and optimal solutions have been completely characterized for both the Basic Model and the Price Model, they allow us to efficiently perform numerical study. \OUT{
@@ -676,23 +747,11 @@ where $\epsilon$ is the random factor in exchange rate.  In above formulation, t
 
 
 \section{Numerical Study \label{sect:numer}}
-The structural results (Sections \ref{sect:basicModel} and \ref{sect:priceModel}) enable us to perform an extensive numerical study and to answer the question: What are the favorable conditions for either financial or operational hedging (or both)?  In the case we describe in biggest detail, we assume that (a) we sell both in domestic and in overseas market.  We also evaluate the case (b) where we sell only overseas.  In (a) and (b) price is exogenous.  Finally, we look at case (c), where we sell both in domestic and overseas market and the price is endogenous.  To make a fair evaluation of financial, operational, and joint (financial plus operational) hedging, their relative efficiency is compared to the base case.  The base case (whether it is (a), (b), or (c)) always assumes that all capacity is located in the domestic facility and no financial hedging is used.  Operational hedging allows part of the capacity to be located overseas, while financial hedging keeps all capacity in domestic location, but allows unconstrained use of financial instruments.  The efficiency of other models is expressed as a percentage improvement in the present certainty equivalent value of the considered case over the base case.  Since the parameters of the model may significantly influence the relative strength and weakness of financial hedging and operational hedging, a wide range of parameters has been chosen for the numerical study.
 
+The structural results (Sections \ref{sect:basicModel} and \ref{sect:priceModel}) enable us to perform an extensive numerical study and to answer the question: What are the favorable conditions for either financial or operational hedging (or both)?  In the case we describe in biggest detail, we assume that (a) we sell both in domestic and in overseas market.  We also evaluate the case (b) where we sell only overseas.  In (a) and (b) price is exogenous.  Finally, we look at case (c), where we sell both in domestic and overseas market and the price is endogenous.  To make a fair evaluation of financial, operational, and joint (financial plus operational) hedging, their relative efficiency is compared to the base case.  The base case (whether it is (a), (b), or (c)) always assumes that all capacity is located in the domestic facility and no financial hedging is used.  Operational hedging allows part of the capacity to be located overseas, while financial hedging keeps all capacity in domestic location, but allows unconstrained use of financial instruments.  The efficiency of other models is expressed as a percentage of savings over the utility of the base case.  Since parameters of the model may significantly change the relative strength and weakness of financial hedging and operational hedging, a wide range of parameters has been chosen for the numerical study.
 
+To understand the overall effectiveness of the financial and operational hedging, we vary six parameters, listed below, across four values each, resulting in $1,024$ $(4^5)$ instances.  The values of parameters are: total available capacity $K= \{6, 8, \bold{10}, 12\}$, the risk-averse factor $r = \{0.001, \bold{0.01}, 0.1, 0.5\}$, the sales price $p = \{6, 8, \bold{10}, 12\}$, the exchange rate parameter $\epsilon=\{0.01, \bold{0.1},$ $0.3,$ $0.5 \}$, and the demand coefficient of variation ranges in $\{10\%, 20\%, \bold{33.3\%}, 50\%\}$.  The production cost $c=5$ is kept unchanged because relative effects are revealed through the change of the price and transportation cost.  Exchange rate is modelled as a binomial tree.  It changes with rate {\it $(1+\epsilon)$} up and $1/{\it (1+\epsilon)}$ down in each period with mean equal to the exchange rate at the beginning of the period.  To make computation time manageable, maximum exchange rate does not exceed $(1+\epsilon)^3$ and minimum exchange rate does not exceed $(1+\epsilon)^{-3}$.  Demands in each market are modelled as Erlang distribution with mean of 5.  Demands and exchange rates are independent.  All experiments are run for 20 periods with the financial hedging extending for all periods.  Except when we explicitly state it, all experiments assume 0 transportation costs.  Transportation costs favor strongly operational costs, as we show in one of later graphs.
 
-Exchange rate is modeled as a binomial tree.  In each period, it increases or decreases according to multiplier {\it $(1+\epsilon)$} (up) or $1/{\it (1+\epsilon)}$ (down), with the mean equal to the exchange rate in the previous period. This implies that the probability of going up is $1/{\it (2+\epsilon)}$ and that of going down is $(1+\epsilon)/(2+\epsilon)$, and the coefficient of variation is $\epsilon/\sqrt{1+\epsilon}$. Demands in each market are independent and are modeled as Erlang distribution with mean of 5.  Demands and exchange rates are independent. Transportation costs favor strongly operational costs, as we show in one of later graphs. Therefore, except when we explicitly state it, all experiments assume 0 transportation costs.  The production cost $c=1$ is kept constant.  All relative effects are examined by changes to the price and to the transportation cost.  For the endogenous price model to be comparable to the exogenous price model, the price sensitivity coefficient $b$ values are set such that the exogenous price values are optimal and the optimal quantity is the average exogenous demand. 
-
-To understand the overall effectiveness of the financial and operational hedging, we consider three values of planning horizon, $N$, and five values for each of the five parameters: total capacity $K$, the risk-tolerance value $\rho$, the sales price $p$ for exogenous price model (the price sensitivity coefficient $b$ for endogenous price model), the exchange rate coefficient of variation cv($S$), and the demand coefficient of variation cv($\xi$).  Their values are listed in Table \ref{tab:parameters}. The bold values are considered center ones. This setting has $3*5^5 = 9375$  instances for each model.  
- 
-\begin{table}[htdp]
-\begin{center}\begin{tabular}
-[c] {|c|ccccc|} \hline
-Parameter & \multicolumn{5} {|c|} {Values}    \\ \hline
-$N$ & 1 &  & $\bold{5}$ &  & 10 \\$K$ & 6 & 8 & $\bold{10}$ & 13 & 17 \\$\rho$ & 12.5 & 15 & $\bold{17.5}$ & 20 & 22.5 \\$p$ & 1.05 & 1.1 & $\bold{1.2}$ & 1.4 & 1.8 \\ $b$ & 6.25 &  12.5 & $\bold{25}$ & 50 & 100 \\ cv($S$) & 1\% & 5\% & $\bold{10\%}$ & 18\% & 26\% \\ cv($\xi$) & 10\% & 20\% & $\bold{25\%}$ & 33.3\% & 50\% \\ \hline
-\end{tabular} \caption{Parameter values }
-\end{center}
-\label{tab:parameters}
-\end{table}
 
 
 %???
@@ -701,7 +760,6 @@ $N$ & 1 &  & $\bold{5}$ &  & 10 \\$K$ & 6 & 8 & $\bold{10}$ & 13 & 17 \\$\rho$ &
 
 
 
-%: Dec 5 2009
 
 \subsection{Operational Hedging {\it versus} Financial Hedging}
 
@@ -719,7 +777,7 @@ The relative efficiencies of financial and operational hedging are affected by n
 \begin{minipage}{6in}
     \begin{minipage}{3.1in}
         \epsfxsize=2.8in
-   \hspace{-0.0in}    \epsfbox{capacity.eps}
+   \hspace{-0.0in}     \epsfbox{capExoDmd.eps}
     \end{minipage}
     \begin{minipage}{2.8in}
         \epsfxsize=2.8in
@@ -729,7 +787,6 @@ The relative efficiencies of financial and operational hedging are affected by n
 \vspace{.05in} \caption{Relative savings as function of total capacity in the Basic Model (left) and in the Price Model (right).} \label{fig:capacity} \vspace{-.2in}
 \end{center}
 \end{figure}
-
 
 
 
@@ -803,7 +860,7 @@ transportation cost in the Basic Model (left) and in the Price Model (right).} \
 
 {\noindent \em Exchange rate parameter.} The effect of exchange rate variance is illustrated in Figure \ref{fig:exch}.  Directly from our analytical results, financial hedging changes the linear average of the disutility to a geometric average.  Thus, the savings are higher for a larger variation of exchange rate.
 
-The benefits due to operational hedging may either increase or decreases as a function of the exchange rate, depending on the transhipment cost.  The savings come from two sources: reduced exposures to exchange rate risks and reduced transportation costs.  While the savings from the reduced exposure always increase in the variance of exchange rate, the savings from the reduced transportation cost decrease due to capacity increasingly censoring the needed transshipment.  Since transportation always benefits operational hedging, we illustrate here only the situation when transportation costs are absent.  This dynamics is actually straightforward: higher variability of exchange rates allows financial hedging to capture a significant portion of that variability, while operational hedging results in production being shifted more often to cheaper location.\footnote{When exchange rate variance is small, operational hedging may eliminate a big portion of transshipment and save most of the transportation costs.  When exchange rate variance is high, operational hedging may not save the transhipment cost at all as it may be optimal to allocate all capacity to the domestic facility, as in the base case.}
+The benefits due to operational hedging may either increase or decreases as a function of the exchange rate, depending on the transshipment cost.  The savings come from two sources: reduced exposures to exchange rate risks and reduced transportation costs.  While the savings from the reduced exposure always increase in the variance of exchange rate, the savings from the reduced transportation cost decrease due to capacity increasingly censoring the needed transshipment.  Since transportation always benefits operational hedging, we illustrate here only the situation when transportation costs are absent.  This dynamics is actually straightforward: higher variability of exchange rates allows financial hedging to capture a significant portion of that variability, while operational hedging results in production being shifted more often to cheaper location.\footnote{When exchange rate variance is small, operational hedging may eliminate a big portion of transshipment and save most of the transportation costs.  When exchange rate variance is high, operational hedging may not save the transshipment cost at all as it may be optimal to allocate all capacity to the domestic facility, as in the base case.}
 
 %To see this, lets consider a simple example where $p=2, \; t =c=1, \; \xi^d = \xi^o = 5$ and $K= 10$. If exchange rate is 1 and constant, then operational hedging eliminate all transportation costs.  If exchange rate becomes 2 or 0 with half chance each, operational hedging allocates all capacity to domestic facility.  (For exchange rate of 2, domestic production is cheaper, and it is best to have all capacity domestic.  For exchange rate of 0, overseas production and prices are cheaper, but transportation cost rules out the advantage of overseas production.  Thus, all capacity is domestic.)
 
@@ -932,7 +989,7 @@ In short horizon operational hedging, as shown in Figure \ref{fig:startExRateOp}
 \end{figure}
 
 
-The value of converging domestic capacity depends on the variance of exchange rate.  In most case when transhipment cost is moderate, higher variance of exchange rates results in lower domestic capacity, with corresponding higher overseas capacity, because more overseas production is needed to reduce the variance of cash
+The value of converging domestic capacity depends on the variance of exchange rate.  In most case when transshipment cost is moderate, higher variance of exchange rates results in lower domestic capacity, with corresponding higher overseas capacity, because more overseas production is needed to reduce the variance of cash
  flow when exchange rate variance is high, as illustrated in Figure
 \ref{fig:ExVCap}.
 \begin{figure}[ht]
@@ -973,9 +1030,91 @@ For supply chains with multiple locations of demand (including the place when pr
 
 \section{Appendix}
 
+\noindent {\bf Proof of Lemma \ref{lem:pcev-bond}: }
+We prove the $PCEV_n(\cdot)$'s independence on $\beta_n$ by induction, the other results will follow from the induction proof process. We first apply variable substitution $\beta_i^\prime = \beta_i + w_i^\prime$ for all $i\in \{0,\cdots,n\}$. When $n=1$, we have
+ \begin{equation*}
+ \begin{array}{lll}
+ \mathcal{U}_1(f_1,f_0|\beta_1) &= &\max_{\beta_0^\prime} \{\E [ -(1+r_f)\rho_1 \exp(- \frac{f_1 + \beta_1^\prime - \beta_0^\prime/(1+r_f)}{\rho_1}) - \rho_0 \exp(-\frac{f_0+ \beta_0^\prime}{\rho_0})]\}\\
+&=& \max_{\beta_0^\prime} \{\E [ -(1+r_f)\rho_1 \exp(- \frac{f_1 + \beta_1^\prime - \beta_0^\prime/(1+r_f)}{\rho_1}) - \rho_0 \exp(-\frac{PCEV_0(f_0)+ \beta_0^\prime}{\rho_0})]\},
+ \end{array}
+\end{equation*}
+where the second equation follows from (\ref{eqn:PCEV}) and (\ref{eqn:pcev-Xn-gen}).  The first order optimality condition on $\beta_0^\prime$ is
+\[\frac{PCEV_0(f_0)+ \beta_0^\prime}{\rho_0}=\frac{f_1 + \beta_1^\prime - \beta_0^\prime/(1+r_f)}{\rho_1} .\]
+Substituting back the original decisions, we get optimal investment decision (\ref{eqn:beta-gen}) for $n=1$, the corresponding maximum utility is then (\ref{eqn:Un-gen}). The PCEV in (\ref{eqn:pcev-gen}) follows from (\ref{eqn:PCEV}) and $PCEV_1(f_1,f_0|\beta_1$ is independent of $\beta_1$. This concludes the proof of induction  base, i.e., the truth for $n=1$.
+
+Now suppose $PCEV_{n-1}(f_{n-1},\cdots, f_0|\beta_{n-1})$ is independent of $\beta_{n-1}$ for any $n-1 \geq 0$, we proceed to prove the $PCEV_n(\cdot)$'s independence on $\beta_n$ and all the other results.  By (\ref{eqn:bondInv-rho}) and variable subsitution, the left side of (\ref{eqn:Un-gen}) becomes
+\[
+\mathcal{U}_n^\prime (f_n, \cdots, f_0|\beta_n^\prime) = \max_{\beta_{i}^\prime \forall 0 \leq i < n} \{\E [ \sum_{i=0}^n \big{(}-(1+r_f)^i\rho_i \exp (-\frac{f_i + \beta_{i}^\prime -\beta^\prime_{i-1}/(1+r_f)}{\rho_i})\big{)}]\}\]
+By (\ref{eqn:bondInv-rho}) for $n-1$, the objective function of the above maximization problem becomes
+\begin{equation*}
+\E [ -(1+r_f)^n\rho_n \exp (-\frac{f_i + \beta_{i}^\prime -\beta^\prime_{n-1}/(1+r_f)}{\rho_n})+\mathcal{U}_{n-1}^\prime(f_{n-1},\cdots, f_0 |\beta_{n-1}^\prime)],
+\end{equation*}
+where the only decision is $\beta_{n-1}^\prime$.  By the induction assumption, (\ref{eqn:PCEV}), and (\ref{eqn:Un-Xn}) in Lemma~\ref{lem:pcev-Xn-gen}, for $n-1$, the function inside the expectation becomes
+\begin{equation*}
+-(1+r_f)^n\rho_n \exp (-\frac{f_i + \beta_{i}^\prime -\beta^\prime_{n-1}/(1+r_f)}{\rho_n})-R_{n-1} (1+r_f)^{n-1} \exp (-  \frac{ \beta_{n-1}^\prime + PCEV_{n-1}(f_{n-1},\cdots, f_0)}{R_{n-1}}).
+\end{equation*}
+The first order optimality condition implies
+\[\frac{\beta_{n-1}^\prime + PCEV_{n-1}(f_{n-1},\cdots, f_0)}{R_{n-1}}= \frac{f_n + \beta_{n}^\prime -\beta^\prime_{n-1}/(1+r_f)}{\rho_n} . \]
+ Substituting the original decision back results (\ref{eqn:beta-gen}) for $n$. This equation implies that the adjusted cash consumptions are equalized between two periods.  Solving this equation results the optimal bond investment
+ \[\beta_{n-1}^\prime= (f_n + \beta_n^\prime - PCEV_{n-1}(f_{n-1},\cdots,f_0)\rho_n/R_{n-1})\frac{R_{n-1}}{R_n}\]
+
+ This optimal decision implies that the equal adjusted cash consumption in period $n$ or $n-1$ is $ (f_n + \beta_n^\prime - PCEV_{n-1}(f_{n-1},\cdots,f_0)\rho_n/R_{n-1})/R_n+ PCEV_{n-1}(f_{n-1},\cdots, f_0)/R_{n-1}$. By simplification, it becomes
+ \[
+(f_n + \beta_n^\prime  + PCEV_{n-1}(f_{n-1},\cdots,f_0) \frac{(R_n-\rho_n)}{R_{n-1}})/R_n  = \frac{f_n + \beta_n^\prime - PCEV_{n-1}(f_{n-1},\cdots,f_0)/(1+r_f)}{R_n},
+ \]
+where the last equation follows from $(R_n-\rho_n)/R_{n-1} = 1/(1+r_f)$. Substituting this optimal consumption back to the objective function and then the original decision back, we have (\ref{eqn:Un-gen}) for $n$.
+Finally,  using (\ref{eqn:PCEV}) we obtain (\ref{eqn:pcev-gen}) for $n$, which implies that $PCEV_n(\cdot)$ is independence of $\beta_n$.
+\qed
+
+\medskip
+\noindent {\bf Proof of Lemma \ref{lem:pcev-FH}: }
+We prove the PCEV's independence on $\beta_n(s_n)$ by induction, the other results will follow from the induction proof process. We first apply variable substitution $\beta_i^\prime(S_i) = \beta_i(S_i) + w_i^\prime$ for all $i\in \{0,\cdots,n\}$. When $n=1$ and by (\ref{eqn:maxU-FH}), the left side of (\ref{eqn:Un-FH}) becomes
+\[
+ \max_{\beta_0^\prime(S_0)} \{ -(1+r_f)\rho_1 \exp(- \frac{f_1 + \beta_1^\prime(s_1) - \frac{\E[\beta_0^\prime(S_0)|S_1=s_1]}{1+r_f}}{\rho_1}) - \E [\rho_0 \exp(-\frac{f_0+ \beta_0^\prime(S_0)}{\rho_0})|S_1=s_1]\}. \]
+ By (\ref{eqn:PCEV}) and (\ref{eqn:pcev-Xn-gen}), the objective function of the above maximization problem becomes
+\[-(1+r_f)\rho_1 \exp(- \frac{f_1 + \beta_1^\prime(s_1) - \frac{\E[\beta_0^\prime(S_0)|S_1=s_1]}{1+r_f}}{\rho_1}) - \E[\rho_0 \exp(-\frac{PCEV_0(f_0|S_0)+ \beta_0^\prime(S_0)}{\rho_0})|S_1=s_1]\}.
+ \]
+By point-wise maximization,  the first order optimality condition on $\beta_0^\prime(s_0)$ is
+\[\frac{f_1 + \beta_1^\prime(s_1) - \E[\beta_0^\prime(S_0)|S_1=s_1]/(1+r_f)}{\rho_1} =\frac{PCEV_0(f_0|S_0=s_0)+ \beta_0^\prime(s_0)}{\rho_0}.\]
+This equation means that the optimal derivative investment equalizes the adjusted consumption cash not only between two periods, but also among all possible realizations of the exchange rate (the right side of the equation).  Substituting the original decision back to the above equation results (\ref{eqn:beta-FH}) for $n=1$. Taking expectation of both sides conditioning on $S_1=s_1$ results
+\[\frac{f_1 + \beta_1^\prime(s_1) - \E[\beta_0^\prime(S_0)|S_1=s_1]/(1+r_f)}{\rho_1} =\frac{\E[PCEV_0(f_0)|S_1=s_1]+ \E[\beta_0^\prime(S_0)|S_1=s_1]}{\rho_0}.\]
+Simplifying this equations to obtain the price of the optimal derivative
+\[ \frac{\E[\beta_0^\prime(S_0)|S_1=s_1]}{1+r_f} = (f_1 + \beta_1^\prime(s_1) -\E[PCEV(f_0)|S_1=s_1]\frac{\rho_1}{\rho_0}) \frac{\rho_0}{(1+r_f)R_1}.\]
+We substitute the price back in the left side of the first order optimality condition, and obtain, for both periods and all scenarios of exchange rate realization, the optimal adjusted cash consumption as follow
+\[\frac{f_1 + \beta_1^\prime(s_1)}{\rho_1} (1-\frac{\rho_0}{(1+r_f)R_1}) +\frac{\E[PCEV_0(f_0)|S_1=s_1]}{(1+r_f)R_1} = \frac{f_1 + \beta_1^\prime(s_1)+\E[PCEV_0(f_0)|S_1=s_1]/(1+r_f) }{R_1},\]
+where the last equation follows from $1-\rho_0/[(1+r_f)R_1] = \rho_1/R_1$. We substitute this consumption cash into the objective function and the original decision variable back, thus obtain (\ref{eqn:Un-FH}) for $n=1$. This and (\ref{eqn:PCEV}) imply (\ref{eqn:pcev-FH}) for $n=1$, and consequently the PCEV is independent of $\beta_1(s_1)$. This concludes the proof of induction  base, i.e., the truth for $n=1$.
+
+Now suppose $PCEV_{n-1}(f_{n-1},\cdots, f_0|\beta_{n-1}(s_{n-1}))$ is independent of $\beta_{n-1}(s_{n-1})$ for any $n-1 \geq 0$, we proceed to prove that $PCEV_n(f_n, \cdots, f_0|\beta_{n}(s_n))$ is independence of $\beta_n(s_n)$ and all the other results.  By (\ref{eqn:maxU-FH}) and variable subsitution, the left side of (\ref{eqn:Un-FH}) becomes
+\[
+\mathcal{U}_n^\prime (f_n, \cdots, f_0|\beta_n^\prime(s_n)) = \max_{\beta_{i}^\prime \forall 0 \leq i < n} \{\E [ \sum_{i=0}^n \big{(}-(1+r_f)^i\rho_i \exp (-\frac{f_i + \beta_{i}^\prime -\frac{\E[\beta^\prime_{i-1}(S_{i-1})|S_i]}{(1+r_f)}}{\rho_i})\big{)}|S_n=s_n]\}.\]
+By (\ref{eqn:maxU-FH}) for $n-1$, the objective function of the above maximization problem becomes
+\begin{equation*}
+ -(1+r_f)^n\rho_n \exp (-\frac{f_i + \beta_{i}^\prime(s_n) -\E[\beta^\prime_{n-1}(S_{n-1})|s_n]/(1+r_f)}{\rho_n})+\E[\mathcal{U}_{n-1}^\prime(f_{n-1},\cdots, f_0 |\beta_{n-1}^\prime(S_{n-1}))|s_n],
+\end{equation*}
+where the only decision is derivative payoff function $\beta_{n-1}^\prime(S_{n-1})$.  By the induction assumption, (\ref{eqn:PCEV}), and (\ref{eqn:Un-Xn}) for $n-1$, the objective function becomes
+\begin{align}
+&-(1+r_f)^n\rho_n \exp (-\frac{f_i + \beta_{i}^\prime -\E[\beta^\prime_{n-1}(S_{n-1})|s_n]/(1+r_f)}{\rho_n})\\
+&-R_{n-1} (1+r_f)^{n-1} \E[\exp (-  \frac{ \beta_{n-1}^\prime(S_{n-1}) + PCEV_{n-1}(f_{n-1},\cdots, f_0|S_{n-1})}{R_{n-1}})|s_n].
+\end{align}
+The first order optimality condition on $\beta^\prime(s_{n-1})$ is
+\[ \frac{f_n + \beta_{n}^\prime(s_n) -\E[\beta^\prime_{n-1}(S_{n-1})|s_n]/(1+r_f)}{\rho_n} =\frac{\beta_{n-1}^\prime(s_{n-1}) + PCEV_{n-1}(f_{n-1},\cdots, f_0|s_{n-1})}{R_{n-1}}. \]
+This equation becomes (\ref{eqn:beta-FH}) for $n$ when the original decisions are substituted back. Taking expectation of both sides conditioning on $s_n$, we have
+\[ \frac{f_n + \beta_{n}^\prime(s_n) -\E[\beta^\prime_{n-1}(S_{n-1})|s_n]/(1+r_f)}{\rho_n} =\frac{\E[\beta_{n-1}^\prime(S_{n-1})|s_n] + \E[PCEV_{n-1}(f_{n-1},\cdots, f_0)|s_n]}{R_{n-1}}. \]
+This equation implies that the optimal derivative price is
+\[
+\frac{\E[\beta_{n-1}^\prime(S_{n-1})|s_n]}{1+r_f} = (f_n + \beta_{n}^\prime(s_n)-\E[PCEV_{n-1}(f_{n-1},\cdots, f_0)|s_n] \frac{\rho_n}{R_{n-1}})\frac{R_{n-1}}{(1+r_f)R_n}.
+\]
+This derivative price  implies that the consumption cash of period $n$ is
+\[\frac{f_n + \beta_n^\prime(s_n)}{\rho_n} (1-\frac{R_{n-1}}{(1+r_f)R_n}) +\frac{\E[PCEV_{n-1}(f_{n-1}, \cdots, f_0)|s_n]}{(1+r_f)R_n} = \frac{f_n + \beta_n^\prime(s_n)+\frac{\E[PCEV_{n-1}(f_{n-1}, \cdots, f_0)|s_n]}{(1+r_f)} }{\rho_n},
+\]
+where the equation follows from $(1-\frac{R_{n-1}}{(1+r_f)R_n}) = \rho_n/R_n$. This cash consumption in period $n$ is also the one in period $n-1$ at any realization of the exchange rate because of the optimal derivative investment. Substituting these consumption cashes into objective function yields (\ref{eqn:Un-FH}) for $n$.  Finally, using (\ref{eqn:Un-FH}) and (\ref{eqn:PCEV}) we obtain (\ref{eqn:pcev-FH}) for $n$, consequently the PCEV is independent of $\beta_n(s_n)$.
+\qed
+
+\medskip
+
 \noindent {\bf Proof of Lemma \ref{lemma:conProfit}: } First, $f$ is non-decreasing in $(\bold{k},\xiv)$ because
 $A(\bold{k}_1, \xiv_1) \subseteq A(\bold{k}_2, \xiv_2)$ when $(\bold k_1, \xiv_1) \leq (\bold{k}_2, \xiv_2)$.
-Second, we prove the concavity of $f$.  Assume $f(s,\bold {k}_i, \bold{\xiv}_i) = J(\bold {z}_i, \bold{x}_i,s)$, where $(\bold{z}_i, \bold{x}_i)\in A(\bold{k}_i, \xiv_i)$.  Since $((1-\lambda)\bold {z}_1 + \lambda \bold {z}_2, (1-\lambda)\bold {x}_1 + \lambda \bold {x}_2) \in A((1-\lambda)\bold{k}_1 + \lambda \bold {k}_2, (1-\lambda)\xiv_1 + \lambda \xiv_2)$, it must follow that $f(s,(1-\lambda)\bold{k}_1 + \lambda \bold {k}_2, (1-\lambda)\xiv_1 + \lambda \xiv_2)) \geq J((1-\lambda)\bold {z}_1 + \lambda \bold {z}_2, (1-\lambda)\bold {x}_1 + \lambda \bold {x}_2,s) \geq (1-\lambda) J(\bold {z}_1, \bold{x}_1,s) + \lambda J(\bold {z}_2, \bold{x}_2,s) = (1-\lambda) f(s,\bold {k}_1, \bold{\xiv}_1) +  \lambda f(s,\bold {k}_2, \bold{\xiv}_2)$.  The last inequality follows because the objective function $J$ defined in (\ref{eqn:profitObj}) is concave in production decisions $(\bold {x,z})$.\qed
+Second, we prove the concavity of $f$.  Assume $f(s,\bold {k}_i, \bold{\xiv}_i) = J(\bold {z}_i, \bold{x}_i,s)$, where $(\bold{z}_i, \bold{x}_i)\in A(\bold{k}_i, \xiv_i)$.  Since $((1-\lambda)\bold {z}_1 + \lambda \bold {z}_2, (1-\lambda)\bold {x}_1 + \lambda \bold {x}_2) \in A((1-\lambda)\bold{k}_1 + \lambda \bold {k}_2, (1-\lambda)\xiv_1 + \lambda \xiv_2)$, it must follow that $f(s,(1-\lambda)\bold{k}_1 + \lambda \bold {k}_2, (1-\lambda)\xiv_1 + \lambda \xiv_2)) \geq J((1-\lambda)\bold {z}_1 + \lambda \bold {z}_2, (1-\lambda)\bold {x}_1 + \lambda \bold {x}_2,s) \geq (1-\lambda) J(\bold {z}_1, \bold{x}_1,s) + \lambda J(\bold {z}_2, \bold{x}_2,s) = (1-\lambda) f(s,\bold {k}_1, \bold{\xiv}_1) +  \lambda f(s,\bold {k}_2, \bold{\xiv}_2)$.  The last inequality follows because the objective function in (\ref{eqn:profit}) is concave in production decisions $(\bold {x,z})$.\qed
 
 \medskip
 
@@ -1011,6 +1150,8 @@ When $x^d = 0$ and $x^o \geq 0$,  the objective function becomes $\bar{t}^o x^o 
 The same analysis can be applied to this scenario, which leads to $\bar{x}^o$.  \qed
 
 \medskip
+
+
 
 \noindent {\bf Proof of Lemma \ref{lemma:priceFsub}: }
 $f$'s submodularity in $(\bold k, -\xiv)$ is equivalent to $f$'s being supermodular in the pairs $(k^d, -k^o)$, $(k^d, \bar{y}^d)$, $(k^d, \bar{y}^o)$, $(k^o, \bar{y}^d)$, $(k^o,\bar{y}^o)$, and $(\bar{y}^d, -\bar{y}^o)$.  Since supermodularity is preserved under summation and maximization, it suffices to prove that $f^d$ and $f^o$ are supermodular in those pairs.  Without loss of generality, let us consider $f^d$.  Recall that maximum operator on a sublattice preserves submodularity.
@@ -1071,13 +1212,12 @@ Bhagwan, C., J. T.~B. Howe. 1999.
 \newblock {\em European Fiannce Review}, {\bf 2} 229--246.
 
 \bibitem{cisco}
-Cisco System Inc. 2001. Annual Report.
-\newblock page~36. 
+Cisco System Inc. 2009. Annual Report.
+\newblock page~38.
 
 \bibitem{Bickel2002}
 Bickel, J.~E., D.~Fishman, C.~S. Spetzler. 2002
 \newblock corporate risk tolerance: Taking the right risks.
-
 \newblock Technical report, Strategic Decisions Group, Menlo Park, CA.
 
 \bibitem{boyabatli2004}
@@ -1105,6 +1245,11 @@ Caldentey, R., M. Haugh. 2006.
 Chen X., M. Sim, D. Simchi-Levi, P. Sun. 2006.
 \newblock Risk aversion in inventory management.
 \newblock Working paper, August 2006.
+
+\bibitem{devalkar_integrated_2010}
+Devalkar K. S., R. Anupindi, A. Sinha
+\newblock Integrated Optimization of Procurement, Processing and Trade of Commodities in a Network Environment.
+\newblock Working paper, University of Michigan, April 2010
 
 
 \bibitem{Dasu}
@@ -1168,7 +1313,7 @@ Hu, X., I. Duenyas, R. Kapuscinski. 2004.
 \bibitem{Krishnan1965}
 Krishnan, K.~S., V.~R.~K. Rao. 1965.
 \newblock Inventory control in n warehouses.
-\newblock {\em J. Indust. Eng.}, {\bf 16} 212--215 
+\newblock {\em J. Indust. Eng.}, {\bf 16} 212--215
 
 \bibitem{Levy92}
 Levy, H. 1992.
@@ -1241,6 +1386,12 @@ Tagaras, G. 1989.
   two-location inventory system.
 \newblock {\em IIE. Trans.}, {\bf 21} 250--257.
 
+\bibitem{tapiero_value_2005}
+Tapiero C. S. 2005
+\newblock Value at risk and inventory control.
+\newblock {\em European Journal of Operational Research}, {\bf 163} (3):769--775.
+
+
 \bibitem{vanmieghem2003}
 Van Mieghem, J. 2003.
 \newblock {Capacity Management, Investment, and Hedging: A Review and Recent Developments.}
@@ -1269,6 +1420,7 @@ Van Mieghem, J. 2003.
 
 \section*{On-Line Appendix}
 }
+
 
 
 \noindent {\bf Proof of Theorem \ref{theo:priceoptimal}: }
@@ -1354,4 +1506,4 @@ When $x^d = 0$ and $x^o \geq 0$, the role of $x^d$ and $x^o$ is reversed. \qed
 
 
 \end{document}
-[k1]Unclear why you need this.
+
