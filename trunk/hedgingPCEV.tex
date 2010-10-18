@@ -258,9 +258,8 @@ Multiple streams of literature are related to our problem.  The first stream int
 
 \medskip
 
-Multiple streams of research are relevant to our topic.  We list them first before describing them in more detail.
-
-- Currency exchange-rate risk: the use of financial and operational hedging.  
+Multiple streams of research are relevant to our topic.  We list them first before describing them in more detail. The first stream studies the exchange rate uncerainty and its impact on operations under risk-neutral assumption. The second deals with multi-location production and its related issues of transshipment and capacity allocation. The third introduces risk-averse models and their strengths and weaknesses. The fourth investigates financial and operational hedging empirically and theoretically. 
+%- Currency exchange-rate risk: the use of financial and operational hedging.  
 
 %- Currency exchange rate uncertainty -- considered in both operations and finance literature.  %Most of operations literature assumes risk neutrality, while most of finance literature assumes risk aversion, but does not consider demand uncertainty and operational decisions.
 
@@ -270,8 +269,55 @@ Multiple streams of research are relevant to our topic.  We list them first befo
 
 \medskip
 
-\noindent \underline{Currency exchange-rate risk} 
-\\
+\noindent \underline{Currency exchange-rate uncertainty} 
+
+Many operations management papers have addressed production and inventory decisions in the presence of exchange rate uncertainty.  Dasu and Li \cite{Dasu} and Li {\it et al.} \cite{Li2001} focus on the opitmal the production policies when the exchange rate uncertainty affects only the production cost.  The former further considers switchover cost and shows that it is optimal to switch the production locaiton from one to the other if the exchange rate is above a value and to switch back if it is below another value. The later assumes no swithover cost and shows that under certain condition, the optimal policy is to produce in both locations at extreme low stock, in a cheaper location at moderate stock, and in neither at high stock. Ayetkin and Birge \cite{Aytekin2004} study a single capacity allocation decision, followed by a series of production decisions, when exchange rate is uncertain, but demand is certain.  They show that a band control policy is optimal for production. Kazaz et al. (2005) studied the production decisions when a firm has production facility in two foreign countries and found that the company may underserve the demand even when it has enough capacity because the exchange rate and transshipment cost make serving demand not profitable. Dong et al (2010) study a firm's choice among facility networks of home only, foreign only or both when it faces the exchange rate and demand uncertainty, and show that the expected marginal profit determines the choices.  While all these papers consider the exchange rate uncertainty, they differ from our paper in that they do not consider the transshipment costs from a production facility to a market location different from the facility, nor the decision maker's risk aversion.  We next discuss the papers that consider multi-location producation and the associated transshipment problems. 
+
+
+
+\noindent \underline{Multi-location production}
+
+In the category of transshipment of product between facilities, most models consider risk-neutral decision making over an extended period.  Krishnan and Rao \cite{Krishnan1965} study a single-period two-location problem and include an extension to N-locations.  Tagaras \cite{Tagaras1992} uses a similar model to study the pooling effects of transshipment on service levels. Hu {\it et al.} (2007, 2008) study a general transshipment problem in centralized and decentralized settings when capacity may be uncertain. Huang and Sosic (2010) study the game among retailers that order independently before demand realizes, and then transship among them after demand realizes. Similar to these papers, we have also considered the product trasshipment across contries. However, the transshipment problem is only a subproblem in our paper because our focus is to compare the financial hedging versus operational hedging for a risk-averse decision maker. 
+
+\noindent \underline{Financial hedging and operational hedging}
+
+
+(4) Huchzermeier and Cohen \cite{Huchzermeier} studied the finanical hedigng and operational hedging and show that the operational hedging exploits the volatility to increase the present certainty equivalent values, while financial hedging eliminates the volatility. Their limitation is that only forward contract is considered in financial hedging and second their consideration of the risk is the distribution of cash flow. 
+
+
+Allen Scheller Wolf
+
+
+
+\noindent \underline{Financial and operational hedging}
+
+A review paper by Bandaly et al.'s \cite{Bandaly_supply_2010} reports that operational approaches might include geographic dispersion, switching production, capacity allocation postponement. These activities are often characterized by ``mitigating risks by counterbalancing actions'' (see \cite{vanmieghem2003}).  %The dominant use of operational hedging fits the context of currency rate uncertainty and is the one we consider in our paper.
+There is less ambiguity about financial hedging, which includes general financial hedges, currency derivatives, currency forward, currency options, exotic derivatives, and foreign debt.  Our paper considers allocation of capacity across countries as operational hedging and currency derivatives as financial hedging. Both empirical and theoretical studies of them are very active.
+
+
+Empirical papers define operational hedging as international and geographical dispersion.  While they agree that companies use each (financial or operational) hedging, they are not fully consistent in evaluating the benefits.   
+Pantzalis et al (2001), finds support of hypothesis that the exposure of cash flows to currency risk is effectively managed by operational hedging.
+Allayannis et al (2001) finds that operational hedging is not an effective substitute for financial hedging and that operational hedging increases firms' values only if used in conjunction with financial hedging.  Both of these papers consider consider data from US companies. 
+Kim (2006), Aabo and Simkins (2005), and Faseruk and Mishra (2008) based on US, Danish, and Canadian data, respectively, find that the firms that use (or have a possibility of using) operational hedging are less likely to use financial hedging. Carter et al (2001) suggests that firms that use both hedges face effectively smaller exchange-rate exposure.  A superb summary of empirical literature can be found in Bandaly (2010).  Our objective is to explore the role of each of the types of hedging and to evaluate their individual and joint benefits. While these emprical papers come exclusively from financial literature, the theoretical papers come from both finance and operations management literature. 
+
+%FINANCE:
+In finance literature dealing with currency exchange risk, a few papers consider both demand and exchange-rate risks.  
+Among those, Logue (1995) suggest that operational exposure cannot be effectively hedged by financial instruments. 
+Chowdry and Howe (1999) in one-period model compare financial and operational hedging.  The main conclusion is that operational hedging is needed only in the presence of both demand and exchange rate uncertainty.
+Hommel (2003) extends the above model by including convex (quadratic) cost for foreign capacity and concludes that the operational hedging is only useful for sufficiently high exchange rate variability. Our paper differs these papers in several aspects.  Most importantly, our primary question of when financial and when operational hedging is most appropriate, is not directly answered (apart of the special case, when of no demand or no exchange-rate uncertainty).\footnote{Also, some of their assumptions are more restrictive than ours leading to not exactly the same conclusions.  First, they do not allow capacity shortage and do not consider the cost of transshipment.  Second, due to assuming single period, decisions have only short-term effect creating potential bias of ignoring dependencies between financial and operational decisions(due, for example, to the fact that in some future periods expected cost of domestic and overseas production might not be equal).}  Also, decision maker's objective function is slightly different in their setting.  Consequently, we are able to derive properties of financial hedging not available with mean-variance objective.  Their main finding, that operational hedging is necessary only when {\em both} exchange rate and demand are uncertain, is not true in general in our multi-period model.  We are also able to evaluate how a broader range of factors, such as transshipment costs, possibility of price elasticity, influence the relative benefit of financial and operational hedging.
+
+In operatons management theoretical papers, some do not expressly study exchange rate and others do. In the former case, Gaur and Seshadri \cite{Guar2004} consider a single-period one-facility model with demand and financial asset values being correlated.  Their purpose is to construct the optimal financial hedging contract.  Agrawal and Seshadri \cite{Agrawal2000} investigate joint price and production decisions in similar settings, when demand and financial asset values have correlation and find corresponding optimal hedging contract. Caldentey and Haugh \cite{Caldentey}, who study financial hedging in an incomplete market, where one financial asset and one operational value follow continuous-time correlated diffusion processes and a mean-variance objective function is used.  Chod et al (2010) bears to our work in considering both financial and operational hedging, and study whether financial hedging and operational flexibility are complementary or substitute. In their model, however, the financial instrument affect demands, not the cost and sales price. Furthermore, all these paper consider only single produciton facility and do not expressly address the exchange rate uncertainty.
+
+%In our model, while we do not allow inventory to be carried across periods, the consecutive periods are still linked due to the dynamics of the exchange rate.  A few papers consider multiple periods, but they consider only one facility (and do not study operational hedging) or do not consider any form of risk aversion.  A paper that considers both financial and operational issues is The focus, however, is not on comparison of two types of hedging, but instead on deriving financial hedging policy.  %We are not aware of any other papers comparing financial {\it versus} operational hedging.
+
+
+	- not necessarily related to currency exchange
+
+
+
+	- related to currency exchangE
+
+
 \noindent \underline{Within modeling papers,} most of modeling papers in operations literature assume risk neutrality, while most of finance literature assumes risk aversion, but does not consider demand uncertainty and operational decisions.
 
 OPS: 
@@ -280,62 +326,42 @@ OPS:
 For example, 
 
 
+In the risk-averse decision making literature, most papers consider only a single period.  The work of Chowdhry and Howe \cite{Chowdhry1999} and Hommel (2003) are very close to our study, where financial and operational hedging is considered in a two-facility two-market single-period framework.  Chowdhry and Howe show that both uncertainty in demand and exchange rate is necessary for operational hedging to be useful.  The authors look at the form of financial contract and, for example justify that it mostly will not be in a form of a forward. Later Hommel extend their work by explicitly modeling the cost of acquiring foreign production capacity by a quadratic function, and show that for operational hedging to add value, the exchange rate variability must exceed certain threshold value.  
 
+Despite different objective, Ding {\it et al.} (2007) bears some similarity to our work.  They study the joint decisions of the financial hedging and capacity allocation for one-facility two-market single-period model and use mean-variance as objective function.  Their work, however, {concentrates} on the effect of postponement of decisions and does not compare financial hedging to operational hedging. 
 
-In the risk-averse decision making literature, most papers consider only a single period.  The work of Chowdhry and Howe \cite{Chowdhry1999} and Hommel (2003) are very close to our study, where financial and operational hedging is considered in a two-facility two-market single-period framework.  Chowdhry and Howe show that both uncertainty in demand and exchange rate is necessary for operational hedging to be useful.  The authors look at the form of financial contract and, for example justify that it mostly will not be in a form of a forward. Later Hommel extend their work by explicitly modeling the cost of acquiring foreign production capacity by a quadratic function, and show that for operational hedging to add value, the exchange rate variability must exceed certain threshold value.  Our paper differs in several aspects.  Most importantly, our primary question of when financial and when operational hedging is most appropriate, is not directly answered (apart of the special case, when of no demand or no exchange-rate uncertainty).\footnote{Also, some of their assumptions are more restrictive than ours leading to not exactly the same conclusions.  First, they do not allow capacity shortage and do not consider the cost of transshipment.  Second, due to assuming single period, decisions have only short-term effect creating potential bias of ignoring dependencies between financial and operational decisions(due, for example, to the fact that in some future periods expected cost of domestic and overseas production might not be equal).}  Also, decision maker's objective function is slightly different in their setting.  Consequently, we are able to derive properties of financial hedging not available with mean-variance objective.  Their main finding, that operational hedging is necessary only when {\em both} exchange rate and demand are uncertain, is not true in general in our multi-period model.  We are also able to evaluate how a broader range of factors, such as transshipment costs, possibility of price elasticity, influence the relative benefit of financial and operational hedging.
-
-Despite different objective, Ding {\it et al.} (2007) bears some similarity to our work.  They study the joint decisions of the financial hedging and capacity allocation for one-facility two-market single-period model and use mean-variance as objective function.  Their work, however, {concentrates} on the effect of postponement of decisions and does not compare financial hedging to operational hedging. Chod et al (2010) also bears similarity to our work in considering both financial and operational hedging, and study whether financial hedging and operational flexibility are complementary or substitute. In their model, however, the financial instrument affect demands, not the cost and sales price. Gaur and Seshadri \cite{Guar2004} consider a single-period one-facility model with demand and financial asset values being correlated.  Their purpose is to construct the optimal financial hedging contract.  Agrawal and Seshadri \cite{Agrawal2000} investigate joint price and production decisions in similar settings, when demand and financial asset values are correlated and find corresponding optimal hedging contract.
-
-In our model, while we do not allow inventory to be carried across periods, the consecutive periods are still linked due to the dynamics of the exchange rate.  A few papers consider multiple periods, but they consider only one facility (and do not study operational hedging) or do not consider any form of risk aversion.  A paper that considers both financial and operational issues is Caldentey and Haugh \cite{Caldentey}, who study financial hedging in an incomplete market, where one financial asset and one operational value follow continuous-time correlated diffusion processes and a mean-variance objective function is used.  The focus, however, is not on comparison of two types of hedging, but instead on deriving financial hedging policy.  %We are not aware of any other papers comparing financial {\it versus} operational hedging.
 
 Other papers concentrate specifically on studying risk averseness without financial hedgings.  Eeckhoudt {\it et al.} \cite{Eeckhoudt1995} consider a simple risk-averse one-facility news-vendor facing demand uncertainty.  They show that, employing a concave increasing utility function, a newsvendor orders less when she becomes more risk averse. Their model is extended to multiple resource capacity investment by Van Mieghem (2007) and to multi-period by Chen {\it et al.} (2007). Boyabatli and Toktay (2010) further extend this model to consider the choice of flexible and dedicated technologies when the firm faces financial budget constraint.
 
 \medskip
 
 
-(2) Many operations management papers have addressed various versions of production capacity problems, some including exchange rate variability.  For example, Ayetkin and Birge \cite{Aytekin2004} study a single capacity allocation decision, followed by a series of production decisions, when exchange rate is uncertain, but demand is certain.  They show that a band control policy is optimal for production.Kazaz et al. (2005) studied the production decisions when a firm has production facility in two foreign countries and found that the company may underserve the demand even when it has enough capacity because the exchange rate and transshipment cost make serving demand not profitable. Dong et al (2010) study a firm's choice among facility networks of home only, foreign only or both when it faces the exchange rate and demand uncertainty, and show that the expected marginal profit determines the choices.
 
 \medskip
 
 Our paper is different from those cited above in that we allow a decision maker to be risk-averse and that financial hedging contracts are explicitly built into our multi-period operational model.  Our aim is to first understand the structure of optimal policies, and then to compare the relative strength of financial and operational hedging for various environments.  Within our model, based on optimal production decisions, we are able to derive pleasing properties of financial hedging -- it equalizes the consumption cash across periods and across exchange rate realizations. In the numerical study that follows, we compare the benefits due to operational hedging and due to financial hedging, show that in general operational hedging offers significantly higher benefits, and characterize the scenarios when it happens.  In order to measure systematically the effects of risk aversion, in the numerical study we use a family of exponential utility functions.
 
 
-(2) Huchzermeier and Cohen \cite{Huchzermeier}, Dasu and Li \cite{Dasu}, Li et al.  \cite{Li2001}, Li and Wang \cite{li_outsourcing_2010}, and Dong et al. \cite{dong_global_2010} ask how to use the network of capacities to deal with demand and exchange rate uncertainties.  
-
-
-Li {\it et al.} \cite{Li2001} consider the production decisions when demand and exchange rate are uncertain.  They show that, for any currency exchange rate, it is optimal to follow a primary/secondary plant policy, where the primary plant is more efficient and has a lower order-up-to level than the secondary plant.  They show that the order-up-to level is in general not monotonic in the exchange rate, even though the production cost is.  
-
-Allen Scheller Wolf 
-Burak Kazaz
-
-
-FINANCE:
-In finance literature dealing with currency exchange risk, a few papers consider both demand and exchange-rate risks.  
-Among those, Logue (1995) suggest that operational exposure cannot be effectively hedged by financial instruments. 
-Chowdry and Howe (1999) in one-period model compare financial and operational hedging.  The main conclusion is that operational hedging is needed only in the presence of both demand and exchange-rate uncertainty.
-Hommel (2003) extends the above model by including convex (quadratic) cost for foreign capacity and concludes that the operational hedging is only useful for sufficiently high exchange rate variability.
 
 
 
 
-(3) In the category of transshipment of product between facilities, most models consider risk-neutral decision making over an extended period of time.  Krishnan and Rao \cite{Krishnan1965} study a single-period two-location problem and include an extension to N-locations.  Tagaras \cite{Tagaras1992} uses a similar model to study the pooling effects of transshipment on service levels.  Li {\it et al.} \cite{Li2001} consider the production decisions when demand and exchange rate are uncertain.  They show that, for any currency exchange rate, it is optimal to follow a primary/secondary plant policy, where the primary plant is more efficient and has a lower order-up-to level than the secondary plant.  They show that the order-up-to level is in general not monotonic in the exchange rate, even though the production cost is.  Hu {\it et al.} (2007, 2008) study a general transshipment problem in centralized and decentralized settings when capacity may be uncertain. Huang and Sosic (2010) study the game among retailers that order independently before demand realizes, and then tranship among them after demand realizes.
+
+
+
 
 \medskip
 
 
 
-(4) While operational hedging is predominantly defined as physical division of capacity across locations, the term is sometimes defined in broader terms.  A review paper by Bandaly et al.'s \cite{Bandaly_supply_2010} reports that (a) operational approaches might include geographic dispersion, switching production, capacity allocation postponement. These activities are often characterized by ``mitigating risks by counterbalancing actions'' (see \cite{vanmieghem2003}).  %The dominant use of operational hedging fits the context of currency rate uncertainty and is the one we consider in our paper.
-There is less ambiguity about financial hedging, which includes general financial hedges, currency derivatives, currency forward, currency options, exotic derivatives, and foreign debt. 
-Our paper considers allocation of capacity across countries as operational hedging and exotic currency derivatives as financial hedging.
+(4) While operational hedging is predominantly defined as physical division of capacity across locations, the term is sometimes defined in broader terms.  
 
 
-(4) Empirical papers define operational hedging as international and geographical dispersion.  While they agree that companies use each (financial or operational) hedging, they are not fully consistent in evaluating the benefits.   
-Pantzalis et al (2001), finds support of hypothesis that the exposure of cash flows to currency risk is effectively managed by operational hedging.
-Allayannis et al (2001) finds that operational hedging is not an effective substitute for financial hedging and that operational hedging increases firms' values only if used in conjunction with financial hedging.  Both of these papers consider consider data from US companies. 
-Kim (2006), Aabo and Simkins (2005), and Faseruk and Mishra (2008) based on US, Danish, and Canadian data, respectively, find that the firms that use (or have a possibility of using) operational hedging are less likely to use financial hedging. Carter et al (2001) suggests that firms that use both hedges face effectively smaller exchange-rate exposure.  A superb summary of empirical literature can be found in Bandaly (2010).  Our objective is to explore the role of each of the types of hedging and to evaluate their individual and joint benefits.
+(4) 
 
 
 
+\noindent \underline{Risk-aversion Models}
 
 
 \section{Risk Aversion}
@@ -385,12 +411,12 @@ In our paper, we follow the most popular and most agreed-for discounted utility 
 
 \subsection{ Present Certainty Equivalent Value \label{sect:pcev}}
 
-PCEV is a lump-sum amount received with certainty today that generates the same consumption utility as a streamof uncertain operatinal cashflows for a decision maker. Since the decision maker can use financial instruments to smooth the consumption, PCEV explicitly models the investments in these instruments and uses utility functions to represent consumption preference of the decision maker. The functions we use are exponential utility functions, following \cite{smith1998}. We consider the evaluation of PCEV under the investment of either risk free bond or exchange rate derivatives.
+PCEV is a lump-sum amount received with certainty today that generates the same consumption utility as a streamof uncertain operatinal cashflows for a decision maker. Since the decision maker can use financial instruments to smooth the consumption, PCEV explicitly models the investments in these instruments and uses utility functions to represent consumption preference of the decision maker. The functions we use are exponential utility functions, following Smith (1998). We consider the evaluation of PCEV under the investment of either risk free bond or exchange rate derivatives.
 
 
 \subsection{PCEV with Risk-free Bond}
 
-We let $n$ be the index of the current periods and count the periods backwards, with the last period being 0. Let $f_i$ and $\beta_i$ be the cash generated in period $i$, respectively, from operations and from past investment. The cash consumption in period $i$ is then  $f_i + \beta_{i} -\beta_{i-1}/(1+r_f)$, where the last term is the price paid on the bond investment that generates cash $\beta_{i-1}$ in period $i-1$. Since consumption ends in period $0$, $\beta_{-1} =0$. Thus, for given initial wealth $\beta_{n}$,  the maximum consumption utility of the stream of operational cash flow $f_i$s is
+We let $n$ be the index of the current periods and count the periods backwards, with the last period being 0. Let $f_i$ and $\beta_i$ be the cash generated in period $i$, respectively, from operations and from past investment, and let $r_f$ be the bond's risk-free interest rate. The cash consumption in period $i$ is then  $f_i + \beta_{i} -\beta_{i-1}/(1+r_f)$, where the last term is the price paid on the bond investment that generates cash $\beta_{i-1}$ in period $i-1$. Since consumption ends in period $0$, $\beta_{-1} =0$. Thus, for given initial wealth $\beta_{n}$,  the maximum consumption utility of the stream of operational cash flow $f_i$s is
 \begin{eqnarray} 
      \label{eqn:bondInv-rho}
 \mathcal{U}_n(f_n, \cdots, f_0|\beta_{n}) = \max_{\beta_{i} \forall 0 \leq i < n} \{\E [ \sum_{i=0}^n \big{(}-w_i \exp (-\frac{f_i + \beta_{i} -\beta_{i-1}/(1+r_f)}{\rho_i})\big{)}]\},
@@ -430,11 +456,11 @@ The corresponding PCEV is then defined in (\ref{eqn:PCEV}) except the bond inves
 
 \section{Basic Model \label{sect:basicModel}}
 
-In this section we describe the assumptions and the structural properties of the model that allows for both financial and operational hedging.  In every period firm faces demands in both markets.  Demands are independent from period to period, but not necessarily independent across locations.  The exchange rate follows a Markov-modulated process with a finite number of possible realizations.  After demand and exchange rate are realized, the firm decides production quantities as well as quantities to transship.  No inventory can be held from period to period.  The sales price is assumed to be exogenous.  This assumption is especially appropriate in competitive market, where the MRN may be forced to be a price taker (Next section allows MRN to set the price). 
+In this section we describe the assumptions and the structural properties of the model that allow for both financial and operational hedging.  In every period firm faces demands in both markets.  Demands are independent from period to period, but not necessarily independent across locations.  The exchange rate follows a Markov-modulated process with a finite number of possible realizations.  After demand and exchange rate are realized, the firm decides production quantities as well as quantities to transship.  No inventory can be held from period to period.  The sales price is assumed to be exogenous.  This assumption is especially appropriate in competitive market, where the MRN may be forced to be a price taker (Section 6 allows MRN to set the price). 
 
-We assume that the objective of the MRN is to maximize her Present Certainty Equivalent Value (PCEV) for all periods of the planning horizon, and that she has finite total capacity. This PCEV is to be evaluated in a period after the realization of exchange rate, but before demand realization.  To maximize PCEV, she has three decisions to make, initial decision regarding allocation of capacity (i.e., operational hedging), and then in every period decisions regarding financial hedging that we studied in section 3 and production/transshipment.
+We assume that the objective of the MRN is to maximize her Present Certainty Equivalent Value (PCEV) for all periods of the planning horizon, and that she has finite total capacity. This PCEV is to be evaluated in a period after the realization of exchange rate, but before demand realization.  To maximize PCEV, she has three decisions to make, initial decision regarding allocation of capacity (i.e., operational hedging), and then in every period decisions regarding financial hedging and production/transshipment.
 
-The first, operational hedging, decision is how to allocate the total capacity between DF and OF at the beginning of horizon.  Once this decision is made, DF's and OF's capacities do not change in any later periods. The production/transshipment decision determines how much to produce at each location and how much to transship from a location to the other market. The financial hedging decision is what financial contract, if any, to enter into. The events in each period are as follows. (1) Uncertainty of exchange rate resolves. (2) Uncertainty of demand resolves. (3) Make production and transshipment decisions. (4) Collect operational cash flow. (5) Trade risk-free bond or trade exchange rate derivatives (Financial hedging) and obtain investment cash. (6) Consume cash.
+The first, operational hedging, decision is how to allocate the total capacity between DF and OF at the beginning of horizon.  Once this decision is made, DF's and OF's capacities do not change in any later periods. The production/transshipment decision determines how much to produce at each location and how much to transship from a location to the other market. The financial hedging decision is what financial contract, if any, to enter into. The events in each period are as follows. (1) Uncertainty of exchange rate resolves. (2) Uncertainty of demand resolves. (3) Make production and transshipment decisions. (4) Collect operational cash. (5) Trade risk-free bond or trade exchange rate derivatives (Financial hedging) and collect investment cash. (6) Consume cash.
 
 The following additional notation is used.  The first six symbols are illustrated in Figure \ref{figure:frameGeneral}.
 \begin{itemize}
@@ -445,10 +471,10 @@ The following additional notation is used.  The first six symbols are illustrate
     \item $x^{j}$ quantity produced in the other facility and transshipped to market $j$, $\bold x = \{x^d,x^o\}$,
     \item $y^{j}= z^j + x^j$ total production quantity available to meet market $j$ demand, $\bold y = \{y^d,y^o\}$,
 %\newpage
-    \item $i$:  subscript index of the period number, counting backwards,
+ %   \item $i$:  subscript index of the period number, counting backwards,
 
 
-PUT BACK HERE exchange rate TO cumulative hedging contracts
+%PUT BACK HERE exchange rate TO cumulative hedging contracts
 
     \item $K$: total capacity, $K >0$,
     \item $p$: unit price, $p > 0$,
@@ -585,7 +611,7 @@ Note that many papers (including Chowdhry and Howe \cite{Chowdhry1999}) assume c
 
 %%%% **** CANDIDATE FOR REMOVING ******
 
-\noindent {\bf Example} {\em Let $k^d = 10,\; \xi^d = 2, \; k^o = 3,\; \xi^o = 5 $ and $s = 0.4, \; p = 10,\; c = 5$.  In this case, it is optimal to use all overseas capacity and no domestic capacity at all.  Two units of overseas capacity are used for domestic demand and one unit for overseas demand.  Adding any domestic production has negative marginal benefit because there are only two uses of domestic production: (1) meeting domestic demand and pushing overseas product to overseas demand, where the marginal benefit is $p-c + ps - p = -1$; and (2) meeting overseas demand; then the marginal benefit is also 1 because $ ps - c = -1$.}
+\noindent {\bf Example} {\em Let $k^d = 10,\; \xi^d = 2, \; k^o = 3,\; \xi^o = 5 $ and $s = 0.4, \; p = 10,\; c = 5$.  In this case, it is optimal to use all overseas capacity and no domestic capacity at all.  Two units of overseas capacity are used for domestic demand and one unit for overseas demand.  Adding any domestic production has negative marginal benefit because there are only two uses of domestic production: (1) meeting domestic demand and pushing overseas product to overseas demand, where the marginal benefit is $p-c + ps - p = -1$; and (2) meeting overseas demand; then the marginal benefit is also -1 because $ ps - c = -1$.}
 
 
 
@@ -601,7 +627,7 @@ Note that many papers (including Chowdhry and Howe \cite{Chowdhry1999}) assume c
 
 We use two intuitive economic terms.  Let the effective risk tolerance $R_i =\sum_{j=0}^i (\rho_j(1+r_f)^{j-i})$ and the time weight present value equivalent $w^\prime_i = \sum_{j=0}^i(\rho_j \ln((1+r_f)^j \rho_j)/w_j)/(1+r_f)^{i-j})$.
 
-The effective risk tolerance $R_n$ is the sum of discount risk tolerance in all periods from $n$ to $0$. It reflects the decision maker's ability to use bond investment spreading risk across time, he is effectively less risk averse to an earlier resolution of the cash flow uncertainty than a later one. This effective risk tolerance captures the inter-temporal risk that a decision maker prefers earlier resolution of the uncertainties of the same cash flow.
+The effective risk tolerance $R_n$ is the sum of discount risk tolerance in all periods from $n$ to $0$. It reflects the decision maker's ability to use bond investment spreading risk across time, he is effectively less risk averse to an earlier resolution of the cash flow uncertainty than a later one. This effective risk tolerance captures the inter-temporal risk preference that a decision maker prefers an earlier resolution of the uncertainties of the same cash flow.
 
 The time weight present value equivalent $w^\prime_i$ is the present value of cash equivalent values of the time weights in all periods $j \in \{0, \cdots, i\}$.
 The discount factor from period $j$ to $i$ is $1/(1+r_f)^{i-j}$, which is applied to the period $j$'s cash equivalent value of $w_j$. This value is $\rho_j\ln ((1+r_f)^j\rho_j)/w_j$ because $w_j = (1+r_f)^j \rho_j \exp(-(\rho_j\ln ((1+r_f)^j\rho_j/w_j))/\rho_j)$.
@@ -610,7 +636,7 @@ The discount factor from period $j$ to $i$ is $1/(1+r_f)^{i-j}$, which is applie
 Using this definition, we first obtain the analytical solution of PCEV for a given single uncertain operational cash flow.
 
 \begin{lemma} \label{lem:pcev-Xn-gen}
-For a given initial wealth $\beta_n$ and a given uncertain operational cash flow with $f_n$ in period $n$ and $0$ in all other periods, the optimal bond investment satisfies
+For a given initial wealth $\beta_n$ and a given uncertain operational cash flow with $f_n$ in period $n$ and with $0$ in all other periods, the optimal bond investment satisfies
 \begin{eqnarray}\label{eqn:beta-Xn}
 \frac{\beta_i + w_i^\prime}{R_i} = \frac{f_n+\beta_n + w_n^\prime}{R_n}, \; \forall 0\leq i< n;
 \end{eqnarray}
@@ -805,7 +831,7 @@ Lemma \ref{lemma:priceFcon} allows us, later, to claim concavity of both { finan
 
 Lemma \ref{lemma:solPSales} states that $\bar{\bold y}$ serve as optimal sales target levels, which are independent of the transshipment decisions $\bold x$, and that actual sales will be limited by the constraints in the capacity and transshipment.  To further explore structural properties, optimal sales are substituted into the objective function of the problem.  With definition $\bar{t}^d \equiv (c-cs-t)b/2$ and $\bar{t}^o \equiv (cs-c-t)b/(2s)$, the cost difference of cross sales due to transshipment (these definitions differ slightly from those in the previous section), the price and production/transshipment decision problem is simplified to a transshipment-decision-only problem:
 \begin{eqnarray}
-f(s,\bold{k},\xiv) &=& [(\bar{y}^)d^2 + s(\bar{y}^o)^2 +
+f(s,\bold{k},\xiv) &=& [(\bar{y}^d)^2 + s(\bar{y}^o)^2 +
 \max_{\bold {x} \in
 A_2(\bold k, \xiv)} G(\bold x)]/b \label{eqn:fPNewTran}\\
 G(\bold x) &=& 2\bar{t}^d x^d - ((x^d - \bar{y}^d)^+)^2 - ((k^d
@@ -961,9 +987,11 @@ where $\epsilon$ is the random factor in exchange rate.  In above formulation, t
 
 \section{Numerical Study \label{sect:numer}}
 
-The structural results (Sections \ref{sect:basicModel} and \ref{sect:priceModel}) enable us to perform an extensive numerical study and to answer the question: What are the favorable conditions for either financial or operational hedging (or both)?  In the case we describe in biggest detail, we assume that (a) we sell both in domestic and in overseas market.  We also evaluate the case (b) where we sell only overseas.  In (a) and (b) price is exogenous.  Finally, we look at case (c), where we sell both in domestic and overseas market and the price is endogenous.  To make a fair evaluation of financial, operational, and joint (financial plus operational) hedging, their relative efficiency is compared to the base case.  The base case (whether it is (a), (b), or (c)) always assumes that all capacity is located in the domestic facility and no financial hedging is used.  Operational hedging allows part of the capacity to be located overseas, while financial hedging keeps all capacity in domestic location, but allows unconstrained use of financial instruments.  The efficiency of other models is expressed as a percentage of savings over the utility of the base case.  Since parameters of the model may significantly change the relative strength and weakness of financial hedging and operational hedging, a wide range of parameters has been chosen for the numerical study.
+The structural results (Sections \ref{sect:basicModel} and \ref{sect:priceModel}) enable us to perform an extensive numerical study and to answer the question: What are the favorable conditions for either financial or operational hedging (or both)?  In the case we describe in biggest detail, we assume that (a) we sell both in domestic and in overseas market.  We also evaluate the case (b) where we sell only overseas.  In (a) and (b) price is exogenous.  Finally, we look at case (c), where we sell both in domestic and overseas market and the price is endogenous.  To make a fair evaluation of financial, operational, and joint (financial plus operational) hedging, their relative efficiency is compared to the base case.  The base case (whether it is (a), (b), or (c)) always assumes that all capacity is located in the domestic facility and no financial hedging is used.  Operational hedging allows part of the capacity to be located overseas, while financial hedging keeps all capacity in domestic location, but allows unconstrained use of financial instruments.  The efficiency of other models is expressed as a percentage of increase over the PCEV of the base case.  
 
-To understand the overall effectiveness of the financial and operational hedging, we vary six parameters, listed below, across four values each, resulting in $1,024$ $(4^5)$ instances.  The values of parameters are: total available capacity $K= \{6, 8, \bold{10}, 12\}$, the risk-averse factor $r = \{0.001, \bold{0.01}, 0.1, 0.5\}$, the sales price $p = \{6, 8, \bold{10}, 12\}$, the exchange rate parameter $\epsilon=\{0.01, \bold{0.1},$ $0.3,$ $0.5 \}$, and the demand coefficient of variation ranges in $\{10\%, 20\%, \bold{33.3\%}, 50\%\}$.  The production cost $c=5$ is kept unchanged because relative effects are revealed through the change of the price and transportation cost.  Exchange rate is modelled as a binomial tree.  It changes with rate {\it $(1+\epsilon)$} up and $1/{\it (1+\epsilon)}$ down in each period with mean equal to the exchange rate at the beginning of the period.  To make computation time manageable, maximum exchange rate does not exceed $(1+\epsilon)^3$ and minimum exchange rate does not exceed $(1+\epsilon)^{-3}$.  Demands in each market are modelled as Erlang distribution with mean of 5.  Demands and exchange rates are independent.  All experiments are run for 20 periods with the financial hedging extending for all periods.  Except when we explicitly state it, all experiments assume 0 transportation costs.  Transportation costs favor strongly operational costs, as we show in one of later graphs.
+We use bionomial tree to model exchange rate evoluation.  It changes with rate {\it $(1+\epsilon)$} up and $1/{\it (1+\epsilon)}$ down in each period with mean equal to the exchange rate at the beginning of the period.  To make computation time manageable, maximum exchange rate does not exceed $(1+\epsilon)^3$ and minimum exchange rate does not exceed $(1+\epsilon)^{-3}$.  Demands in each market are modelled as Erlang distribution with mean of 5.  Demands and exchange rates are independent. 
+
+Since parameters of the model may significantly change the relative strength and weakness of financial hedging and operational hedging, a wide range of parameters has been chosen for the numerical study. We vary five parameters, listed below, across four values each, resulting in $1,024$ $(4^5)$ instances.  The values of parameters are: total available capacity $K= \{6, 8, \bold{10}, 12\}$, the risk-tolerance factor $\rho = \{10, 12.5, \bold{15}, 17.5, 20\}$, the sales price $p = \{6, 8, \bold{10}, 12\}$, the exchange rate parameter $\epsilon=\{0.01, \bold{0.1},$ $0.3,$ $0.5 \}$, and the demand coefficient of variation ranges in $\{10\%, 20\%, \bold{33.3\%}, 50\%\}$.  The production cost $c=5$ is kept unchanged because relative effects are revealed through the change of the price and transportation cost. All experiments run for 20 periods.  Except when we explicitly state it, all experiments assume 0 transportation costs.  Transportation costs favor strongly operational hedging, as we show in one of later graphs.
 
 
 
