@@ -204,10 +204,9 @@ The MRN has a finite capacity.  In the beginning of the horizon, The MRN allocat
 
 Both types of hedging that we study are special cases of this model:  {\em operational hedging} means that we allocate the total capacity between both locations and consequently produce both in DF and OF, but use no financial hedging; {\em financial hedging} means that all capacity is allocated to DF (consequently, we produce in DF only), while we are allowed to use any financial contracts in any period.
 
-We make a number of specific assumptions.  Financial hedging allows any general financial contract fairly priced in the efficient financial market. No inventory is held between periods.\footnote{This assumption simplifies the analysis and also reflects reality.  With the length of single period being a month, a quarter, or longer (which is typical period length for non-financial firms involved in financial hedging) the inventories are usually not a significant element of decisions.}  
+The most important assumption in our model is MRN's risk-aversion. Even though it is argued that a firm should be risk neutral to non-systematic risks because the shareholders may be able to diversify away those risks, Smith \cite{Smith2004} in his review of risk attitudes points out that many firms, including large public companies, are risk-averse.  Some practitioners of decision analysis (see Bickel et al.  \cite{Bickel2002}) suggest deriving a firm-wide risk-averse utility function.  % and maximizes Present Certainty Equivalent Value (PCEV), that is based on exponential utility function. In addition, we make a number of other specific assumptions. Financial hedging allows any general financial contract fairly priced in the efficient financial market. No inventory is held between periods.\footnote{This assumption simplifies the analysis and also reflects reality.  With the length of single period being a month, a quarter, or longer (which is typical period length for non-financial firms involved in financial hedging) the inventories are usually not a significant element of decisions.}  
 Due to finite capacity, some demand may be not satisfied and, therefore, lost. Transshipment and production costs are linear.
-MRN is risk averse and maximizes Present Certainty Equivalent Value (PCEV), that is based on exponential utility function.
-The basic model assumes that price is exogenous.  As an extension we consider price-sensitive demand, where MRN can adjust price from period to period.
+The basic model assumes that price is exogenous.  As an extension, we consider price-sensitive demand, where MRN can adjust price from period to period.
 
 
 Having introduced the problem, the rest of the paper seeks to analyze it.  
@@ -237,7 +236,7 @@ As a background, Section \ref{sect:liter} contains discussion of literature. In 
 
 
 \section{Literature Review \label{sect:liter}}
-
+\OUT{
 1. RISK AVERSION - briefly and say that the next section deals in more detail.
 
 2. EXCHANGE RATE
@@ -257,41 +256,36 @@ Multiple streams of literature are related to our problem.  The first stream int
 
 
 \medskip
+}
+Multiple streams of research are relevant to our topic.  We list them first before describing them in more detail. The first stream deals with multi-location production and its related issues of transshipment and capacity allocation. The second studies the exchange rate uncerainty and its impact on operations under risk-neutral assumption. The third investigates financial and operational hedging empirically and theoretically. The fourth introduces risk-averse models and their strengths and weaknesses. 
 
-Multiple streams of research are relevant to our topic.  We list them first before describing them in more detail. The first stream studies the exchange rate uncerainty and its impact on operations under risk-neutral assumption. The second deals with multi-location production and its related issues of transshipment and capacity allocation. The third introduces risk-averse models and their strengths and weaknesses. The fourth investigates financial and operational hedging empirically and theoretically. 
 %- Currency exchange-rate risk: the use of financial and operational hedging.  
 
 %- Currency exchange rate uncertainty -- considered in both operations and finance literature.  %Most of operations literature assumes risk neutrality, while most of finance literature assumes risk aversion, but does not consider demand uncertainty and operational decisions.
 
-- Risk aversion -- central to a few sub-streams of economics and finance literature. Recently it has been increasingly studied in operations literature. %, although predominantly in single-period models.%  Economics and finance literature has developed criteria to evaluate the appropriateness of various risk-aversion frameworks.
 
-- The comparisons between financial and operational hedging. % have been considered in very few papers.  We describe them in detail and compare to our model.  
+
+%- The comparisons between financial and operational hedging. % have been considered in very few papers.  We describe them in detail and compare to our model.  
 
 \medskip
-
-\noindent \underline{Currency exchange-rate uncertainty} 
-
-Many operations management papers have addressed production and inventory decisions in the presence of exchange rate uncertainty.  Dasu and Li \cite{Dasu} and Li {\it et al.} \cite{Li2001} focus on the opitmal the production policies when the exchange rate uncertainty affects only the production cost.  The former further considers switchover cost and shows that it is optimal to switch the production locaiton from one to the other if the exchange rate is above a value and to switch back if it is below another value. The later assumes no swithover cost and shows that under certain condition, the optimal policy is to produce in both locations at extreme low stock, in a cheaper location at moderate stock, and in neither at high stock. Ayetkin and Birge \cite{Aytekin2004} study a single capacity allocation decision, followed by a series of production decisions, when exchange rate is uncertain, but demand is certain.  They show that a band control policy is optimal for production. Kazaz et al. (2005) studied the production decisions when a firm has production facility in two foreign countries and found that the company may underserve the demand even when it has enough capacity because the exchange rate and transshipment cost make serving demand not profitable. Dong et al (2010) study a firm's choice among facility networks of home only, foreign only or both when it faces the exchange rate and demand uncertainty, and show that the expected marginal profit determines the choices.  While all these papers consider the exchange rate uncertainty, they differ from our paper in that they do not consider the transshipment costs from a production facility to a market location different from the facility, nor the decision maker's risk aversion.  We next discuss the papers that consider multi-location producation and the associated transshipment problems. 
-
-
-
 \noindent \underline{Multi-location production}
 
-In the category of transshipment of product between facilities, most models consider risk-neutral decision making over an extended period.  Krishnan and Rao \cite{Krishnan1965} study a single-period two-location problem and include an extension to N-locations.  Tagaras \cite{Tagaras1992} uses a similar model to study the pooling effects of transshipment on service levels. Hu {\it et al.} (2007, 2008) study a general transshipment problem in centralized and decentralized settings when capacity may be uncertain. Huang and Sosic (2010) study the game among retailers that order independently before demand realizes, and then transship among them after demand realizes. Similar to these papers, we have also considered the product trasshipment across contries. However, the transshipment problem is only a subproblem in our paper because our focus is to compare the financial hedging versus operational hedging for a risk-averse decision maker. 
+Since we allow product sales across countries, the first relevant literature is about multi-location producation.  Krishnan and Rao \cite{Krishnan1965} study a single-period two-location problem and include an extension to N-locations.  Tagaras \cite{Tagaras1992} uses a similar model to study the pooling effects of transshipment on service levels. Hu {\it et al.} (2007, 2008) study a general transshipment problem in centralized and decentralized settings when capacity may be uncertain. Huang and Sosic (2010) study the game among retailers that order independently before demand realizes, and then transship among them after demand realizes. Similar to these papers, we have also considered the product trasshipment across multi-locations.  However, the transshipment problem is only a subproblem in our paper and these papers have not expressly considered the impact of currency exchange rate uncertainty.
+
+
+\medskip
+\noindent \underline{Currency exchange-rate uncertainty} 
+
+Many operations management papers have addressed production and inventory decisions in the presence of exchange rate uncertainty.  Dasu and Li \cite{Dasu} and Li {\it et al.} \cite{Li2001} focus on the opitmal production policies when the exchange rate uncertainty affects only the production cost.  The former further considers switchover cost and shows that it is optimal to switch the production locaiton from one to the other if the exchange rate is above a value, and to switch back if it is below another value. The later assumes no swithover cost and shows that under certain condition, the optimal policy is to produce in both locations at extreme low stock, in a cheaper location at moderate stock, and in neither at high stock. Ayetkin and Birge \cite{Aytekin2004} study a single capacity allocation decision, followed by a series of production decisions, when exchange rate is uncertain, but demand is certain.  They show that a band control policy is optimal for production. Kazaz et al. (2005) studied the production decisions when a firm has production facilities in two foreign countries and found that the company may underserve the demand even when it has enough capacity because the exchange rate and transshipment cost make serving demand not profitable. Dong et al (2010) study a firm's choice among facility networks of home only, foreign only or both when it faces the exchange rate and demand uncertainty, and show that the expected marginal profit determines the choices.  While all these papers consider the exchange rate uncertainty, they differ from our paper in that they do not consider using the financial instruments to hedge the risks, thus are not able to study the financial hedging and operational hedging in a single framework for a risk-averse decision maker.We next discuss the papers that study both hedges. 
+
+
+
+{\bf Allen Scheller Wolf, note I can not find his paper}
+
 
 \noindent \underline{Financial hedging and operational hedging}
 
-
-(4) Huchzermeier and Cohen \cite{Huchzermeier} studied the finanical hedigng and operational hedging and show that the operational hedging exploits the volatility to increase the present certainty equivalent values, while financial hedging eliminates the volatility. Their limitation is that only forward contract is considered in financial hedging and second their consideration of the risk is the distribution of cash flow. 
-
-
-Allen Scheller Wolf
-
-
-
-\noindent \underline{Financial and operational hedging}
-
-A review paper by Bandaly et al.'s \cite{Bandaly_supply_2010} reports that operational approaches might include geographic dispersion, switching production, capacity allocation postponement. These activities are often characterized by ``mitigating risks by counterbalancing actions'' (see \cite{vanmieghem2003}).  %The dominant use of operational hedging fits the context of currency rate uncertainty and is the one we consider in our paper.
+A review paper by Bandaly et al. \cite{Bandaly_supply_2010} reports that operational approaches might include geographic dispersion, switching production, capacity allocation postponement. These activities are often characterized by ``mitigating risks by counterbalancing actions'' (see \cite{vanmieghem2003}).  %The dominant use of operational hedging fits the context of currency rate uncertainty and is the one we consider in our paper.
 There is less ambiguity about financial hedging, which includes general financial hedges, currency derivatives, currency forward, currency options, exotic derivatives, and foreign debt.  Our paper considers allocation of capacity across countries as operational hedging and currency derivatives as financial hedging. Both empirical and theoretical studies of them are very active.
 
 
@@ -301,17 +295,21 @@ Allayannis et al (2001) finds that operational hedging is not an effective subst
 Kim (2006), Aabo and Simkins (2005), and Faseruk and Mishra (2008) based on US, Danish, and Canadian data, respectively, find that the firms that use (or have a possibility of using) operational hedging are less likely to use financial hedging. Carter et al (2001) suggests that firms that use both hedges face effectively smaller exchange-rate exposure.  A superb summary of empirical literature can be found in Bandaly (2010).  Our objective is to explore the role of each of the types of hedging and to evaluate their individual and joint benefits. While these emprical papers come exclusively from financial literature, the theoretical papers come from both finance and operations management literature. 
 
 %FINANCE:
-In finance literature dealing with currency exchange risk, a few papers consider both demand and exchange-rate risks.  
-Among those, Logue (1995) suggest that operational exposure cannot be effectively hedged by financial instruments. 
-Chowdry and Howe (1999) in one-period model compare financial and operational hedging.  The main conclusion is that operational hedging is needed only in the presence of both demand and exchange rate uncertainty.
-Hommel (2003) extends the above model by including convex (quadratic) cost for foreign capacity and concludes that the operational hedging is only useful for sufficiently high exchange rate variability. Our paper differs these papers in several aspects.  Most importantly, our primary question of when financial and when operational hedging is most appropriate, is not directly answered (apart of the special case, when of no demand or no exchange-rate uncertainty).\footnote{Also, some of their assumptions are more restrictive than ours leading to not exactly the same conclusions.  First, they do not allow capacity shortage and do not consider the cost of transshipment.  Second, due to assuming single period, decisions have only short-term effect creating potential bias of ignoring dependencies between financial and operational decisions(due, for example, to the fact that in some future periods expected cost of domestic and overseas production might not be equal).}  Also, decision maker's objective function is slightly different in their setting.  Consequently, we are able to derive properties of financial hedging not available with mean-variance objective.  Their main finding, that operational hedging is necessary only when {\em both} exchange rate and demand are uncertain, is not true in general in our multi-period model.  We are also able to evaluate how a broader range of factors, such as transshipment costs, possibility of price elasticity, influence the relative benefit of financial and operational hedging.
+In theoretical finance literature dealing with currency exchange risk, a few papers consider both demand and exchange rate risks.  
+Among those, Logue (1995) suggest that financial instruments cannot effectively hedge operational exposure. 
+Chowdry and Howe (1999) in a one-period model use mean-variance as objective to study financial and operational hedging.  The main conclusion is that operational hedging is needed only in the presence of both demand and exchange rate uncertainty.
+Hommel (2003) extends the above model by including convex (quadratic) cost for foreign capacity and concludes that the operational hedging is only useful for sufficiently high exchange rate variability. Our paper is different from these papers in several aspects.  First, our primary question of when financial and when operational hedging is most appropriate, is not directly answered (apart of the special case, when of no demand or no exchange-rate uncertainty).\footnote{Also, some of their assumptions are more restrictive than ours leading to not exactly the same conclusions.  First, they do not allow capacity shortage and do not consider the cost of transshipment.  Second, due to assuming single period, decisions have only short-term effect creating potential bias of ignoring dependencies between financial and operational decisions(due, for example, to the fact that in some future periods expected cost of domestic and overseas production might not be equal).}  Second, we consider the dynamic hedging in multi-periods, and our objective function is different.  Consequently, we are able to derive properties of financial hedging not available with mean-variance objective.  Their main finding, that operational hedging is necessary only when {\em both} exchange rate and demand are uncertain, is not true in general in our multi-period model.  We are also able to evaluate how a broader range of factors, such as transshipment costs, possibility of price elasticity, influence the relative benefit of financial and operational hedging.
 
-In operatons management theoretical papers, some do not expressly study exchange rate and others do. In the former case, Gaur and Seshadri \cite{Guar2004} consider a single-period one-facility model with demand and financial asset values being correlated.  Their purpose is to construct the optimal financial hedging contract.  Agrawal and Seshadri \cite{Agrawal2000} investigate joint price and production decisions in similar settings, when demand and financial asset values have correlation and find corresponding optimal hedging contract. Caldentey and Haugh \cite{Caldentey}, who study financial hedging in an incomplete market, where one financial asset and one operational value follow continuous-time correlated diffusion processes and a mean-variance objective function is used.  Chod et al (2010) bears to our work in considering both financial and operational hedging, and study whether financial hedging and operational flexibility are complementary or substitute. In their model, however, the financial instrument affect demands, not the cost and sales price. Furthermore, all these paper consider only single produciton facility and do not expressly address the exchange rate uncertainty.
-
-%In our model, while we do not allow inventory to be carried across periods, the consecutive periods are still linked due to the dynamics of the exchange rate.  A few papers consider multiple periods, but they consider only one facility (and do not study operational hedging) or do not consider any form of risk aversion.  A paper that considers both financial and operational issues is The focus, however, is not on comparison of two types of hedging, but instead on deriving financial hedging policy.  %We are not aware of any other papers comparing financial {\it versus} operational hedging.
+In operatons management papers, a few study the optimal financial and operational policies without considering impact of exchange rate expressly. Gaur and Seshadri \cite{Guar2004} consider a single-period one-facility model with demand and financial asset values being correlated.  Their purpose is to construct the optimal financial hedging contract.  Agrawal and Seshadri \cite{Agrawal2000} investigate joint price and production decisions in similar settings, when demand and financial asset values have correlation and find corresponding optimal hedging contract. Caldentey and Haugh \cite{Caldentey}, who study financial hedging in an incomplete market, where one financial asset and one operational value follow continuous-time correlated diffusion processes and a mean-variance objective function is used.  Chod et al (2010) bears similarity to our work in considering both financial and operational hedging, and study whether financial hedging and operational flexibility are complementary or substitute. In their model, however, the financial instrument affect demands, not the cost and sales price. Furthermore, all these paper consider only single produciton facility and do not expressly address the exchange rate uncertainty.
 
 
-	- not necessarily related to currency exchange
+In papers expressly addressing the exchange rate uncertainty, Huchzermeier and Cohen \cite{Huchzermeier} studied the finanical hedigng and operational hedging and show that the operational hedging exploits the volatility to increase the net present value, while financial hedging eliminates the volatility. Their objective is to evaluate the option value of production network to a risk-neutral decision maker who uses only forward contract in financial hedging.  Ding {\it et al.} (2007) study a risk-aversion decision maker's joint decisions of the financial hedging and the optimal postponement in a single-period model and use mean-variance as objective function. Their model allows decision maker to uses a portfolio of call and put options in the financial hedging. However, this portfolio is still less general than our model.  Furthermore, their work {concentrates} on the effect of postponement of production decisions and the optimal option contracts and does not compare financial hedging to operational hedging.
+Wang and Li (2010b) extend Ding et al (2007) to consider financial and operational hedging for more than two countries using a mean-variance objective function in a static model. Their financial hedging contract is similar to ours, and thus, more general than put call options in Ding et al. (2007). Then they study a particular configuration where a US company considers setting capacities in China and Vietnam and using financial hedging. They show numerically that financial hedging and operational hedging are substitutes. Our research complements their work by studying a dynamic model. To the best of our knowledge, we are the first to consider the dynamics in hedging.  While they uses mean-variance objective function to model the decision maker's risk-aversion, this method is not the only way for static models and its direct extension to dynamic models has some theoretical difficulties. 
+
+\OUT{
+In our model, while we do not allow inventory to be carried across periods, the consecutive periods are still linked due to the dynamics of the exchange rate.  A few papers consider multiple periods, but they consider only one facility (and do not study operational hedging) or do not consider any form of risk aversion.  A paper that considers both financial and operational issues is The focus, however, is not on comparison of two types of hedging, but instead on deriving financial hedging policy.  %We are not aware of any other papers comparing financial {\it versus} operational hedging.
+
+
 
 
 
@@ -320,18 +318,16 @@ In operatons management theoretical papers, some do not expressly study exchange
 
 \noindent \underline{Within modeling papers,} most of modeling papers in operations literature assume risk neutrality, while most of finance literature assumes risk aversion, but does not consider demand uncertainty and operational decisions.
 
-OPS: 
+%OPS: 
 
 
-For example, 
+%For example, 
 
 
-In the risk-averse decision making literature, most papers consider only a single period.  The work of Chowdhry and Howe \cite{Chowdhry1999} and Hommel (2003) are very close to our study, where financial and operational hedging is considered in a two-facility two-market single-period framework.  Chowdhry and Howe show that both uncertainty in demand and exchange rate is necessary for operational hedging to be useful.  The authors look at the form of financial contract and, for example justify that it mostly will not be in a form of a forward. Later Hommel extend their work by explicitly modeling the cost of acquiring foreign production capacity by a quadratic function, and show that for operational hedging to add value, the exchange rate variability must exceed certain threshold value.  
+%In the risk-averse decision making literature, most papers consider only a single period.  The work of Chowdhry and Howe \cite{Chowdhry1999} and Hommel (2003) are very close to our study, where financial and operational hedging is considered in a two-facility two-market single-period framework.  Chowdhry and Howe show that both uncertainty in demand and exchange rate is necessary for operational hedging to be useful.  The authors look at the form of financial contract and, for example justify that it mostly will not be in a form of a forward. Later Hommel extend their work by explicitly modeling the cost of acquiring foreign production capacity by a quadratic function, and show that for operational hedging to add value, the exchange rate variability must exceed certain threshold value.  
 
-Despite different objective, Ding {\it et al.} (2007) bears some similarity to our work.  They study the joint decisions of the financial hedging and capacity allocation for one-facility two-market single-period model and use mean-variance as objective function.  Their work, however, {concentrates} on the effect of postponement of decisions and does not compare financial hedging to operational hedging. 
+Despite different objective, 
 
-
-Other papers concentrate specifically on studying risk averseness without financial hedgings.  Eeckhoudt {\it et al.} \cite{Eeckhoudt1995} consider a simple risk-averse one-facility news-vendor facing demand uncertainty.  They show that, employing a concave increasing utility function, a newsvendor orders less when she becomes more risk averse. Their model is extended to multiple resource capacity investment by Van Mieghem (2007) and to multi-period by Chen {\it et al.} (2007). Boyabatli and Toktay (2010) further extend this model to consider the choice of flexible and dedicated technologies when the firm faces financial budget constraint.
 
 \medskip
 
@@ -342,76 +338,81 @@ Other papers concentrate specifically on studying risk averseness without financ
 Our paper is different from those cited above in that we allow a decision maker to be risk-averse and that financial hedging contracts are explicitly built into our multi-period operational model.  Our aim is to first understand the structure of optimal policies, and then to compare the relative strength of financial and operational hedging for various environments.  Within our model, based on optimal production decisions, we are able to derive pleasing properties of financial hedging -- it equalizes the consumption cash across periods and across exchange rate realizations. In the numerical study that follows, we compare the benefits due to operational hedging and due to financial hedging, show that in general operational hedging offers significantly higher benefits, and characterize the scenarios when it happens.  In order to measure systematically the effects of risk aversion, in the numerical study we use a family of exponential utility functions.
 
 
-
-
-
-
-
-
-
-
 \medskip
-
-
 
 (4) While operational hedging is predominantly defined as physical division of capacity across locations, the term is sometimes defined in broader terms.  
 
-
 (4) 
 
-
+}
+\medskip
 
 \noindent \underline{Risk-aversion Models}
 
-
-\section{Risk Aversion}
-
-Even though it is argued that a firm should be risk neutral to non-systematic risks because the shareholders may be able to diversify away those risks, Smith \cite{Smith2004} in his review of risk attitudes points out that many firms, including large public companies, are risk-averse.  Some practitioners of decision analysis (see Bickel et al.  \cite{Bickel2002}) suggest deriving a firm-wide risk-averse utility function.  In this paper we study the decisions of a risk-averse firm facing two uncertainties, stochastic demand and exchange rate over time.  
+Risk aversion is central to a few sub-streams of economics and finance literature. Recently it has been increasingly studied in operations literature.
+\OUT{
+ %, although predominantly in single-period models.%  Economics and finance literature has developed criteria to evaluate the appropriateness of various risk-aversion frameworks.
+ In this paper we study the decisions of a risk-averse firm facing two uncertainties, stochastic demand and exchange rate over time.  
 Therefore, we start by discussing how the risk and time preference are modeled.
+}
+Two major approaches to modeling the risk attitude are: (a) Value-at-Risk (VaR), and (b) various forms of utility functions.  VaR is defined as the maximum loss of value that a firm can incur for a given confidence level and a given time interval.  Many financial firms use Value-at-Risk to manage day-to-day operations.  Manganelli and Engle \cite{Manganelli2001} provide a discussion of the VaR models and their uses in practice. Tapiero \cite{tapiero_value_2005} applies the VaR to a single-stage inventory control problem and finds that the target cost level can be interpreted as VaR.  Recently Devalkar et al. \cite{devalkar_integrated_2010} applies VaR to study the optimal decisions of a firm that procures, trade, and process commodities. %Boyabatli and Toktay (2010) further extend this model to consider the choice of flexible and dedicated technologies when the firm faces financial budget constraint.
 
-Two major approaches to modeling the risk attitude are: (a) Value-at-Risk (VaR), and (b) various forms of utility functions.  VaR is defined as the maximum loss of value that a firm can incur for a given confidence level and a given time interval.  Many financial firms use Value-at-Risk to manage day-to-day operations.  Manganelli and Engle \cite{Manganelli2001} provide a discussion of the VaR models and their uses in practice. Tapiero \cite{tapiero_value_2005} applies the VaR to a single stage inventory control problem and finds that the target cost level can be interpreted as VaR.  Recently Devalkar et al. \cite{devalkar_integrated_2010} applies VaR to study the optimal decisions of a firm that procures, trade, and process commodities.
 
 \medskip
 
 Most theoretical models of risk-averse behavior employ a utility function to study consumption.  Levy \cite{Levy92} surveys the use of utility functions to define the risk.  This approach is based on translating a cash flow $x$ in a given period into utility function $U(x)$, which is concave and increasing.  Levy points out that, ranking risk by non-decreasing concave utility function is consistent with the natural definition of risk premium given by Arrow \cite{Arrow1951} and Pratt \cite{Pratt1964} -- the total utility serves as an index for risk.  Gerber and Pafumi \cite{Gerber1998} review the most often used utility functions: (i) linear, (ii) exponential, (iii) negative quadratic, and (vi) logarithmic.
 
-Obviously, linear utility function means risk neutrality, and it is often implicitly assumed in models that do \emph{not} deal with risk.  Negative quadratic utility is often used in finance literature, see survey by Steinbach \cite{Steinbach2001}.  The popularity of negative quadratic function is partly driven by technical reasons as the variance can serve as an index of risk only when the utility function is quadratic, or the random variable has Normal or Geometric Normal distribution.  Since the quadratic utility function has its obvious shortcomings (it penalizes superior performances and also the actual profits of firms are not necessarily normally distributed), a general concave utility function for risk-averse modeling has been widely used in economics, see survey by Fishburn \cite{Fishburn1989}, as well as in operations management, see Bouakiz and Sobel \cite{Bouakiz1992}, Smith \cite{Smith1998}, and Echkout and {\it et al.} \cite{Eeckhoudt1995}.  Many of the papers use the exponential utility function in order to provide closed-form solutions for their model, see Gerber and Pafumi \cite{Gerber1998}.
+Obviously, linear utility function means risk neutrality, and it is often implicitly assumed in models that do \emph{not} deal with risk.  Negative quadratic utility is often used in finance literature, see survey by Steinbach \cite{Steinbach2001}.  The popularity of negative quadratic function is partly driven by technical reasons as it considers only the mean and variance of the cash flow. 
+Since the quadratic utility function has its obvious shortcoming, penalizing superior performances,  general concave utility functions for risk-averse modeling have been widely used in economics, see survey by Fishburn \cite{Fishburn1989}. In operations literature,  Eeckhoudt {\it et al.} \cite{Eeckhoudt1995} employ a concave increasing utility function to study a typical single-period  news-vendor problem.  They show that a high risk-aversion newsvendor orders less inventory than a low risk-aversion one. Their model is extended to multiple resource capacity investment by Van Mieghem (2007) and to multi-period dynamic inventory control with set-up cost by Chen {\it et al.} (2007).
 
-While the approaches to one-period risk modeling are relatively well agreed on, it is less clear how to capture the time preference combined with risk aversion in any single period.  The fundamental issue here is the consistence of time preferences, {\it i.e.}, given risk preferences defined over different time periods and risk preferences on value at a single point in time, how does one make consistent risk-averse choices for all time periods? Samuelson \cite{Samuelson1937} first proposes a discounted utility model for decisions across time periods, where total utility is the discounted sum of utilities across all time points.  Later, Samuelson \cite{Samuelson1952} and Pollack \cite{Pollak} argue that, when risk preference is assumed independent of time, the additive utility across time does, in fact,  give consistent choices.  The discounted utility model has been used for several decades, with several generalizations.  The approach was generalized in works of Prakash \cite{Prakash1976} and Fishburn \cite{Fishburn1989}.  They show that under proper assumptions, the consistent choices are possible.  OMIT THE REST?: Prakash \cite{Prakash1976} shows that the consistence of preference across time can be completely determined if (1) The preference across time is specified by a continuous monotone function; and (2) the preference, at a fixed instant of time, is specified.  Fishburn {\it et al.} \cite{Fishburn1982} conclude that, if utility function is monotonic and continuous, then the resultant choice is consistent.  
+\OUT{
+as well as in operations management, see Echkout and {\it et al.} \cite{Eeckhoudt1995}  and Van Mieghem (2007).  Many of the papers use the exponential utility function in order to provide closed-form solutions for their model, see Gerber and Pafumi \cite{Gerber1998}.
+Other papers concentrate specifically on studying risk averseness without financial hedgings.  
+}
 
+While the approaches to one-period risk modeling are relatively well agreed on, it is less clear in multi-period model how to capture the time preference combined with risk aversion.  One of the fundamental issues here is the intertemporal consistence, {\it i.e.}, given risk preferences defined over multiple time periods, whether the optimal policy formulated for future periods will be carried out as planned.  In an intertemporally inconsistant model, the decision maker does not implement the optimal policy planned for the future. Since this inconsistence is not deriable, researchers in economic literature typically use discounted utility model that is intertemporally consistent and was first proposed by Samuelson \cite{Samuelson1937}. In this model, total utility is the discounted sum of utilities of cash flows across all time periods. Frederik {\it et al} (2002) review the extensive application of this model and its variatons in economic literature. However, Sobel (2006) show that in a stochastic environment using this model for risk-aversion is not compitable with the decomposition axiom and its converse. A compatible model is the utility of the sum of discounted cash flows, which Bouakiz and Sobel (1992) use to study dynamic inventory control problem. To model risk-aversion, they use a particular utility function, i.e., exponential, and thus achives the intertemporal consistence.  Novertheless, the applicaion of this model is not as extensive as the discount utility model bacause using utility functions other than exponential in general leads to intertemporal inconsistence.
+
+Another fundamental issue in modeling multi-period risk-aversion is the "temporal risk preference" that represents a decision maker's preference in timing of uncertainty resolution. In general an earlier resolution of the uncertainty is prefered becaust it gives the decision maker more information to formulate better plans for the future. Unfortunately, both models of discount utility and utility of discounted cash flows do not capture this temporal risk preference. 
+
+\OUT{
+   Later, Samuelson \cite{Samuelson1952} and Pollack \cite{Pollak} argue that, when risk preference is assumed independent of time, the additive utility across time does, in fact,  give consistent choices.  The discounted utility model has been used for several decades, with several generalizations.  The approach was generalized in works of Prakash \cite{Prakash1976} and Fishburn \cite{Fishburn1989}.  They show that under proper assumptions, the consistent choices are possible.  OMIT THE REST?: Prakash \cite{Prakash1976} shows that the consistence of preference across time can be completely determined if (1) The preference across time is specified by a continuous monotone function; and (2) the preference, at a fixed instant of time, is specified.  Fishburn {\it et al.} \cite{Fishburn1982} conclude that, if utility function is monotonic and continuous, then the resultant choice is consistent.  
+}
 \OUT{
 Assuming stationary condition (that is, if $x$ at time $t$ is preferred over $y$ at time $t + k$, then $x$ at time $s$ is preferred over $y$ at time $s +k$), they show that the utility can be expressed as $U(x,t) = \alpha^t f(x)$, where $1>\alpha>0$ and $f$ is an increasing function.  They also present other forms of utility functions under conditions weaker than the stationarity.  
 }
 \OUT{
 Obviously the discounted utility models satisfy the stationarity condition.  Frederick {\it et al.} \cite{Frederick2002} survey the popularity of theoretical economic analysis based on the discounted utility model, as well as some of its anomalies, pointed out by empirical examples.  They discuss a few minor modifications of the discounted utility model.  The distinctions they draw are that (1) the discount rate as a function of time may be decreasing, and (2) the utility across time may  be interdependent, {\it e.g.}, increasing sequence of payoffs is preferred over decreasing one.
-}
+
 Even though the utility approach is mostly used to study the consumption decisions in economics and finance literature, it is also used in a few papers to evaluate a company's value and to study the operations decisions. 
-\OUT{
+
 For example, Bouakiz and Sobel \cite{Bouakiz1992} use the expected utility of the total net present value; while this approach does not meet the stationary and separability condition, it meets the continuous and monotonic conditions.
-}  
 Sobel \cite{Sobel2007} discusses benefits and drawbacks of discounted sum utilities vs. utility of net present value. Utility of net present value has not been widely accepted and drawbacks are reported.  Using this approach to evaluate a company's value by considering only the operations decisions fails to account for the timing of uncertainty resolution, see Matheson and Howard (1968), Mossion (1969) and also illustrated by an example in Smith (1998, page 1690), as the ``temporal risk problem.'' Also, in the case of using expected utility of the total net present value, the optimal operations decisions are not time consistent.
 (WANSHAN - DOES THE LAST SENTENCE REPEAT THE SAME MESSAGE AS ABOVE?)
+}  
 
 
-Two modified utility-based approaches are developed to address the problems related to time consistency of decisions and to timing of uncertainty resolutions: recursive utility function and present certainty equivalent value (PCEV). Kreps and Porteus (1978) first proposed recursive utility procedure to account for the timing of uncertainty resolution. Epstein and Zin (1989) generalized their models to allow independent risk-aversion specifications for a given period and across periods. The Epstein-Zin framework has become the most popular model for dynamic asset pricing in economic and finance literature; it is discussed in textbooks including Singleton (2006) and Duffie (2001).  
-
-
+Two modified utility-based approaches are developed to address the problems related to temporal risk preference: recursive utility function and present certainty equivalent value (PCEV). Kreps and Porteus (1978) first proposed recursive utility procedure to account for the timing of uncertainty resolution. Epstein and Zin (1989) generalized their models to allow independent risk-aversion specifications for a given period and across periods. The Epstein-Zin framework has become the most popular model for dynamic asset pricing applications in economic and finance literature; Many textbooks, including Singleton (2006) and Duffie (2001), discussed these applications. Their framework is specified by three elements: a recursive utility function, an aggregator function and a certainty equivalent operator.    The freedom in choices for these elements makes the framwork very powerful, yet too general. It turns out that PCEV corresponds to a particular choice for the elements where the recursive utility and the aggregator functions are additive exponential and the certainty equivalent operator is the PCEV operator. This particular choice  makes the PCEV conducive to efficient evaluation. 
+\OUT{
 WHAT ARE WE SAYING HERE?  IS IT A REASON TO USE PCEV, OR SIMPLY SOBEL's METHOD IS BAD?  
 While the recursive utility theorem by Epstein and Zin (1989) solves this problem of temporal risk problem, it is not in general consistent with the expected utility preference for consumption. 
 
 
 Present certainty equivalent value (PCEV) approach captures the decisions maker's risk preference that is sensitive to both uncertainty and the time at which the uncertainty is resolved.
-It directly models the decision maker's decisions in both consumption and operations (IS THAT RIGHT???? CANT WE USE PCEV OUTSIDE OF OPERATIONS???). Dreze and Modigliani (1972) studied the optimal consumption decision for a two-period uncertain income. Smith (1998) extended their model to multi-period and assuming exponential utility function was able to derive a recursive formula for PCEV. This recursive PCEV can be viewed as a special case (more amenable to analyze) of the recursive utility in Epstein and Zin's framework. 
+It directly models the decision maker's decisions in both consumption and operations (IS HAT RIGHT???? CANT WE USE PCEV OUTSIDE OF OPERATIONS???).
+
+
+%This recursive PCEV can be viewed as a special case (more amenable to analyze) of the recursive utility in Epstein and Zin's framework. 
 
 
 In our paper, we follow the most popular and most agreed-for discounted utility model and use PCEV to study the firm's decisions, as it captures the decisions maker's risk preference that is sensitive to both uncertainty and the time at which the uncertainty is resolved. (REPETITION WITH THE BEGINNING OF THE PREVIOUS PARAGRAPH)
 
+%\subsection{ Present Certainty Equivalent Value \label{sect:pcev}}
+}
 
 
+\section{Present Certainty Equivalent Value}
 
-\subsection{ Present Certainty Equivalent Value \label{sect:pcev}}
-
-PCEV is a lump-sum amount received with certainty today that generates the same consumption utility as a streamof uncertain operatinal cashflows for a decision maker. Since the decision maker can use financial instruments to smooth the consumption, PCEV explicitly models the investments in these instruments and uses utility functions to represent consumption preference of the decision maker. The functions we use are exponential utility functions, following Smith (1998). We consider the evaluation of PCEV under the investment of either risk free bond or exchange rate derivatives.
+PCEV is a lump-sum amount received with certainty today that generates the same consumption utility as a stream of uncertain operatinal cashflows. Since the decision maker can use financial instruments to smooth the consumption, Dreze and Modigliani (1972) developed the PCEV concept in studying the optimal consumption decision for a two-period uncertain income. Smith (1998) extended their model to multi-period and assuming exponential utility function was able to derive a recursive formula for PCEV. PCEV explicitly models the investments in these instruments and uses utility functions to represent consumption preference of the decision maker. The functions we use are exponential utility functions, following Smith (1998). We consider the evaluation of PCEV under the investment of either risk free bond or exchange rate derivatives.
 
 
 \subsection{PCEV with Risk-free Bond}
