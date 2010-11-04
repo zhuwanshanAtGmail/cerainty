@@ -984,9 +984,10 @@ where $\epsilon$ is the random factor in exchange rate.  In above formulation, t
 
 The structural results (Sections \ref{sect:basicModel} and \ref{sect:priceModel}) enable us to perform an extensive numerical study and to answer the question: What are the favorable conditions for either financial or operational hedging (or both)?  In the case we describe in biggest detail, we assume that (a) we sell both in domestic and in overseas market.  We also evaluate the case (b) where we sell only overseas.  In (a) and (b) price is exogenous.  Finally, we look at case (c), where we sell both in domestic and overseas market and the price is endogenous.  To make a fair evaluation of financial, operational, and joint (financial plus operational) hedging, their relative efficiency is compared to the base case.  The base case (whether it is (a), (b), or (c)) always assumes that all capacity is located in the domestic facility and no financial hedging is used.  Operational hedging allows part of the capacity to be located overseas, while financial hedging keeps all capacity in domestic location, but allows unconstrained use of financial instruments.  The efficiency of other models is expressed as a percentage of increase over the PCEV of the base case.  
 
-We use bionomial tree to model exchange rate evoluation.  It changes with rate {\it $(1+\epsilon)$} up and $1/{\it (1+\epsilon)}$ down in each period with mean equal to the exchange rate at the beginning of the period.  To make computation time manageable, maximum exchange rate does not exceed $(1+\epsilon)^3$ and minimum exchange rate does not exceed $(1+\epsilon)^{-3}$.  Demands in each market are modelled as Erlang distribution with mean of 5.  Demands and exchange rates are independent. 
+We use bionomial tree to model exchange rate evoluation.  It changes with rate {\it $(1+\epsilon)$} up and $1/{\it (1+\epsilon)}$ down in each period with mean equal to the exchange rate at the beginning of the period.  %To make computation time manageable, maximum exchange rate does not exceed $(1+\epsilon)^3$ and minimum exchange rate does not exceed $(1+\epsilon)^{-3}$.  
+Demands in each market are modelled as Erlang distribution with mean of 5.  Demands and exchange rates are independent. 
 
-Since parameters of the model may significantly change the relative strength and weakness of financial hedging and operational hedging, a wide range of parameters has been chosen for the numerical study. We vary five parameters, listed below, across four values each, resulting in $1,024$ $(4^5)$ instances.  The values of parameters are: total available capacity $K= \{6, 8, \bold{10}, 12\}$, the risk-tolerance factor $\rho = \{10, 12.5, \bold{15}, 17.5, 20\}$, the sales price $p = \{6, 8, \bold{10}, 12\}$, the exchange rate parameter $\epsilon=\{0.01, \bold{0.1},$ $0.3,$ $0.5 \}$, and the demand coefficient of variation ranges in $\{10\%, 20\%, \bold{33.3\%}, 50\%\}$.  The production cost $c=5$ is kept unchanged because relative effects are revealed through the change of the price and transportation cost. All experiments run for 20 periods.  Except when we explicitly state it, all experiments assume 0 transportation costs.  Transportation costs favor strongly operational hedging, as we show in one of later graphs.
+Since parameters of the model may significantly change the relative strength and weakness of financial hedging and operational hedging, a wide range of parameters has been chosen for the numerical study. We vary five parameters, listed below, across 5 values each, resulting in $3125$ $(5^5)$ instances.  The values of parameters are: total available capacity $K= \{6, 8, \bold{10}, 13, 17\}$, the risk-tolerance factor $\rho = \{10, 12.5, \bold{15}, 17.5, 20\}$, the sales price $p = \{1.05, 1.1, \bold{1.2}, 1.4, 1.8\}$, the exchange rate parameter $\epsilon=\{0.01, 0.05, \bold{0.1}, 0.2, 0.3 \}$, and the demand coefficient of variation ranges in $\{10\%, 20\%, \bold{25\%},33.3\% 50\%\}$.  The production cost $c=1$ is kept unchanged because relative effects are revealed through the change of the price and transportation cost. All experiments run for 1, 4 and 7 periods.  Except when we explicitly state it, all experiments assume 0 transportation costs.  Transportation costs favor strongly operational hedging, as we show in one of later graphs.
 
 
 
@@ -1069,7 +1070,8 @@ The relative efficiencies of financial and operational hedging are affected by n
 {\noindent \em Sales price sensitivity.} Price sensitivity effects apply to the Price Model only (case (c)) and are illustrated in the right of Figure \ref{fig:priceAndSens}.  The savings of both financial and operational hedging increases in price sensitivity.  When price sensitivity increases, utilities of all models decrease.  The utilities of both operational and financial hedging decrease, however, slower than that of the base-case for the same reasons as above:  for financial hedging, this is caused by the convexity of exponential utility function's derivative, similar to the price effect, while for operational hedging, due to portion of profits not being influenced.
 
 
-
+%comments to Roman: the tranportation results is not availabe for pcev study yet, I comment it out temprarily
+\OUT{
 {\noindent \em Transportation cost.}  This is the only place where we allow consider positive transportation costs.  Transportation cost's effect
 on operational hedging is opposite to that of  financial hedging,
 as shown in Figure \ref{fig:trans}.  Operational hedging savings increase with transportation costs, but financial hedging savings slowly decrease.  Higher transportation costs result in less goods being transshipped and, thus, less foreign cash flow.  Therefore, financial hedging is less needed.
@@ -1091,7 +1093,7 @@ as shown in Figure \ref{fig:trans}.  Operational hedging savings increase with t
 transportation cost in the Basic Model (left) and in the Price Model (right).} \label{fig:trans} \vspace{-.2in}
 \end{center}
 \end{figure}
-
+}
 
 
 {\noindent \em Exchange rate parameter.} The effect of exchange rate variance is illustrated in Figure \ref{fig:exch}.  Directly from our analytical results, financial hedging changes the linear average of the disutility to a geometric average.  Thus, the savings are higher for a larger variation of exchange rate.
@@ -1140,6 +1142,7 @@ rate parameter in the Basic Model (right) and in the Price Model
 \end{center}
 \end{figure}
 
+\OUT{ %note to roman: these results are not available, I comment them out temprerily
 \noindent {\em Horizon of financial hedging}
 The longer number of periods of financial hedging, the bigger the benefits.  Obviously, it becomes increasingly difficult and increasingly costly (due to additional reserves required) to hedge very far into the future.  Figure \ref{fig:HorizonAndStructure} left shows the relative benefits of financial hedging for different number of periods.
 
@@ -1160,6 +1163,9 @@ The longer number of periods of financial hedging, the bigger the benefits.  Obv
 \vspace{.05in} \caption{Financial hedging horizon effect(left) and relative savings with overseas market demand only (right).} \label{fig:HorizonAndStructure} \vspace{-.2in}
 \end{center}
 \end{figure}
+
+
+}
 
 \OUT{
 \subsection{Dynamic Behavior by Centralized Study}
